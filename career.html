@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | NovaMind AI</title>
+    <meta name="description" content="Join the NovaMind AI team. Explore career opportunities and help shape the future of artificial intelligence.">
+    <link rel="canonical" href="https://novamindai.com/career">
+    <!-- Open Graph & Twitter Card -->
+    <meta property="og:title" content="Careers | NovaMind AI">
+    <meta property="og:description" content="Join the NovaMind AI team. Explore career opportunities and help shape the future of artificial intelligence.">
+    <meta property="og:image" content="/assets/og-image.jpg">
+    <meta property="og:url" content="https://novamindai.com/career">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Careers | NovaMind AI">
+    <meta name="twitter:description" content="Join the NovaMind AI team. Explore career opportunities and help shape the future of artificial intelligence.">
+    <meta name="twitter:image" content="/assets/og-image.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero_fix.css">
+    <!-- Flickity CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body { background: #f7f8fa; }
+      .career-hero {
+        background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        padding: 54px 0 30px 0;
+        text-align: center;
+      }
+      .career-hero h1 {
+        font-size: 2.3rem;
+        font-weight: 800;
+        margin-bottom: 14px;
+      }
+      .career-hero p {
+        font-size: 1.15rem;
+        max-width: 700px;
+        margin: 0 auto 0.7rem auto;
+        color: #f3f3ff;
+      }
+      .career-section {
+        max-width: 900px;
+        margin: 2rem auto 0 auto;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(102,126,234,0.08);
+        padding: 2rem 2rem 1.5rem 2rem;
+      }
+      .career-section h2 {
+        color: #764ba2;
+        font-size: 1.3rem;
+        margin-bottom: 1.1rem;
+        text-align: center;
+      }
+      .career-culture {
+        font-size: 1.05rem;
+        color: #444;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      .career-benefits {
+        display: flex;
+        gap: 1.2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1.2rem 0 1.2rem 0;
+      }
+      .benefit-item {
+        background: #f7f8fa;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(102,126,234,0.07);
+        padding: 1rem 1.1rem 0.7rem 1.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 120px;
+        max-width: 180px;
+        flex: 1 1 120px;
+        text-align: center;
+      }
+      .benefit-item i {
+        color: #764ba2;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .benefit-item span {
+        font-size: 1.01rem;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+      .benefit-item p {
+        font-size: 0.95rem;
+        color: #555;
+        margin: 0;
+      }
+      .job-list {
+        margin: 1.5rem 0 1.2rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+      }
+      .job-item {
+        background: #f7f8fa;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(102,126,234,0.07);
+        padding: 1.1rem 1.3rem 0.8rem 1.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .job-title {
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #333;
+      }
+      .job-meta {
+        font-size: 0.97rem;
+        color: #764ba2;
+        margin-bottom: 0.2rem;
+      }
+      .job-desc {
+        font-size: 0.95rem;
+        color: #555;
+      }
+      .career-form-section {
+        max-width: 400px;
+        margin: 2rem auto 0 auto;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(102,126,234,0.07);
+        padding: 1.2rem 1.2rem 1.1rem 1.2rem;
+      }
+      .career-form-section h2 {
+        color: #764ba2;
+        font-size: 1.15rem;
+        margin-bottom: 0.7rem;
+        text-align: center;
+      }
+      .career-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .career-form label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.1rem;
+        font-size: 0.98rem;
+      }
+      .career-form input, .career-form textarea, .career-form select {
+        padding: 0.6rem 0.8rem;
+        border-radius: 7px;
+        border: 1px solid #ccc;
+        font-size: 0.98rem;
+        font-family: inherit;
+        background: #f7f8fa;
+        resize: vertical;
+      }
+      .career-form textarea {
+        min-height: 60px;
+      }
+      .career-form button {
+        background: #764ba2;
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        border-radius: 7px;
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .career-form button:hover {
+        background: #667eea;
+      }
+      #career-form-success {
+        display:none;
+        color:#25a244;
+        font-weight:600;
+        margin-top:0.7rem;
+        text-align:center;
+        font-size:1rem;
+      }
+      @media (max-width: 900px) {
+        .career-section { padding: 1.2rem 0.5rem; }
+        .career-benefits { gap: 0.7rem; }
+      }
+    </style>
+</head>
+<body>
+    <header class="clean-navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="site-logo">
+                <span class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#111"/><circle cx="14" cy="20" r="6" fill="#fff"/><rect x="22" y="16" width="10" height="8" rx="3" fill="#fff"/></svg>
+                </span>
+                <div class="logo-text-group">
+                    <span class="logo-title"><b>NovaMind</b> AI</span>
+                    <span class="logo-tagline">Communicate. Collaborate. Create.</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="career.html" class="active">Career</a></li>
+                    <li class="has-dropdown">
+                        <a href="resources.html">Resources <span class="arrow">&#9662;</span></a>
+                        <div class="dropdown">
+                            <a href="#">Blog</a>
+                            <a href="#">Affiliate Programs</a>
+                            <a href="#">Community</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="career-hero new-hero-style">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-content-wrap">
+        <h1 class="hero-headline fadein-delay-1">
+          Join the <span class="gradient-text">AI Revolution</span><br>
+          at NovaMind
+        </h1>
+        <div class="hero-subheading fadein-delay-2">
+          Building the future of intelligent technology—<b>and we want you on our team.</b>
+        </div>
+        <a href="#open-positions" class="glass-btn fadein-delay-3">
+          <span>View Open Positions</span>
+          <i class="fa fa-chevron-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="career-section animate-slideup" style="animation-delay:0.4s">
+      <h2><i class="fa fa-briefcase"></i> Open Positions</h2>
+      <div class="job-list grid-3-col">
+        <div class="job-card animate-fadein" style="animation-delay:0.1s">
+          <div class="job-title">Technical Support Engineers</div>
+          <div class="job-desc">Provide voice-based support to international/domestic customers over the phone (Inbound and Outbound). Build a rapport with customers with clear and c...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+        <div class="job-card animate-fadein" style="animation-delay:0.12s">
+          <div class="job-title">Designers- UI/UX/Visual/Graphic</div>
+          <div class="job-desc">Help build design work across multiple mediums on various projects, from small pieces to multi-channel campaigns. Build digital assets for marketing c...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+        <div class="job-card animate-fadein" style="animation-delay:0.14s">
+          <div class="job-title">Sales Executives</div>
+          <div class="job-desc">Build rapport with contacts and understand where the prospect is in the buying process. Identify opportunities that meet a minimum qualification crite...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+        <div class="job-card animate-fadein" style="animation-delay:0.16s">
+          <div class="job-title">Web Developers</div>
+          <div class="job-desc">Develop new components based on design specs. Work independently and write maintainable code. Understand existing code and suggest optimization in ter...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+        <div class="job-card animate-fadein" style="animation-delay:0.18s">
+          <div class="job-title">Digital Marketing Analyst</div>
+          <div class="job-desc">Manage Google Adwords Campaigns to improve Return on Investment and generate reports Develop performance metrics to provide recommendations and contin...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+        <div class="job-card animate-fadein" style="animation-delay:0.20s">
+          <div class="job-title">Content/Technical Writers</div>
+          <div class="job-desc">Ideate and create content for blogs, articles, social media copies, and other formats on a regular basis. Stay up to date with content in the market t...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+        <div class="job-card animate-fadein" style="animation-delay:0.22s">
+          <div class="job-title">Software Developers</div>
+          <div class="job-desc">Design and develop high-volume, low-latency applications for mission-critical systems, ensuring top-tier availability and performance. Contribute to a...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+        <div class="job-card animate-fadein" style="animation-delay:0.24s">
+          <div class="job-title">QA Engineers</div>
+          <div class="job-desc">Experience in manual and automation testing. Knowledge of Java Programming (data types, variables, operators, flow control statements, methods (built-...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+        <div class="job-card animate-fadein" style="animation-delay:0.26s">
+          <div class="job-title">Product Marketers</div>
+          <div class="job-desc">Write, rewrite, test, and maintain website and landing pages. Create and maintain accurate comparison documents. Write briefs for ads, landing pages, ...</div>
+          <div class="job-meta">Full time</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="career-section animate-slideup" style="animation-delay:0.6s">
+      <div class="why-join-visuals">
+        <svg class="why-join-illustration" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="56" fill="#e0e7ff"/>
+          <ellipse cx="60" cy="80" rx="32" ry="12" fill="#c7d2fe"/>
+          <circle cx="60" cy="54" r="28" fill="#fff"/>
+          <ellipse cx="60" cy="54" rx="18" ry="12" fill="#a5b4fc"/>
+          <circle cx="60" cy="54" r="8" fill="#764ba2"/>
+          <rect x="52" y="40" width="16" height="8" rx="4" fill="#667eea"/>
+        </svg>
+        <i class="fa fa-users why-join-icon"></i>
+      </div>
+      <h2><i class="fa fa-star"></i> Why Join Us?</h2>
+      <div class="why-join-blog">
+        <p><strong>NovaMind AI is more than just a workplace—it's a launchpad for your career in artificial intelligence and technology innovation.</strong> As a member of our team, you'll collaborate with some of the brightest minds in the industry, working on projects that shape the future of AI and digital transformation.</p>
+        <p>We foster a culture of continuous learning, creativity, and open communication. Our team enjoys flexible work arrangements, access to world-class resources, and the freedom to experiment and grow. Whether you're passionate about building scalable AI systems, designing intuitive user experiences, or driving business growth, NovaMind AI offers the perfect environment to thrive.</p>
+        <p>Join us to make a real impact—helping businesses and communities unlock the power of artificial intelligence. At NovaMind AI, your ideas matter, your growth is supported, and your work truly makes a difference. <strong>Be part of a company that values innovation, diversity, and the relentless pursuit of excellence.</strong></p>
+      </div>
+    </section>
+
+    <section class="career-section animate-slideup" id="apply-form" style="animation-delay:0.8s">
+      <h2><i class="fa fa-send"></i> Apply Now</h2>
+      <div class="application-steps">
+        <div class="step animate-fadein" style="animation-delay:0.1s"><span class="step-icon">1</span> Submit Application</div>
+        <div class="step animate-fadein" style="animation-delay:0.2s"><span class="step-icon">2</span> Interview</div>
+        <div class="step animate-fadein" style="animation-delay:0.3s"><span class="step-icon">3</span> Offer</div>
+        <div class="step animate-fadein" style="animation-delay:0.4s"><span class="step-icon">4</span> Onboard</div>
+      </div>
+      <form class="career-form" action="https://formspree.io/f/mnqewqzv" method="POST" autocomplete="off">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="position">Position</label>
+        <select id="position" name="position" required>
+          <option value="">Select a position</option>
+          <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+          <option value="Product Designer">Product Designer</option>
+          <option value="AI Solutions Consultant">AI Solutions Consultant</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us why you're a great fit..."></textarea>
+        <button type="submit"><i class="fa fa-paper-plane"></i> Submit Application</button>
+      </form>
+      <div id="career-form-success">Thank you! Your application has been submitted.</div>
+    </section>
+
+    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <i class="fa fa-whatsapp"></i>
+    </a>
+
+<script>
+// Smooth scroll for hero CTA and Apply buttons
+  document.querySelectorAll('.hero-cta, .apply-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const form = document.getElementById('apply-form');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth' });
+        // If Apply button, pre-select the position
+        if (this.classList.contains('apply-btn')) {
+          const pos = this.getAttribute('data-position');
+          const select = document.getElementById('position');
+          if (select) select.value = pos;
+        }
+      }
+    });
+  });
+// Animate on scroll
+  function animateOnScroll() {
+    document.querySelectorAll('.animate-fadein, .animate-slideup').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        el.classList.add('animated');
+      }
+    });
+  }
+  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('DOMContentLoaded', animateOnScroll);
+</script>
+</body>
+</html> 

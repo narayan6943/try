@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | NovaMind AI</title>
+    <meta name="description" content="Learn about NovaMind AI, our mission, vision, and the team behind our innovative AI solutions.">
+    <link rel="canonical" href="https://novamindai.com/about">
+    <!-- Open Graph & Twitter Card -->
+    <meta property="og:title" content="About Us | NovaMind AI">
+    <meta property="og:description" content="Learn about NovaMind AI, our mission, vision, and the team behind our innovative AI solutions.">
+    <meta property="og:image" content="/assets/og-image.jpg">
+    <meta property="og:url" content="https://novamindai.com/about">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | NovaMind AI">
+    <meta name="twitter:description" content="Learn about NovaMind AI, our mission, vision, and the team behind our innovative AI solutions.">
+    <meta name="twitter:image" content="/assets/og-image.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero_fix.css">
+    <!-- Flickity CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body { background: #f7f8fa; }
+      .about-hero {
+        background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        padding: 60px 0 36px 0;
+        text-align: center;
+      }
+      .about-hero h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+      .about-hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 0.7rem auto;
+        color: #f3f3ff;
+      }
+      .about-section {
+        max-width: 900px;
+        margin: 2.2rem auto 0 auto;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(102,126,234,0.08);
+        padding: 2.2rem 2rem 1.5rem 2rem;
+      }
+      .about-section h2 {
+        color: #764ba2;
+        font-size: 1.4rem;
+        margin-bottom: 1.1rem;
+        text-align: center;
+      }
+      .about-story {
+        font-size: 1.08rem;
+        color: #444;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      .about-values {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 2.2rem 0 1.2rem 0;
+      }
+      .value-item {
+        background: #f7f8fa;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(102,126,234,0.07);
+        padding: 1.2rem 1.3rem 1rem 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 160px;
+        max-width: 220px;
+        flex: 1 1 160px;
+        text-align: center;
+      }
+      .value-item i {
+        color: #764ba2;
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+      }
+      .value-item span {
+        font-size: 1.08rem;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+      }
+      .value-item p {
+        font-size: 0.98rem;
+        color: #555;
+        margin: 0;
+      }
+      .about-team {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 2.2rem 0 1.2rem 0;
+      }
+      .team-member {
+        background: #f7f8fa;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(102,126,234,0.07);
+        padding: 1.2rem 1.3rem 1rem 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 180px;
+        max-width: 220px;
+        flex: 1 1 180px;
+        text-align: center;
+      }
+      .team-member img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 0.7rem;
+        border: 3px solid #764ba2;
+      }
+      .team-member .name {
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.2rem;
+      }
+      .team-member .role {
+        font-size: 0.98rem;
+        color: #764ba2;
+        margin-bottom: 0.3rem;
+      }
+      .team-member .bio {
+        font-size: 0.95rem;
+        color: #555;
+        margin: 0;
+      }
+      @media (max-width: 900px) {
+        .about-section { padding: 1.2rem 0.5rem; }
+        .about-values, .about-team { gap: 0.7rem; }
+      }
+    </style>
+</head>
+<body>
+    <header class="clean-navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="site-logo">
+                <span class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#111"/><circle cx="14" cy="20" r="6" fill="#fff"/><rect x="22" y="16" width="10" height="8" rx="3" fill="#fff"/></svg>
+                </span>
+                <div class="logo-text-group">
+                    <span class="logo-title"><b>NovaMind</b> AI</span>
+                    <span class="logo-tagline">Communicate. Collaborate. Create.</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li class="has-dropdown">
+                        <a href="resources.html">Resources <span class="arrow">&#9662;</span></a>
+                        <div class="dropdown">
+                            <a href="#">Blog</a>
+                            <a href="#">Affiliate Programs</a>
+                            <a href="#">Community</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="about-hero">
+      <h1>Empowering the Future with AI</h1>
+      <p>At NovaMind AI, our mission is to transform businesses and lives through innovative, ethical, and accessible artificial intelligence.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Story & Vision</h2>
+      <div class="about-story">
+        Founded by passionate technologists and visionaries, NovaMind AI is dedicated to making advanced AI solutions practical and impactful for organizations of all sizes. We believe in a future where AI augments human potential, drives sustainable growth, and solves real-world challenges.<br><br>
+        Our vision is to democratize AI—making it secure, transparent, and beneficial for everyone. We partner with clients to co-create solutions that are not only powerful, but also responsible and trustworthy.
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>Why Choose NovaMind AI?</h2>
+      <div class="about-values">
+        <div class="value-item"><i class="fa fa-lightbulb-o"></i><span>Innovation</span><p>We push the boundaries of what's possible with AI, always learning and evolving.</p></div>
+        <div class="value-item"><i class="fa fa-shield"></i><span>Trust & Ethics</span><p>We build solutions that are secure, transparent, and fair.</p></div>
+        <div class="value-item"><i class="fa fa-users"></i><span>Collaboration</span><p>We work closely with clients, valuing every partnership as a journey.</p></div>
+        <div class="value-item"><i class="fa fa-rocket"></i><span>Impact</span><p>We focus on real results—measurable, sustainable, and meaningful.</p></div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>Meet Our Leadership</h2>
+      <div class="about-team">
+        <div class="team-member">
+          <img src="images/011 Dusty Grass (1).png" alt="Nayan Aryan Dwivedi">
+          <div class="name">Nayan Aryan Dwivedi</div>
+          <div class="role">Founder & CEO</div>
+          <div class="bio">AI evangelist, entrepreneur, and lifelong learner. Nayan leads NovaMind AI with a vision for responsible, human-centric innovation.</div>
+        </div>
+        <div class="team-member">
+          <img src="images/034 Lemon Gate.png" alt="Priya Sharma">
+          <div class="name">Priya Sharma</div>
+          <div class="role">Chief Technology Officer</div>
+          <div class="bio">Expert in machine learning and scalable systems. Priya ensures our technology is always ahead of the curve.</div>
+        </div>
+        <div class="team-member">
+          <img src="images/036 Zeus Miracle.png" alt="Rahul Verma">
+          <div class="name">Rahul Verma</div>
+          <div class="role">Head of Product</div>
+          <div class="bio">Product strategist and customer advocate. Rahul bridges the gap between client needs and AI innovation.</div>
+        </div>
+      </div>
+    </section>
+
+    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <i class="fa fa-whatsapp"></i>
+    </a>
+</body>
+</html> 

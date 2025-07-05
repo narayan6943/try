@@ -1,0 +1,521 @@
+/* Solutions Page Styles */
+.solutions-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    color: white;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+.tab-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tab-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: white;
+    color: #667eea;
+    border-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.service-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.service-card > p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-details h4 {
+    color: #667eea;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.service-details p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Industry Grid */
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.industry-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.industry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.industry-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.industry-header i {
+    font-size: 24px;
+    color: #667eea;
+    width: 40px;
+    text-align: center;
+}
+
+.industry-header h3 {
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+}
+
+.solution-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.solution-list li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+    position: relative;
+    padding-left: 20px;
+}
+
+.solution-list li:before {
+    content: "•";
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.solution-list li:last-child {
+    border-bottom: none;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #667eea;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .tab-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .industry-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+    
+    .service-card,
+    .industry-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .industry-header h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Skip Link Styles */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 1000;
+    background: #fff;
+    color: #667eea;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: left 0.3s;
+}
+.skip-link:focus {
+    left: 20px;
+    top: 20px;
+    width: auto;
+    height: auto;
+    outline: 3px solid #764ba2;
+    box-shadow: 0 2px 8px rgba(102,126,234,0.2);
+}
+
+/* Focus Styles for Accessibility */
+.tab-button:focus, .service-card:focus, .industry-card:focus, .cta-button:focus, .footer a:focus {
+    outline: 3px solid #764ba2;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(102,126,234,0.15);
+    z-index: 2;
+}
+
+.tab-button:active, .service-card:active, .industry-card:active, .cta-button:active, .footer a:active {
+    outline: none;
+    box-shadow: 0 0 0 2px #667eea;
+}
+
+/* Smooth transitions for focus/hover */
+.tab-button, .service-card, .industry-card, .cta-button, .footer a {
+    transition: box-shadow 0.2s, outline 0.2s, background 0.3s, color 0.3s;
+}
+
+/* Ensure visible focus for all links in footer */
+.footer a:focus {
+    background: #f3f3ff;
+    color: #764ba2;
+}
+
+/* Industry List Grid Styles */
+.industry-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+  background: #f7f8fa;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin: 2rem 0;
+}
+.industry-list-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #222;
+  background: transparent;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1.1rem 0 1.1rem 0.2rem;
+  gap: 1.1rem;
+  transition: background 0.2s;
+}
+.industry-list-item i {
+  color: #6b7bb6;
+  font-size: 1.5rem;
+  min-width: 1.7em;
+}
+.industry-list-item:last-child,
+.industry-list-item:nth-last-child(2) {
+  border-bottom: none;
+}
+@media (max-width: 900px) {
+  .industry-list-grid {
+    grid-template-columns: 1fr;
+    padding: 1.2rem 0.7rem;
+  }
+  .industry-list-item {
+    font-size: 1.1rem;
+    padding: 0.9rem 0 0.9rem 0.2rem;
+  }
+}
+
+/* Hero Section (Solutions Page) */
+.hero.hero-solutions {
+  background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.hero-visual i {
+  font-size: 4.5rem;
+  color: #fff;
+  background: linear-gradient(135deg, #fff 60%, #667eea 100%);
+  border-radius: 50%;
+  box-shadow: 0 8px 32px 0 rgba(102,126,234,0.12);
+  padding: 22px 26px;
+}
+.hero-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 36px;
+  color: #f3f3ff;
+}
+.hero-subtitle .highlight {
+  color: #ffe082;
+  font-weight: 600;
+}
+.hero-cta {
+  font-size: 1.15rem;
+  padding: 18px 48px;
+  border-radius: 40px;
+  background: #fff;
+  color: #764ba2;
+  font-weight: 700;
+  box-shadow: 0 8px 32px 0 rgba(102,126,234,0.18);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.hero-cta:hover, .hero-cta:focus {
+  background: #ffe082;
+  color: #764ba2;
+  box-shadow: 0 12px 40px 0 rgba(102,126,234,0.22);
+}
+@media (max-width: 700px) {
+  .hero.hero-solutions {
+    padding: 48px 0 32px 0;
+    min-height: 260px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-visual i {
+    font-size: 2.5rem;
+    padding: 12px 14px;
+  }
+  .hero-cta {
+    font-size: 1rem;
+    padding: 13px 28px;
+  }
+} 

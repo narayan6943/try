@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Demo | NovaMind AI</title>
+    <meta name="description" content="Book a personalized demo of NovaMind AI solutions. See how our AI can transform your business.">
+    <link rel="canonical" href="https://novamindai.com/demo">
+    <!-- Open Graph & Twitter Card -->
+    <meta property="og:title" content="Book a Demo | NovaMind AI">
+    <meta property="og:description" content="Book a personalized demo of NovaMind AI solutions. See how our AI can transform your business.">
+    <meta property="og:image" content="/assets/og-image.jpg">
+    <meta property="og:url" content="https://novamindai.com/demo">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book a Demo | NovaMind AI">
+    <meta name="twitter:description" content="Book a personalized demo of NovaMind AI solutions. See how our AI can transform your business.">
+    <meta name="twitter:image" content="/assets/og-image.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero_fix.css">
+    <!-- Flickity CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body { background: #f7f8fa; }
+      .demo-hero {
+        background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+        min-height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 36px 0 18px 0;
+        color: #fff;
+        text-align: center;
+      }
+      .demo-hero-content {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .demo-hero-content h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+      .demo-hero-content p {
+        font-size: 1.05rem;
+        margin-bottom: 18px;
+        color: #f3f3ff;
+      }
+      .demo-hero-content .cta-button {
+        font-size: 1rem;
+        padding: 12px 32px;
+        border-radius: 30px;
+        background: #fff;
+        color: #764ba2;
+        font-weight: 700;
+        box-shadow: 0 4px 16px 0 rgba(102,126,234,0.12);
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      }
+      .demo-hero-content .cta-button:hover, .demo-hero-content .cta-button:focus {
+        background: #ffe082;
+        color: #764ba2;
+        box-shadow: 0 8px 24px 0 rgba(102,126,234,0.18);
+      }
+      .demo-section {
+        max-width: 400px;
+        margin: 1.2rem auto 0 auto;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(102,126,234,0.07);
+        padding: 1.2rem 1.2rem 1.1rem 1.2rem;
+      }
+      .demo-section h2 {
+        color: #764ba2;
+        font-size: 1.15rem;
+        margin-bottom: 0.7rem;
+        text-align: center;
+      }
+      .demo-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .demo-form label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.1rem;
+        font-size: 0.98rem;
+      }
+      .demo-form input, .demo-form textarea {
+        padding: 0.6rem 0.8rem;
+        border-radius: 7px;
+        border: 1px solid #ccc;
+        font-size: 0.98rem;
+        font-family: inherit;
+        background: #f7f8fa;
+        resize: vertical;
+      }
+      .demo-form textarea {
+        min-height: 60px;
+      }
+      .demo-form button {
+        background: #764ba2;
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        border-radius: 7px;
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .demo-form button:hover {
+        background: #667eea;
+      }
+      #form-success {
+        display:none;
+        color:#25a244;
+        font-weight:600;
+        margin-top:0.7rem;
+        text-align:center;
+        font-size:1rem;
+      }
+      @media (max-width: 700px) {
+        .demo-section, .demo-hero-content {
+          padding: 0.7rem 0.2rem;
+        }
+        .demo-hero-content h1 {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header class="clean-navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="site-logo">
+                <span class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#111"/><circle cx="14" cy="20" r="6" fill="#fff"/><rect x="22" y="16" width="10" height="8" rx="3" fill="#fff"/></svg>
+                </span>
+                <div class="logo-text-group">
+                    <span class="logo-title"><b>NovaMind</b> AI</span>
+                    <span class="logo-tagline">Communicate. Collaborate. Create.</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="demo.html" class="active">Demo</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li class="has-dropdown">
+                        <a href="resources.html">Resources <span class="arrow">&#9662;</span></a>
+                        <div class="dropdown">
+                            <a href="#">Blog</a>
+                            <a href="#">Affiliate Programs</a>
+                            <a href="#">Community</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="demo-hero">
+      <div class="demo-hero-content">
+        <h1>Book Your Personalized AI Demo</h1>
+        <p>See NovaMind AI in action! Discover how our solutions can transform your business. Schedule a live, interactive demo with our experts.</p>
+        <a href="#demo-form" class="cta-button">Request a Demo</a>
+      </div>
+    </section>
+
+    <section class="demo-section" id="demo-form">
+      <h2>Request Your Demo</h2>
+      <form class="demo-form" action="https://formspree.io/f/mnqewqzv" method="POST" autocomplete="off">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your goals or questions..."></textarea>
+        <button type="submit">Book My Demo</button>
+      </form>
+      <div id="form-success">Thank you! Your demo request has been sent.</div>
+    </section>
+
+    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <i class="fa fa-whatsapp"></i>
+    </a>
+</body>
+</html> 
