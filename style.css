@@ -4862,3 +4862,110 @@ select {
     grid-template-columns: 1fr;
   }
 }
+
+.site-logo {
+  position: absolute;
+  top: 1.2rem;
+  left: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ef6f6c;
+  text-decoration: none;
+  letter-spacing: 1px;
+  z-index: 100;
+  font-family: 'Poppins', Arial, sans-serif;
+  transition: color 0.2s;
+}
+.site-logo:hover {
+  color: #d95c5a;
+}
+@media (max-width: 700px) {
+  .site-logo {
+    left: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Add styles for company name in navbar */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+.company-name {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #22223b;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+.company-name:hover {
+    color: #4f8cff;
+}
+
+/* Adjust nav-links to align properly after adding brand */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Ensure navbar brand is at the top left */
+.clean-navbar {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(34,34,59,0.04);
+}
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+.company-name {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #22223b;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+    padding: 0.25rem 0;
+}
+.company-name:hover {
+    color: #4f8cff;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+@media (max-width: 768px) {
+    .navbar-inner {
+        padding: 0.5rem 1rem;
+    }
+    .company-name {
+        font-size: 1.1rem;
+    }
+}

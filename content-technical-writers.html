@@ -3,35 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Content/Technical Writers - NovaMind AI Careers</title>
+  <title>Content/Technical Writer - Careers</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Poppins', Arial, sans-serif; background: #fff; color: #222; margin: 0; padding: 0; }
+    .center-header { text-align: center; margin-top: 2.5rem; margin-bottom: 1.5rem; }
+    .center-header h1 { font-size: 3rem; font-weight: 700; margin: 0.2em 0 0.5em 0; color: #222; text-align: center; }
+    .center-header .company-info { font-size: 1.1rem; color: #444; margin-bottom: 0.5em; }
+    .job-action-btns { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .job-action-btns button, .job-action-btns .email-btn { background: #ef6f6c; color: #fff; border: none; padding: 0.8rem 2rem; border-radius: 7px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .job-action-btns .email-btn { background: #fff; color: #222; border: 2px solid #222; }
+    .job-action-btns button:hover { background: #d95c5a; }
+    .job-action-btns .email-btn:hover { background: #f3f3f3; }
+    .share-icons { display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 2.2rem; }
+    .share-icons a { color: #222; font-size: 1.3rem; border: 1.5px solid #eee; border-radius: 50%; width: 2.2rem; height: 2.2rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s; text-decoration: none; }
+    .share-icons a:hover { background: #ef6f6c; color: #fff; border-color: #ef6f6c; }
+    .job-main-content { max-width: 1100px; margin: 0 auto 2.5rem auto; display: flex; gap: 2.5rem; background: #fff; border-radius: 1rem; box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07); padding: 2.5rem 2rem 2rem 2rem; }
+    .job-desc-col { flex: 2; min-width: 0; }
+    .job-info-col { flex: 1; min-width: 220px; background: #fafbfc; border-radius: 0.7rem; padding: 1.5rem 1.2rem; margin-left: 1rem; height: fit-content; }
+    .job-desc-col h2 { color: #ef6f6c; font-size: 1.2rem; margin-bottom: 0.7rem; font-weight: 700; }
+    .job-desc-col ul { margin: 0.3rem 0 0 1.2rem; padding: 0; list-style: disc inside; color: #222; }
+    .job-desc-col li { margin-bottom: 0.3rem; font-size: 1rem; }
+    .job-info-col h3 { color: #ef6f6c; font-size: 1.1rem; margin-bottom: 1.1rem; font-weight: 700; }
+    .job-info-col .info-label { color: #888; font-weight: 500; margin-bottom: 0.2rem; }
+    .job-info-col .info-value { color: #222; font-weight: 600; margin-bottom: 1rem; display: block; }
+    @media (max-width: 900px) { .job-main-content { flex-direction: column; padding: 1.2rem 0.5rem; } .job-info-col { margin-left: 0; margin-top: 2rem; } }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="clean-navbar">
-    <a href="index.html" class="site-logo"><b>NovaMind</b> AI</a>
-  </header>
-  <main class="job-detail">
-    <h1>Content/Technical Writers</h1>
-    <div style="color:#ef6f6c;font-weight:600;margin-bottom:1.2rem;">✍️ Content / Technical Writer<br>Location: Remote | Type: Full-Time</div>
-    <div style="color:#ef6f6c;font-weight:600;margin-bottom:1.2rem;">Job Description</div>
-    <ul>
-      <li>Write blog posts, whitepapers, product documentation, and web copy.</li>
-      <li>Simplify complex AI/ML topics into digestible, engaging content.</li>
-      <li>Collaborate with engineers, product managers, and marketers to ensure accuracy.</li>
-      <li>Conduct industry research and competitor analysis to develop thought leadership.</li>
-      <li>Optimize content for SEO using proper keyword density, headings, meta tags, and internal linking.</li>
-      <li>Maintain a consistent brand voice across different formats and platforms.</li>
-      <li>Contribute to scripts for videos, onboarding guides, and FAQs.</li>
-      <li>Monitor content performance and suggest improvements based on analytics.</li>
-      <li>Publish content using CMS platforms (WordPress, Webflow, Notion, etc.).</li>
-      <li>Assist in newsletters, ad copy, and social campaigns when required.</li>
-    </ul>
-    <a href="career.html">&larr; Back to Careers</a>
-  </main>
-  <footer class="site-footer" style="background:#111;color:#fff;padding:1.2rem 0;text-align:center;margin-top:2rem;">
-    <div class="footer-content">
-      <span>&copy; 2024 NovaMind AI. All rights reserved.</span>
+    <header class="clean-navbar">
+        <div class="navbar-inner">
+            <div class="navbar-brand">
+                <a href="index.html" class="company-name">NovaMind AI</a>
+            </div>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <div class="center-header">
+    <div class="company-info">NovaMind AI | Full time</div>
+    <h1>Content/Technical Writer</h1>
+    <div class="job-action-btns">
+      <button>I'm interested</button>
+      <button class="email-btn">Share job via email</button>
     </div>
-  </footer>
+    <div>Share this job with your network</div>
+    <div class="share-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <div class="job-main-content">
+    <div class="job-desc-col">
+      <div style="color:#ef6f6c;font-weight:600;margin-bottom:1.2rem;">Job Description</div>
+      <ul>
+        <li>Write clear, concise, and engaging technical content for SaaS, AI, and developer tools.</li>
+        <li>Develop product documentation, API guides, tutorials, and knowledge base articles.</li>
+        <li>Collaborate with engineers, PMs, and designers to gather information and clarify requirements.</li>
+        <li>Translate complex technical concepts into user-friendly language and visuals.</li>
+        <li>Maintain content style guides, templates, and documentation standards.</li>
+        <li>Optimize content for SEO, readability, and accessibility.</li>
+        <li>Review and update documentation as products evolve.</li>
+        <li>Support marketing with blog posts, case studies, and whitepapers.</li>
+        <li>Conduct peer reviews and ensure content accuracy.</li>
+        <li>Stay updated on industry trends, tools, and best practices in technical writing.</li>
+      </ul>
+    </div>
+    <div class="job-info-col">
+      <h3>Job Information</h3>
+      <div class="info-label">Country</div>
+      <div class="info-value">Worldwide</div>
+      <div class="info-label">Industry</div>
+      <div class="info-value">Technology</div>
+      <div class="info-label">Job Type</div>
+      <div class="info-value">Full time / part time</div>
+    </div>
+  </div>
 </body>
 </html> 

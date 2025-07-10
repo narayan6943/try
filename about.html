@@ -4,238 +4,371 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | NovaMind AI</title>
-    <meta name="description" content="Learn about NovaMind AI, our mission, vision, and the team behind our innovative AI solutions.">
-    <link rel="canonical" href="https://novamindai.com/about">
-    <!-- Open Graph & Twitter Card -->
-    <meta property="og:title" content="About Us | NovaMind AI">
-    <meta property="og:description" content="Learn about NovaMind AI, our mission, vision, and the team behind our innovative AI solutions.">
-    <meta property="og:image" content="/assets/og-image.jpg">
-    <meta property="og:url" content="https://novamindai.com/about">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Us | NovaMind AI">
-    <meta name="twitter:description" content="Learn about NovaMind AI, our mission, vision, and the team behind our innovative AI solutions.">
-    <meta name="twitter:image" content="/assets/og-image.jpg">
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <!-- Google Fonts: Poppins & Inter -->
+    <meta name="description" content="Empowering Businesses with Ethical & Scalable AI Solutions. Discover our story, vision, mission, values, and the impact we create at NovaMind AI.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero_fix.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="hero_fix.css">
-    <!-- Flickity CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-      body { background: #f7f8fa; }
-      .about-hero {
-        background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
-        color: #fff;
-        padding: 60px 0 36px 0;
-        text-align: center;
-      }
-      .about-hero h1 {
-        font-size: 2.5rem;
-        font-weight: 800;
-        margin-bottom: 16px;
-      }
-      .about-hero p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto 0.7rem auto;
-        color: #f3f3ff;
-      }
-      .about-section {
-        max-width: 900px;
-        margin: 2.2rem auto 0 auto;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 4px 24px rgba(102,126,234,0.08);
-        padding: 2.2rem 2rem 1.5rem 2rem;
-      }
-      .about-section h2 {
-        color: #764ba2;
-        font-size: 1.4rem;
-        margin-bottom: 1.1rem;
-        text-align: center;
-      }
-      .about-story {
-        font-size: 1.08rem;
-        color: #444;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-        text-align: center;
-      }
-      .about-values {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 2.2rem 0 1.2rem 0;
-      }
-      .value-item {
-        background: #f7f8fa;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(102,126,234,0.07);
-        padding: 1.2rem 1.3rem 1rem 1.3rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 160px;
-        max-width: 220px;
-        flex: 1 1 160px;
-        text-align: center;
-      }
-      .value-item i {
-        color: #764ba2;
-        font-size: 2rem;
-        margin-bottom: 0.6rem;
-      }
-      .value-item span {
-        font-size: 1.08rem;
-        color: #333;
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-      }
-      .value-item p {
-        font-size: 0.98rem;
-        color: #555;
-        margin: 0;
-      }
-      .about-team {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 2.2rem 0 1.2rem 0;
-      }
-      .team-member {
-        background: #f7f8fa;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(102,126,234,0.07);
-        padding: 1.2rem 1.3rem 1rem 1.3rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 180px;
-        max-width: 220px;
-        flex: 1 1 180px;
-        text-align: center;
-      }
-      .team-member img {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 0.7rem;
-        border: 3px solid #764ba2;
-      }
-      .team-member .name {
-        font-size: 1.08rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 0.2rem;
-      }
-      .team-member .role {
-        font-size: 0.98rem;
-        color: #764ba2;
-        margin-bottom: 0.3rem;
-      }
-      .team-member .bio {
-        font-size: 0.95rem;
-        color: #555;
-        margin: 0;
-      }
-      @media (max-width: 900px) {
-        .about-section { padding: 1.2rem 0.5rem; }
-        .about-values, .about-team { gap: 0.7rem; }
-      }
+        body {
+            background: linear-gradient(120deg, #fffbe6 0%, #e3f0ff 100%);
+            color: #2d3142;
+            font-family: 'Inter', 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .about-hero {
+            background: linear-gradient(120deg, #ffe082 0%, #b2ebf2 100%);
+            color: #2d3142;
+            padding: 80px 0 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(255,193,7,0.10);
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 18px;
+            letter-spacing: 1.2px;
+            animation: fadeInDown 1s cubic-bezier(.77,0,.18,1);
+        }
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            color: #4f5d75;
+            animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        .about-section {
+            max-width: 1100px;
+            margin: 3rem auto 0 auto;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 8px 40px rgba(255,193,7,0.10);
+            padding: 3rem 3rem 2.2rem 3rem;
+            animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .about-section:not(:last-child) { margin-bottom: 3rem; }
+        .about-section h2 {
+            color: #f9a825;
+            font-size: 1.7rem;
+            margin-bottom: 1.3rem;
+            text-align: left;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .about-section h3 {
+            color: #2d3142;
+            font-size: 1.18rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        .about-section ul, .about-section ol {
+            margin-left: 2.2rem;
+            margin-bottom: 1.3rem;
+        }
+        .about-section li {
+            margin-bottom: 0.7rem;
+            font-size: 1.13rem;
+        }
+        .about-values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        .value-card {
+            background: linear-gradient(120deg, #fffde7 60%, #b2ebf2 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(255,193,7,0.10);
+            padding: 1.5rem 1.5rem 1.1rem 1.5rem;
+            flex: 1 1 240px;
+            min-width: 220px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s cubic-bezier(.77,0,.18,1), background 0.3s;
+            cursor: pointer;
+            color: #2d3142;
+            font-weight: 700;
+        }
+        .value-card:hover {
+            transform: translateY(-10px) scale(1.05) rotate(-1deg);
+            box-shadow: 0 16px 48px rgba(255,193,7,0.18);
+            background: linear-gradient(120deg, #ffe082 0%, #b2ebf2 100%);
+            color: #f9a825;
+        }
+        .about-icons {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+            color: #f9a825;
+            vertical-align: middle;
+        }
+        .about-list-emoji {
+            font-size: 1.2rem;
+            margin-right: 0.7rem;
+            vertical-align: middle;
+        }
+        .about-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0 2rem 0;
+        }
+        .timeline-item {
+            background: linear-gradient(90deg, #fffde7 80%, #b2ebf2 100%);
+            border-left: 7px solid #f9a825;
+            padding: 1.1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(255,193,7,0.10);
+            position: relative;
+            animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+            color: #2d3142;
+        }
+        .timeline-item strong { color: #f9a825; }
+        .about-founder {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin: 2.5rem 0 2rem 0;
+        }
+        .founder-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(120deg, #ffe082 0%, #b2ebf2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.7rem;
+            color: #2d3142;
+            font-weight: 900;
+            box-shadow: 0 4px 24px rgba(255,193,7,0.13);
+        }
+        .founder-bio {
+            flex: 1;
+        }
+        .about-cta {
+            text-align: center;
+            margin: 2.7rem 0 1.7rem 0;
+        }
+        .about-cta a {
+            background: linear-gradient(90deg, #ffe082 0%, #b2ebf2 100%);
+            color: #2d3142;
+            font-weight: 800;
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 2.5rem;
+            font-size: 1.15rem;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 24px rgba(255,193,7,0.10);
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            display: inline-block;
+            margin: 0 0.7rem;
+        }
+        .about-cta a:hover {
+            background: linear-gradient(90deg, #b2ebf2 0%, #ffe082 100%);
+            color: #f9a825;
+            transform: scale(1.07) rotate(-1deg);
+        }
+        .about-testimonials {
+            margin: 2.7rem 0 1.7rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.7rem;
+            justify-content: center;
+        }
+        .testimonial-card {
+            background: linear-gradient(120deg, #fffde7 0%, #b2ebf2 100%);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(255,193,7,0.10);
+            padding: 1.5rem 1.5rem 1.1rem 1.5rem;
+            min-width: 240px;
+            max-width: 380px;
+            text-align: left;
+            font-size: 1.13rem;
+            position: relative;
+            transition: box-shadow 0.3s, transform 0.3s;
+            color: #2d3142;
+        }
+        .testimonial-card:hover {
+            box-shadow: 0 16px 48px rgba(255,193,7,0.18);
+            transform: translateY(-10px) scale(1.05) rotate(1deg);
+            background: linear-gradient(120deg, #ffe082 0%, #b2ebf2 100%);
+            color: #f9a825;
+        }
+        .testimonial-author {
+            font-weight: 900;
+            color: #f9a825;
+            margin-top: 1rem;
+        }
+        @media (max-width: 1100px) {
+            .about-section { padding: 1.3rem 0.7rem; }
+            .about-values { flex-direction: column; gap: 1.1rem; }
+            .about-founder { flex-direction: column; gap: 1.1rem; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animated');
+            }
+          });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.about-section, .value-card, .timeline-item, .testimonial-card').forEach(el => {
+          observer.observe(el);
+        });
+      });
+    </script>
 </head>
 <body>
     <header class="clean-navbar">
         <div class="navbar-inner">
-            <a href="index.html" class="site-logo">
-                <span class="logo-icon">
-                    <svg width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#111"/><circle cx="14" cy="20" r="6" fill="#fff"/><rect x="22" y="16" width="10" height="8" rx="3" fill="#fff"/></svg>
-                </span>
-                <div class="logo-text-group">
-                    <span class="logo-title"><b>NovaMind</b> AI</span>
-                    <span class="logo-tagline">Communicate. Collaborate. Create.</span>
-                </div>
-            </a>
+            <div class="navbar-brand">
+                <a href="index.html" class="company-name">NovaMind AI</a>
+            </div>
             <nav class="main-nav" aria-label="Main Navigation">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="demo.html">Demo</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="career.html">Career</a></li>
-                    <li class="has-dropdown">
-                        <a href="resources.html">Resources <span class="arrow">&#9662;</span></a>
-                        <div class="dropdown">
-                            <a href="#">Blog</a>
-                            <a href="#">Affiliate Programs</a>
-                            <a href="#">Community</a>
-                        </div>
-                    </li>
-                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <section class="about-hero">
-      <h1>Empowering the Future with AI</h1>
-      <p>At NovaMind AI, our mission is to transform businesses and lives through innovative, ethical, and accessible artificial intelligence.</p>
+        <h1>About Us</h1>
+        <p>Empowering Businesses with Ethical & Scalable AI Solutions</p>
     </section>
-
-    <section class="about-section">
-      <h2>Our Story & Vision</h2>
-      <div class="about-story">
-        Founded by passionate technologists and visionaries, NovaMind AI is dedicated to making advanced AI solutions practical and impactful for organizations of all sizes. We believe in a future where AI augments human potential, drives sustainable growth, and solves real-world challenges.<br><br>
-        Our vision is to democratize AI—making it secure, transparent, and beneficial for everyone. We partner with clients to co-create solutions that are not only powerful, but also responsible and trustworthy.
-      </div>
+    <section class="about-section" id="our-story">
+        <h2>Our Story</h2>
+        <p>At <b>aiyourbusiness</b>, we believe artificial intelligence is not just a tool — it’s a transformation engine. We help companies across the globe unlock exponential growth through intelligent, secure, and human-centered AI solutions. Whether you're a startup, SME, or enterprise, we partner with you to build AI products that don't just solve problems — they create new possibilities.</p>
+        <p>Every great company starts with a problem that couldn’t be ignored.<br><br>As a team of precision-focused developers, product architects, and AI strategists, we noticed a dangerous trend — businesses adopting AI without strategy, ethics, or long-term scalability. Tools were being forced into workflows rather than designed around them. ROI was often assumed, not measured.<br><br>That’s when <b>aiyourbusiness</b> was born — out of the need to bridge the gap between raw AI potential and real business outcomes.</p>
+        <blockquote style="font-style:italic;color:#764ba2;margin:1.2rem 0 1.2rem 0;padding-left:1.2rem;border-left:4px solid #ffd700;">“To make AI accessible, actionable, and profitable for every business ready to lead the future.”</blockquote>
+        <p>From MVPs to full-scale SaaS platforms, our journey has been rooted in innovation, trust, and relentless execution.</p>
     </section>
-
-    <section class="about-section">
-      <h2>Why Choose NovaMind AI?</h2>
-      <div class="about-values">
-        <div class="value-item"><i class="fa fa-lightbulb-o"></i><span>Innovation</span><p>We push the boundaries of what's possible with AI, always learning and evolving.</p></div>
-        <div class="value-item"><i class="fa fa-shield"></i><span>Trust & Ethics</span><p>We build solutions that are secure, transparent, and fair.</p></div>
-        <div class="value-item"><i class="fa fa-users"></i><span>Collaboration</span><p>We work closely with clients, valuing every partnership as a journey.</p></div>
-        <div class="value-item"><i class="fa fa-rocket"></i><span>Impact</span><p>We focus on real results—measurable, sustainable, and meaningful.</p></div>
-      </div>
+    <section class="about-section" id="vision-mission">
+        <h2>Our Vision</h2>
+        <p>To become the world's most trusted partner for building AI-first products that are ethical, scalable, and built to deliver exponential impact by 2030.</p>
+        <h2>Our Mission</h2>
+        <ul>
+            <li>Solve real-world problems with measurable ROI</li>
+            <li>Are human-centric, not just data-driven</li>
+            <li>Balance innovation with privacy, ethics, and transparency</li>
+            <li>Equip businesses with a competitive edge in a fast-evolving world</li>
+        </ul>
     </section>
-
-    <section class="about-section">
-      <h2>Meet Our Leadership</h2>
-      <div class="about-team">
-        <div class="team-member">
-          <img src="images/011 Dusty Grass (1).png" alt="Nayan Aryan Dwivedi">
-          <div class="name">Nayan Aryan Dwivedi</div>
-          <div class="role">Founder & CEO</div>
-          <div class="bio">AI evangelist, entrepreneur, and lifelong learner. Nayan leads NovaMind AI with a vision for responsible, human-centric innovation.</div>
+    <section class="about-section" id="core-values">
+        <h2>Core Values</h2>
+        <div class="about-values">
+            <div class="value-card"><span class="about-icons">💡</span>Innovation with Integrity<br><span style="font-size:0.97rem;color:#555;">We never build just to build. Every line of code solves a real problem.</span></div>
+            <div class="value-card"><span class="about-icons">🤝</span>Empathy First<br><span style="font-size:0.97rem;color:#555;">We engineer AI that understands people, not just patterns.</span></div>
+            <div class="value-card"><span class="about-icons">🔒</span>Security by Design<br><span style="font-size:0.97rem;color:#555;">Your data is your moat. We build with compliance, encryption, and transparency.</span></div>
+            <div class="value-card"><span class="about-icons">🌍</span>Global Vision, Local Relevance<br><span style="font-size:0.97rem;color:#555;">We build for scale, but never lose the local context.</span></div>
+            <div class="value-card"><span class="about-icons">📈</span>Results > Hype<br><span style="font-size:0.97rem;color:#555;">AI must create value — not complexity or chaos.</span></div>
         </div>
-        <div class="team-member">
-          <img src="images/034 Lemon Gate.png" alt="Priya Sharma">
-          <div class="name">Priya Sharma</div>
-          <div class="role">Chief Technology Officer</div>
-          <div class="bio">Expert in machine learning and scalable systems. Priya ensures our technology is always ahead of the curve.</div>
-        </div>
-        <div class="team-member">
-          <img src="images/036 Zeus Miracle.png" alt="Rahul Verma">
-          <div class="name">Rahul Verma</div>
-          <div class="role">Head of Product</div>
-          <div class="bio">Product strategist and customer advocate. Rahul bridges the gap between client needs and AI innovation.</div>
-        </div>
-      </div>
     </section>
-
-    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-      <i class="fa fa-whatsapp"></i>
-    </a>
+    <section class="about-section" id="what-we-do">
+        <h2>What We Do</h2>
+        <ul>
+            <li><span class="about-list-emoji">🔄</span><b>AI Process Automation</b> – We eliminate bottlenecks and manual workflows using intelligent automation customized for your business.</li>
+            <li><span class="about-list-emoji">🎙️</span><b>Voice + Emotion AI Integration</b> – Leverage cutting-edge technologies like Deepgram, Hume.ai, and ElevenLabs to capture, analyze, and act on human signals in real time.</li>
+            <li><span class="about-list-emoji">🧪</span><b>AI Interview Simulation Products</b> – Train job seekers and hiring teams with dynamic, voice-based simulations powered by GPT, DeepSeek, and emotional AI.</li>
+            <li><span class="about-list-emoji">📊</span><b>Custom AI SaaS Platforms</b> – From white-labeled dashboards to API-based microservices, we build fully tailored SaaS products ready to scale globally.</li>
+            <li><span class="about-list-emoji">🧠</span><b>AI Strategy & Consulting</b> – Our advisory services guide you through AI adoption — from identifying opportunities to auditing risks and building go-to-market execution plans.</li>
+        </ul>
+    </section>
+    <section class="about-section" id="our-work">
+        <h2>Our Work</h2>
+        <p>At <b>aiyourbusiness</b>, our work is not about volume — it's about impact. Every product we ship is backed by a clear problem statement, a defined user journey, and data that proves its value. Here's what we've been building:</p>
+        <div class="about-values">
+            <div class="value-card"><span class="about-list-emoji">🎯</span><b>AI Interview Practice Platform</b><br><span style="font-size:0.97rem;color:#555;">Built a fully interactive, voice-based SaaS platform to simulate real-world interviews. Integrated GPT-4o, Hume emotion analytics, Deepgram voice input, and personalized feedback systems. Used by 5,000+ candidates globally.</span></div>
+            <div class="value-card"><span class="about-list-emoji">📱</span><b>Parental Control & AI Monitoring SaaS</b><br><span style="font-size:0.97rem;color:#555;">Developed a mobile-first solution combining behavioral tracking, app usage analytics, and emotion-aware alerts for digital well-being. Equipped with real-time dashboards and privacy-first architecture.</span></div>
+            <div class="value-card"><span class="about-list-emoji">⚙️</span><b>Custom AI Workflow Automation for B2B SaaS</b><br><span style="font-size:0.97rem;color:#555;">Engineered intelligent microservices to automate onboarding, CRM data cleanup, and customer support routing using NLP models and webhook-based integrations.</span></div>
+            <div class="value-card"><span class="about-list-emoji">🔊</span><b>Voice Feedback Analytics Engine</b><br><span style="font-size:0.97rem;color:#555;">Built a proprietary backend using FastAPI + WebSockets to analyze tone, sentiment, and clarity from live audio streams. Plug-and-play APIs for edtech and HR clients.</span></div>
+        </div>
+    </section>
+    <section class="about-section" id="tech-stack">
+        <h2>Tech Stack We Love Working With</h2>
+        <ul>
+            <li><b>Frontend:</b> React.js, Next.js, Tailwind CSS, Framer Motion</li>
+            <li><b>Backend:</b> FastAPI, Django, Celery, Redis</li>
+            <li><b>AI/ML Integrations:</b> GPT-4o, Deepgram, Hume.ai, ElevenLabs, DeepSeek</li>
+            <li><b>Payments & Security:</b> Razorpay, 2FA, GDPR compliance</li>
+            <li><b>DevOps:</b> Docker, Render, Vercel, GitHub Actions</li>
+        </ul>
+        <p style="font-size:1.05rem;color:#555;">Our portfolio includes everything from early-stage MVPs to enterprise-ready AI systems across verticals like HRTech, EdTech, SaaS, HealthTech, and Digital Wellbeing.</p>
+    </section>
+    <section class="about-section" id="why-choose-us">
+        <h2>Why Businesses Choose Us</h2>
+        <ul>
+            <li><span class="about-list-emoji">💡</span><b>Strategy</b> – AI without business alignment is noise. We embed AI into your business DNA.</li>
+            <li><span class="about-list-emoji">⚙️</span><b>Execution</b> – We ship clean, scalable code with enterprise-grade architecture.</li>
+            <li><span class="about-list-emoji">🧘</span><b>Ethics</b> – We don’t cut corners. We build trust-first systems with clear boundaries and policies.</li>
+            <li><span class="about-list-emoji">🧠</span><b>Advanced Tech Stack</b> – From GPT-4o to Hume, DeepSeek, ElevenLabs, and beyond — our integrations are cutting-edge and modular.</li>
+            <li><span class="about-list-emoji">📈</span><b>Focus on ROI</b> – Your KPIs are our blueprint. We measure what matters and optimize relentlessly.</li>
+        </ul>
+    </section>
+    <section class="about-section" id="milestones">
+        <h2>Milestones We’re Proud Of</h2>
+        <div class="about-timeline">
+            <div class="timeline-item"><strong>2023</strong> – Founded with a mission to make AI accessible to all forward-thinking businesses</div>
+            <div class="timeline-item"><strong>2024</strong> – Launched our first interview simulation MVP used by over 5,000 candidates</div>
+            <div class="timeline-item"><strong>2025</strong> – Integrated real-time emotion analysis, voice feedback, and predictive scoring into our core AI stack</div>
+            <div class="timeline-item"><strong>Now</strong> – Trusted by clients across SaaS, EdTech, HRTech, and SMBs to deliver customized AI systems with results</div>
+        </div>
+    </section>
+    <section class="about-section" id="founder">
+        <h2>Meet the Founder</h2>
+        <div class="about-founder">
+            <div class="founder-img">N</div>
+            <div class="founder-bio">
+                <h3>Nayan, Founder & Lead AI Architect</h3>
+                <p>A computer science engineer, multi-domain strategist, and product developer focused on building SaaS products that scale globally, solve meaningful problems, and generate recurring revenue.</p>
+                <blockquote style="font-style:italic;color:#764ba2;margin:1.2rem 0 1.2rem 0;padding-left:1.2rem;border-left:4px solid #ffd700;">“AI isn’t the future. It’s the new foundation. We build with purpose, not hype.” — Nayan</blockquote>
+            </div>
+        </div>
+    </section>
+    <section class="about-section" id="whats-next">
+        <h2>What’s Next?</h2>
+        <p>If you’re serious about using AI to drive growth, reduce costs, and deliver breakthrough experiences — you're in the right place.</p>
+        <div class="about-cta">
+            <a href="contact.html">Schedule your free AI strategy session</a>
+            <a href="products.html" style="margin-left:1.2rem;">Explore our products</a>
+        </div>
+    </section>
+    <section class="about-section" id="testimonials">
+        <h2>Trusted by Forward-Thinking Teams</h2>
+        <div class="about-testimonials">
+            <div class="testimonial-card">
+                “aiyourbusiness gave us AI tools we didn’t even know we needed. Our internal processes became 4x faster within 30 days.”
+                <div class="testimonial-author">— CEO, SaaS Platform</div>
+            </div>
+            <div class="testimonial-card">
+                “True experts in execution. From roadmap to delivery, everything was world-class.”
+                <div class="testimonial-author">— Founder, EdTech Startup</div>
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer" style="background:#fffbe6;color:#f9a825;padding:1.5rem 0;text-align:center;margin-top:2.5rem;">
+      <div class="footer-content">
+        <span>&copy; 2024 NovaMind AI. All rights reserved.</span>
+      </div>
+    </footer>
 </body>
 </html> 
