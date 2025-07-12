@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             background: linear-gradient(120deg, #fffbe6 0%, #e3f0ff 100%);
@@ -21,25 +22,62 @@
         .about-hero {
             background: linear-gradient(120deg, #ffe082 0%, #b2ebf2 100%);
             color: #2d3142;
-            padding: 80px 0 50px 0;
+            padding: 100px 0 60px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
             box-shadow: 0 8px 32px rgba(255,193,7,0.10);
+            z-index: 1;
         }
-        .about-hero h1 {
-            font-size: 3rem;
+        .about-hero-bg {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 300px;
+            background: radial-gradient(circle at 60% 40%, #fffde7 0%, #ffe082 60%, transparent 100%);
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
+            animation: heroBgFadeIn 1.2s;
+        }
+        .about-hero-title {
+            font-size: 3.2rem;
             font-weight: 900;
-            margin-bottom: 18px;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
             animation: fadeInDown 1s cubic-bezier(.77,0,.18,1);
         }
-        .about-hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 1.5rem auto;
+        .about-hero-underline {
+            width: 90px;
+            height: 6px;
+            background: linear-gradient(90deg, #ffd700 0%, #b2ebf2 100%);
+            border-radius: 3px;
+            margin: 0 auto 1.2rem auto;
+            z-index: 2;
+            animation: underlineGrow 1.1s cubic-bezier(.77,0,.18,1);
+        }
+        .about-hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            max-width: 700px;
+            margin: 0 auto;
             color: #4f5d75;
+            z-index: 2;
             animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        .about-hero-highlight {
+            background: linear-gradient(90deg, #ffd700 0%, #b2ebf2 100%);
+            color: #2d3142;
+            padding: 0.1em 0.4em;
+            border-radius: 6px;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(255,193,7,0.10);
+            display: inline-block;
+            animation: fadeInUp 1.4s cubic-bezier(.77,0,.18,1);
         }
         .about-section {
             max-width: 1100px;
@@ -219,6 +257,270 @@
             from { opacity: 0; transform: translateY(-40px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes underlineGrow {
+            from { width: 0; opacity: 0; }
+            to { width: 90px; opacity: 1; }
+        }
+        @keyframes heroBgFadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.5; }
+        }
+    .creative-hero {
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(120deg, #ffe082 0%, #b2ebf2 100%);
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(255,193,7,0.10);
+      z-index: 1;
+      margin-bottom: 2.5rem;
+    }
+    .about-hero-bg-shapes {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.18;
+      animation: floatShape 7s infinite ease-in-out;
+    }
+    .shape1 { width: 180px; height: 180px; background: #ffd700; left: 5%; top: 10%; animation-delay: 0s; }
+    .shape2 { width: 120px; height: 120px; background: #b2ebf2; right: 8%; top: 25%; animation-delay: 2s; }
+    .shape3 { width: 90px; height: 90px; background: #f9a825; left: 40%; bottom: 8%; animation-delay: 4s; }
+    @keyframes floatShape {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-18px) scale(1.08); }
+    }
+    .about-hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      gap: 2.5rem;
+    }
+    .about-hero-left {
+      flex: 1 1 320px;
+      text-align: right;
+    }
+    .about-hero-title {
+      font-size: 3.3rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #2d3142;
+      margin: 0 1.5rem 0 0;
+      text-shadow: 0 4px 24px rgba(255,193,7,0.10);
+      animation: fadeInDown 1s cubic-bezier(.77,0,.18,1);
+    }
+    .about-hero-right {
+      flex: 2 1 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .about-hero-bubble {
+      background: linear-gradient(90deg, #fffde7 0%, #b2ebf2 100%);
+      border-radius: 18px 18px 18px 0;
+      box-shadow: 0 4px 24px rgba(255,193,7,0.13);
+      padding: 1.3rem 2.2rem 1.1rem 2.2rem;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #2d3142;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      position: relative;
+      animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+    }
+    .about-hero-icon {
+      font-size: 2rem;
+      color: #ffd700;
+      margin-right: 0.5rem;
+      animation: pulseIcon 2s infinite;
+    }
+    @keyframes pulseIcon {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.18); opacity: 0.7; }
+    }
+    .about-hero-highlight {
+      background: linear-gradient(90deg, #ffd700 0%, #b2ebf2 100%);
+      color: #2d3142;
+      padding: 0.1em 0.4em;
+      border-radius: 6px;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(255,193,7,0.10);
+      display: inline-block;
+      animation: fadeInUp 1.4s cubic-bezier(.77,0,.18,1);
+    }
+    .about-hero-cta {
+      margin-top: 0.7rem;
+      background: linear-gradient(90deg, #ffe082 0%, #b2ebf2 100%);
+      color: #2d3142;
+      font-weight: 800;
+      border: none;
+      border-radius: 8px;
+      padding: 0.8rem 2.1rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(255,193,7,0.10);
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+      display: inline-block;
+      animation: fadeInUp 1.5s cubic-bezier(.77,0,.18,1);
+    }
+    .about-hero-cta:hover {
+      background: linear-gradient(90deg, #b2ebf2 0%, #ffe082 100%);
+      color: #f9a825;
+      transform: scale(1.07) rotate(-1deg);
+    }
+    @media (max-width: 900px) {
+      .about-hero-content { flex-direction: column; gap: 1.2rem; }
+      .about-hero-left, .about-hero-right { text-align: center; align-items: center; }
+      .about-hero-title { margin: 0 0 1.2rem 0; }
+    }
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 36px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .whatsapp-float:hover {
+      background: #128c7e;
+      transform: scale(1.08);
+      color: #fff;
+    }
+    .about-hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      background: #fff;
+      border-radius: 28px;
+      box-shadow: 0 8px 40px rgba(255,193,7,0.10);
+      padding: 3.5rem 3rem 2.5rem 3rem;
+      max-width: 1100px;
+      margin: 3rem auto 2.5rem auto;
+      align-items: flex-start;
+    }
+    .about-hero-grid-left {
+      flex: 2 1 380px;
+      min-width: 320px;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    .about-hero-label {
+      color: #f9a825;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+    .about-hero-main {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #2d3142;
+      margin: 0 0 0.7rem 0;
+      line-height: 1.15;
+    }
+    .about-hero-desc {
+      font-size: 1.13rem;
+      color: #4f5d75;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .about-hero-grid-right {
+      flex: 2 1 340px;
+      min-width: 300px;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .about-hero-img-card {
+      width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(34,41,70,0.10);
+      background: #e3f0ff;
+      margin-bottom: 1.2rem;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      min-height: 220px;
+      max-height: 260px;
+    }
+    .about-hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+      width: 100%;
+    }
+    .about-hero-stat {
+      background: #fffbe6;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(255,193,7,0.07);
+      padding: 1.1rem 1.2rem 0.7rem 1.2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      min-height: 70px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .about-hero-stat:hover {
+      box-shadow: 0 8px 32px rgba(255,193,7,0.18);
+      transform: translateY(-6px) scale(1.04);
+    }
+    .stat-main {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #f9a825;
+      margin-bottom: 0.2rem;
+    }
+    .stat-label {
+      font-size: 1.01rem;
+      color: #4f5d75;
+      font-weight: 600;
+    }
+    @media (max-width: 900px) {
+      .about-hero-grid { flex-direction: column; padding: 2rem 0.7rem; }
+      .about-hero-grid-left, .about-hero-grid-right { max-width: 100%; min-width: 0; }
+      .about-hero-img-card { min-height: 160px; }
+    }
     </style>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -244,64 +546,286 @@
             <nav class="main-nav" aria-label="Main Navigation">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="career.html">Careers</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li class="has-dropdown">
+                        <a href="resources.html">Resources <span class="arrow">&#9662;</span></a>
+                        <div class="dropdown">
+                            <a href="#">Blog</a>
+                            <a href="#">Affiliate Programs</a>
+                            <a href="#">Community</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <section class="about-hero">
-        <h1>About Us</h1>
-        <p>Empowering Businesses with Ethical & Scalable AI Solutions</p>
+    <section class="about-hero-grid">
+      <div class="about-hero-grid-left">
+        <span class="about-hero-label">How We Empower</span>
+        <h1 class="about-hero-main">AI for Real-World Business Transformation</h1>
+        <p class="about-hero-desc">
+          At NovaMind AI, we’re on a mission to make artificial intelligence accessible, ethical, and scalable for organizations worldwide. Our expert team partners with forward-thinking businesses to deliver intelligent solutions that drive growth, efficiency, and trust. From startups to global enterprises, we help you unlock the true value of AI—turning vision into measurable results.
+        </p>
+      </div>
+      <div class="about-hero-grid-right">
+        <div class="about-hero-img-card">
+          <img src="images/120 Seashore.png" alt="NovaMind AI Team Collaboration" class="about-hero-img" />
+        </div>
+        <div class="about-hero-stats">
+          <div class="about-hero-stat"><span class="stat-main">5+</span><span class="stat-label">Years Experience</span></div>
+          <div class="about-hero-stat"><span class="stat-main">40+</span><span class="stat-label">AI Projects Delivered</span></div>
+          <div class="about-hero-stat"><span class="stat-main">98%</span><span class="stat-label">Client Satisfaction</span></div>
+          <div class="about-hero-stat"><span class="stat-main">20+</span><span class="stat-label">Global Clients</span></div>
+        </div>
+      </div>
     </section>
     <section class="about-section" id="our-story">
+      <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start;">
+        <!-- Image/Visual Side -->
+        <div style="flex: 1 1 320px; min-width: 260px; max-width: 400px; display: flex; flex-direction: column; align-items: center;">
+          <img src="images/120 Seashore.png" alt="Our Team" style="width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(255,193,7,0.13); margin-bottom: 1.2rem;" />
+          <div style="background: linear-gradient(90deg, #fffde7 0%, #b2ebf2 100%); border-radius: 12px; padding: 1.1rem 1.5rem; margin-top: 0.5rem; box-shadow: 0 2px 16px rgba(255,193,7,0.10); font-size: 1.1rem; color: #2d3142; text-align: center;">
+            <i class="fa fa-quote-left" style="color:#f9a825; font-size:1.3rem; margin-right:0.5rem;"></i>
+            <span style="font-style:italic;">To make AI accessible, actionable, and profitable for every business ready to lead the future.</span>
+            <i class="fa fa-quote-right" style="color:#f9a825; font-size:1.3rem; margin-left:0.5rem;"></i>
+          </div>
+        </div>
+        <!-- Story & Timeline Side -->
+        <div style="flex: 2 1 480px; min-width: 320px;">
         <h2>Our Story</h2>
-        <p>At <b>aiyourbusiness</b>, we believe artificial intelligence is not just a tool — it’s a transformation engine. We help companies across the globe unlock exponential growth through intelligent, secure, and human-centered AI solutions. Whether you're a startup, SME, or enterprise, we partner with you to build AI products that don't just solve problems — they create new possibilities.</p>
-        <p>Every great company starts with a problem that couldn’t be ignored.<br><br>As a team of precision-focused developers, product architects, and AI strategists, we noticed a dangerous trend — businesses adopting AI without strategy, ethics, or long-term scalability. Tools were being forced into workflows rather than designed around them. ROI was often assumed, not measured.<br><br>That’s when <b>aiyourbusiness</b> was born — out of the need to bridge the gap between raw AI potential and real business outcomes.</p>
-        <blockquote style="font-style:italic;color:#764ba2;margin:1.2rem 0 1.2rem 0;padding-left:1.2rem;border-left:4px solid #ffd700;">“To make AI accessible, actionable, and profitable for every business ready to lead the future.”</blockquote>
-        <p>From MVPs to full-scale SaaS platforms, our journey has been rooted in innovation, trust, and relentless execution.</p>
+          <p>At <b>NovaMind AI</b>, we believe artificial intelligence is not just a tool — it's a transformation engine. We help companies across the globe unlock exponential growth through intelligent, secure, and human-centered AI solutions. Whether you're a startup, SME, or enterprise, we partner with you to build AI products that don't just solve problems — they create new possibilities.</p>
+          <p>Every great company starts with a problem that couldn't be ignored. As a team of precision-focused developers, product architects, and AI strategists, we noticed a dangerous trend — businesses adopting AI without strategy, ethics, or long-term scalability. Tools were being forced into workflows rather than designed around them. ROI was often assumed, not measured. That's when <b>NovaMind AI</b> was born — out of the need to bridge the gap between raw AI potential and real business outcomes.</p>
+        </div>
+      </div>
+      <!-- Subtle background shape -->
+      <div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:0; pointer-events:none;">
+        <div style="position:absolute; width:180px; height:180px; background:#ffd700; border-radius:50%; opacity:0.10; left:2%; top:10%;"></div>
+        <div style="position:absolute; width:120px; height:120px; background:#b2ebf2; border-radius:50%; opacity:0.10; right:4%; top:30%;"></div>
+        <div style="position:absolute; width:90px; height:90px; background:#f9a825; border-radius:50%; opacity:0.10; left:40%; bottom:8%;"></div>
+      </div>
     </section>
     <section class="about-section" id="vision-mission">
-        <h2>Our Vision</h2>
-        <p>To become the world's most trusted partner for building AI-first products that are ethical, scalable, and built to deliver exponential impact by 2030.</p>
-        <h2>Our Mission</h2>
-        <ul>
-            <li>Solve real-world problems with measurable ROI</li>
-            <li>Are human-centric, not just data-driven</li>
-            <li>Balance innovation with privacy, ethics, and transparency</li>
-            <li>Equip businesses with a competitive edge in a fast-evolving world</li>
-        </ul>
+      <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start;">
+        <!-- Image/Visual Side -->
+        <div style="flex: 1 1 320px; min-width: 260px; max-width: 400px; display: flex; flex-direction: column; align-items: center;">
+          <img src="images/169 Supreme Sky.png" alt="Our Vision" style="width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(255,193,7,0.13); margin-bottom: 1.2rem;" />
+          <div style="background: linear-gradient(90deg, #fffde7 0%, #b2ebf2 100%); border-radius: 12px; padding: 1.1rem 1.5rem; margin-top: 0.5rem; box-shadow: 0 2px 16px rgba(255,193,7,0.10); font-size: 1.1rem; color: #2d3142; text-align: center;">
+            <i class="fa fa-eye" style="color:#f9a825; font-size:1.3rem; margin-right:0.5rem;"></i>
+            <span style="font-style:italic;">To become the world's most trusted partner for building AI-first products that are ethical, scalable, and built to deliver exponential impact by 2030.</span>
+          </div>
+        </div>
+        <!-- Vision & Mission Side -->
+        <div style="flex: 2 1 480px; min-width: 320px;">
+          <h2>Our Vision</h2>
+          <p>We envision a future where artificial intelligence is not just a competitive advantage, but a fundamental enabler of human potential and business growth. Our vision is to democratize AI technology, making it accessible, ethical, and transformative for organizations of all sizes.</p>
+          
+          <h2>Our Mission</h2>
+          <p>Our mission is to bridge the gap between cutting-edge AI capabilities and real-world business applications. We partner with forward-thinking organizations to build intelligent solutions that drive measurable impact, foster innovation, and create sustainable competitive advantages.</p>
+        </div>
+      </div>
+      <!-- Subtle background shape -->
+      <div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:0; pointer-events:none;">
+        <div style="position:absolute; width:160px; height:160px; background:#b2ebf2; border-radius:50%; opacity:0.10; left:3%; top:15%;"></div>
+        <div style="position:absolute; width:100px; height:100px; background:#ffd700; border-radius:50%; opacity:0.10; right:5%; top:25%;"></div>
+        <div style="position:absolute; width:80px; height:80px; background:#f9a825; border-radius:50%; opacity:0.10; left:35%; bottom:12%;"></div>
+      </div>
     </section>
     <section class="about-section" id="core-values">
-        <h2>Core Values</h2>
-        <div class="about-values">
-            <div class="value-card"><span class="about-icons">💡</span>Innovation with Integrity<br><span style="font-size:0.97rem;color:#555;">We never build just to build. Every line of code solves a real problem.</span></div>
-            <div class="value-card"><span class="about-icons">🤝</span>Empathy First<br><span style="font-size:0.97rem;color:#555;">We engineer AI that understands people, not just patterns.</span></div>
-            <div class="value-card"><span class="about-icons">🔒</span>Security by Design<br><span style="font-size:0.97rem;color:#555;">Your data is your moat. We build with compliance, encryption, and transparency.</span></div>
-            <div class="value-card"><span class="about-icons">🌍</span>Global Vision, Local Relevance<br><span style="font-size:0.97rem;color:#555;">We build for scale, but never lose the local context.</span></div>
-            <div class="value-card"><span class="about-icons">📈</span>Results > Hype<br><span style="font-size:0.97rem;color:#555;">AI must create value — not complexity or chaos.</span></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start;">
+        <!-- Image/Visual Side -->
+        <div style="flex: 1 1 320px; min-width: 260px; max-width: 400px; display: flex; flex-direction: column; align-items: center;">
+          <img src="images/138 Millennium Pine.png" alt="Our Core Values" style="width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(255,193,7,0.13); margin-bottom: 1.2rem;" />
+          <div style="background: linear-gradient(90deg, #fffde7 0%, #b2ebf2 100%); border-radius: 12px; padding: 1.1rem 1.5rem; margin-top: 0.5rem; box-shadow: 0 2px 16px rgba(255,193,7,0.10); font-size: 1.1rem; color: #2d3142; text-align: center;">
+            <i class="fa fa-star" style="color:#f9a825; font-size:1.3rem; margin-right:0.5rem;"></i>
+            <span style="font-style:italic;">Our values guide every decision, every line of code, and every partnership we build.</span>
+          </div>
         </div>
+        <!-- Values Content Side -->
+        <div style="flex: 2 1 480px; min-width: 320px;">
+          <h2>Our Core Values</h2>
+          <p>Built on purpose, powered by principles — these values define how we create impactful, secure, and human-centered AI solutions.</p>
+          
+          <p>We build AI products that matter. Every solution we create is rooted in real-world needs, designed with ethical precision, and driven by meaningful outcomes — not trends or vanity features. <b>Innovation with Integrity</b> guides our approach. Understanding humans is at the heart of our AI. We design systems that don't just detect patterns — they interpret emotions, intentions, and real-life behaviors to deliver truly intuitive user experiences. <b>Empathy at the Core</b> drives our development.</p>
+          
+          <p>Your data is protected by default. From architecture to deployment, we integrate enterprise-grade encryption, full compliance, and transparent privacy policies — ensuring trust at every level. <b>Security as a Foundation</b> is non-negotiable. We engineer scalable AI systems with deep local adaptability. Whether it's language, culture, or compliance, our solutions stay relevant across borders while growing with your business. <b>Global Reach, Local Relevance</b> ensures universal impact.</p>
+          
+          <p>We believe in results — not buzzwords. Our AI delivers measurable ROI, boosts operational efficiency, and solves high-value problems without adding unnecessary complexity. <b>Impact Over Hype</b> is our commitment.</p>
+        </div>
+      </div>
+      <!-- Subtle background shape -->
+      <div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:0; pointer-events:none;">
+        <div style="position:absolute; width:140px; height:140px; background:#f9a825; border-radius:50%; opacity:0.10; left:4%; top:12%;"></div>
+        <div style="position:absolute; width:110px; height:110px; background:#b2ebf2; border-radius:50%; opacity:0.10; right:6%; top:20%;"></div>
+        <div style="position:absolute; width:70px; height:70px; background:#ffd700; border-radius:50%; opacity:0.10; left:30%; bottom:15%;"></div>
+      </div>
     </section>
     <section class="about-section" id="what-we-do">
-        <h2>What We Do</h2>
-        <ul>
-            <li><span class="about-list-emoji">🔄</span><b>AI Process Automation</b> – We eliminate bottlenecks and manual workflows using intelligent automation customized for your business.</li>
-            <li><span class="about-list-emoji">🎙️</span><b>Voice + Emotion AI Integration</b> – Leverage cutting-edge technologies like Deepgram, Hume.ai, and ElevenLabs to capture, analyze, and act on human signals in real time.</li>
-            <li><span class="about-list-emoji">🧪</span><b>AI Interview Simulation Products</b> – Train job seekers and hiring teams with dynamic, voice-based simulations powered by GPT, DeepSeek, and emotional AI.</li>
-            <li><span class="about-list-emoji">📊</span><b>Custom AI SaaS Platforms</b> – From white-labeled dashboards to API-based microservices, we build fully tailored SaaS products ready to scale globally.</li>
-            <li><span class="about-list-emoji">🧠</span><b>AI Strategy & Consulting</b> – Our advisory services guide you through AI adoption — from identifying opportunities to auditing risks and building go-to-market execution plans.</li>
-        </ul>
+      <h2 style="text-align:center;">What We Do</h2>
+      <p style="text-align: center; font-size: 1.2rem; color: #4f5d75; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">We specialize in delivering cutting-edge AI solutions that transform how businesses operate, innovate, and grow. Our comprehensive services span from process automation to strategic consulting and advanced AI integrations.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2rem;">
+        <!-- Card 1 -->
+        <div class="what-we-do-card">
+          <div style="background: #f3eaff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🧾</span></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">OCR & Document AI</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Extract, classify, and summarize data from invoices, contracts, ID proofs, and PDFs — boosting productivity in HR, finance, and legal ops.</p>
+          <div style="color: #b39ddb; font-size: 0.93rem;">Google Document AI, Azure Form Recognizer, Tesseract</div>
+        </div>
+        <!-- Card 2 -->
+        <div class="what-we-do-card">
+          <div style="background: #e3f7ff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">📦</span></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">Vector Search + RAG Pipelines</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Context-aware AI agents that retrieve and reason over your private knowledge base — ideal for support automation, chatbots, and internal tooling.</p>
+          <div style="color: #4fc3f7; font-size: 0.93rem;">Pinecone, Weaviate, Qdrant, FAISS, LangChain, LlamaIndex</div>
+        </div>
+        <!-- Card 3 -->
+        <div class="what-we-do-card">
+          <div style="background: #eafaf1; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🧠</span></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">LLM Fine-Tuning & Embedding Systems</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Customizing large language models on client-specific data to improve performance, domain specificity, and knowledge access.</p>
+          <div style="color: #81c784; font-size: 0.93rem;">OpenAI Embeddings, HuggingFace, DeepSeek, Ollama</div>
+        </div>
+        <!-- Card 4 -->
+        <div class="what-we-do-card">
+          <div style="background: #fffbe6; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🔄</span></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">Real-Time Data Sync & Automation</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Connect and automate actions across your CRM, ERP, databases, and customer apps using workflows and events — no manual handoffs.</p>
+          <div style="color: #ffd54f; font-size: 0.93rem;">Zapier, n8n, Make, Airbyte, Kafka</div>
+        </div>
+        <!-- Card 5 -->
+        <div class="what-we-do-card">
+          <div style="background: #e3f7ff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🌍</span></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">Multilingual Support Systems</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Support customers globally in 100+ languages with real-time translations, sentiment detection, and contextual understanding.</p>
+          <div style="color: #4fc3f7; font-size: 0.93rem;">Whisper, Google Translate API, OpenAI GPT</div>
+        </div>
+        <!-- Card 6 -->
+        <div class="what-we-do-card">
+          <div style="background: #eafaf1; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🔐</span></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">AI Governance, Audit, and Compliance</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">AI ethics frameworks, bias monitoring, and logging infrastructure to help enterprises stay compliant and transparent.</p>
+          <div style="color: #81c784; font-size: 0.93rem;">OpenPolicyAgent, Azure AI Content Filters, GDPR AI Checklists</div>
+        </div>
+        <!-- Card 7 -->
+        <div class="what-we-do-card">
+          <div style="background: #fffbe6; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">📈</span></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">Predictive Business Intelligence</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Forecast demand, detect churn, and model pricing strategies using advanced ML algorithms — with dashboards connected to real-time business metrics.</p>
+          <div style="color: #ffd54f; font-size: 0.93rem;">Prophet, scikit-learn, XGBoost, PyCaret, Snowflake</div>
+        </div>
+        <!-- Card 8 -->
+        <div class="what-we-do-card">
+          <div style="background: #f3eaff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><i class="fa fa-refresh" style="font-size: 2rem; color: #b39ddb;"></i></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">AI Process Automation</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">We eliminate bottlenecks and manual workflows using intelligent automation customized for your business.</p>
+        </div>
+        <!-- Card 9 -->
+        <div class="what-we-do-card">
+          <div style="background: #e3f7ff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><i class="fa fa-microphone" style="font-size: 2rem; color: #4fc3f7;"></i></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">Voice + Emotion AI Integration</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Leverage cutting-edge technologies like Deepgram, Hume.ai, and ElevenLabs to capture, analyze, and act on human signals in real time.</p>
+        </div>
+        <!-- Card 10 -->
+        <div class="what-we-do-card">
+          <div style="background: #eafaf1; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><i class="fa fa-flask" style="font-size: 2rem; color: #81c784;"></i></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">AI Interview Simulation Products</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Train job seekers and hiring teams with dynamic, voice-based simulations powered by GPT, DeepSeek, and emotional AI.</p>
+        </div>
+        <!-- Card 11 -->
+        <div class="what-we-do-card">
+          <div style="background: #fffbe6; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><i class="fa fa-bar-chart" style="font-size: 2rem; color: #ffd54f;"></i></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">Custom AI SaaS Platforms</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">From white-labeled dashboards to API-based microservices, we build fully tailored SaaS products ready to scale globally.</p>
+        </div>
+        <!-- Card 12 -->
+        <div class="what-we-do-card">
+          <div style="background: #f3eaff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><i class="fa fa-brain" style="font-size: 2rem; color: #b39ddb;"></i></div>
+          <h3 style="font-size: 1.18rem; font-weight: 700; margin: 0 0 0.7rem 0;">AI Strategy & Consulting</h3>
+          <p style="color: #4f5d75; font-size: 1rem; margin: 0 0 0.5rem 0;">Our advisory services guide you through AI adoption — from identifying opportunities to auditing risks and building go-to-market execution plans.</p>
+        </div>
+      </div>
     </section>
     <section class="about-section" id="our-work">
-        <h2>Our Work</h2>
-        <p>At <b>aiyourbusiness</b>, our work is not about volume — it's about impact. Every product we ship is backed by a clear problem statement, a defined user journey, and data that proves its value. Here's what we've been building:</p>
-        <div class="about-values">
-            <div class="value-card"><span class="about-list-emoji">🎯</span><b>AI Interview Practice Platform</b><br><span style="font-size:0.97rem;color:#555;">Built a fully interactive, voice-based SaaS platform to simulate real-world interviews. Integrated GPT-4o, Hume emotion analytics, Deepgram voice input, and personalized feedback systems. Used by 5,000+ candidates globally.</span></div>
-            <div class="value-card"><span class="about-list-emoji">📱</span><b>Parental Control & AI Monitoring SaaS</b><br><span style="font-size:0.97rem;color:#555;">Developed a mobile-first solution combining behavioral tracking, app usage analytics, and emotion-aware alerts for digital well-being. Equipped with real-time dashboards and privacy-first architecture.</span></div>
-            <div class="value-card"><span class="about-list-emoji">⚙️</span><b>Custom AI Workflow Automation for B2B SaaS</b><br><span style="font-size:0.97rem;color:#555;">Engineered intelligent microservices to automate onboarding, CRM data cleanup, and customer support routing using NLP models and webhook-based integrations.</span></div>
-            <div class="value-card"><span class="about-list-emoji">🔊</span><b>Voice Feedback Analytics Engine</b><br><span style="font-size:0.97rem;color:#555;">Built a proprietary backend using FastAPI + WebSockets to analyze tone, sentiment, and clarity from live audio streams. Plug-and-play APIs for edtech and HR clients.</span></div>
-        </div>
+      <h2 style="text-align:center;">Our Work</h2>
+      <p style="text-align: center; font-size: 1.1rem; color: #4f5d75; margin-bottom: 2.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Every product we ship is backed by a clear problem statement, a defined user journey, and data that proves its value. Here are some of our recent projects:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2rem;">
+        <!-- Project 1 -->
+        <a href="ai-interview-practice-platform.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #e3f7ff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">📱</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">AI Interview Practice Platform</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">Fully interactive, voice-based SaaS platform to simulate real-world interviews. Integrated GPT-4o, Hume emotion analytics, Deepgram voice input, and personalized feedback. Used by 5,000+ candidates globally.</p>
+          </div>
+        </a>
+        <!-- Project 2 -->
+        <a href="parental-control-ai-monitoring.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #f3eaff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">👨‍👩‍👧‍👦</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">Parental Control & AI Monitoring SaaS</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">Mobile-first solution combining behavioral tracking, app usage analytics, and emotion-aware alerts for digital well-being. Real-time dashboards and privacy-first architecture.</p>
+          </div>
+        </a>
+        <!-- Project 3 -->
+        <a href="custom-ai-workflow-automation.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #eafaf1; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">⚙️</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">Custom AI Workflow Automation for B2B SaaS</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">Engineered intelligent microservices to automate onboarding, CRM data cleanup, and customer support routing using NLP models and webhook-based integrations.</p>
+          </div>
+        </a>
+        <!-- Project 4 -->
+        <a href="voice-feedback-analytics-engine.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #fffbe6; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🔊</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">Voice Feedback Analytics Engine</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">Proprietary backend using FastAPI + WebSockets to analyze tone, sentiment, and clarity from live audio streams. Plug-and-play APIs for edtech and HR clients.</p>
+          </div>
+        </a>
+        <!-- Project 5 -->
+        <a href="multilingual-ai-support-assistant.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #e3f7ff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🌐</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">Multilingual AI Support Assistant for FinTech</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">24/7 AI chatbot with real-time language detection, emotion-aware escalation, and compliance logging. Enabled faster resolution and reduced support costs across 12 countries.</p>
+          </div>
+        </a>
+        <!-- Project 6 -->
+        <a href="ai-resume-fraud-detection.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #f3eaff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">📄</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">AI Resume Fraud Detection & Skill Validation</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">End-to-end resume parser and skill verification engine using embeddings, dynamic GPT-generated tests, and voice emotion analysis. Designed to reduce false claims and accelerate hiring.</p>
+          </div>
+        </a>
+        <!-- Project 7 -->
+        <a href="document-intelligence-system.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #eafaf1; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">📦</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">Document Intelligence System for Logistics</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">OCR + NLP-powered pipeline to extract, validate, and flag data from thousands of monthly invoices and compliance docs. Seamless ERP integration and anomaly detection.</p>
+          </div>
+        </a>
+        <!-- Project 8 -->
+        <a href="rag-knowledge-assistant.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #fffbe6; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🧠</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">RAG-Based Knowledge Assistant for Insurance</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">AI assistant using vector search and retrieval-augmented generation (RAG) to surface SOPs, claims rules, and FAQs. Delivered instant, contextual answers with citations.</p>
+          </div>
+        </a>
+        <!-- Project 9 -->
+        <a href="white-labeled-ai-saas-platform.html" style="text-decoration: none; color: inherit;">
+          <div class="what-we-do-card" style="cursor: pointer;">
+            <div style="background: #e3f7ff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;"><span style="font-size: 2rem;">🚀</span></div>
+            <h3 style="font-size: 1.13rem; font-weight: 700; margin: 0 0 0.7rem 0;">White-Labeled AI SaaS Platform for Niche Industry</h3>
+            <p style="color: #4f5d75; font-size: 1rem; margin: 0;">Built a scalable, API-first SaaS product with AI microservices, user roles, payments, and analytics. Launched with MRR growth and multi-region white-label partnerships.</p>
+          </div>
+        </a>
+      </div>
     </section>
     <section class="about-section" id="tech-stack">
         <h2>Tech Stack We Love Working With</h2>
@@ -370,5 +894,8 @@
         <span>&copy; 2024 NovaMind AI. All rights reserved.</span>
       </div>
     </footer>
+    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <i class="fa fa-whatsapp"></i>
+    </a>
 </body>
 </html> 

@@ -4969,3 +4969,22 @@ select {
         font-size: 1.1rem;
     }
 }
+
+/* What We Do Card Hover Effect */
+.what-we-do-card {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 4px 24px rgba(34,41,70,0.08);
+  padding: 2.2rem 1.5rem 1.7rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s cubic-bezier(.77,0,.18,1), background 0.3s cubic-bezier(.77,0,.18,1);
+  position: relative;
+  overflow: hidden;
+}
+.what-we-do-card:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+  background: linear-gradient(0deg, rgba(0,0,0,0.10) 0%, #fff 100%);
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG-Based Knowledge Assistant for Insurance | NovaMind AI</title>
+    <meta name="description" content="AI assistant using vector search and retrieval-augmented generation (RAG) to surface SOPs, claims rules, and FAQs. Delivered instant, contextual answers with citations.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero_fix.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #fffbe6 0%, #e3f0ff 100%);
+            color: #2d3142;
+            font-family: 'Inter', 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .project-hero {
+            background: linear-gradient(120deg, #fffbe6 0%, #ffecb3 100%);
+            color: #2d3142;
+            padding: 80px 0 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(255,193,7,0.15);
+        }
+        .project-hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .project-hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: #2d3142;
+        }
+        .project-hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #4f5d75;
+        }
+        .project-section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 8px 40px rgba(255,193,7,0.10);
+            padding: 3rem;
+        }
+        .project-section h2 {
+            color: #f9a825;
+            font-size: 1.7rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .project-section h3 {
+            color: #2d3142;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4f5d75;
+            margin-bottom: 1.5rem;
+        }
+        .project-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: linear-gradient(120deg, #fffde7 60%, #fffbe6 100%);
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 4px 24px rgba(255,193,7,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(255,193,7,0.15);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .tech-tag {
+            background: linear-gradient(90deg, #fffbe6 0%, #ffecb3 100%);
+            color: #2d3142;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #ffe082 0%, #b2ebf2 100%);
+            color: #2d3142;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,193,7,0.2);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: linear-gradient(120deg, #fffbe6 0%, #ffecb3 100%);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(255,193,7,0.15);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #2d3142;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-size: 1rem;
+            color: #4f5d75;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-hero">
+        <span class="project-hero-icon">🧠</span>
+        <h1 class="project-hero-title">RAG-Based Knowledge Assistant for Insurance</h1>
+        <p class="project-hero-subtitle">AI assistant using vector search and retrieval-augmented generation (RAG) to surface SOPs, claims rules, and FAQs</p>
+    </div>
+
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+        <a href="about.html#our-work" class="back-button">
+            <i class="fa fa-arrow-left"></i> Back to Our Work
+        </a>
+
+        <section class="project-section">
+            <h2>Project Overview</h2>
+            <p>Our RAG-Based Knowledge Assistant transforms how insurance companies access and utilize their vast knowledge bases. By combining vector search with retrieval-augmented generation, we provide instant, contextual answers to complex insurance queries while maintaining accuracy and compliance with proper citations.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">Instant</div>
+                    <div class="stat-label">Response Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Availability</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2>Key Features</h2>
+            <div class="project-features">
+                <div class="feature-card">
+                    <span class="feature-icon">🔍</span>
+                    <h3>Vector Search</h3>
+                    <p>Advanced semantic search capabilities to find relevant information from large knowledge bases quickly and accurately.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🧠</span>
+                    <h3>RAG Generation</h3>
+                    <p>Retrieval-augmented generation for contextual, accurate responses based on retrieved knowledge sources.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📋</span>
+                    <h3>SOP Access</h3>
+                    <p>Instant access to standard operating procedures, claims rules, and policy guidelines with contextual understanding.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">❓</span>
+                    <h3>FAQ Management</h3>
+                    <p>Intelligent FAQ system that provides accurate, up-to-date answers to common insurance queries.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📚</span>
+                    <h3>Citation System</h3>
+                    <p>Proper citation and source attribution for all responses to ensure transparency and compliance.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Instant Answers</h3>
+                    <p>Real-time response generation with sub-second latency for immediate knowledge access.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2>Technical Implementation</h2>
+            <p>The RAG-Based Knowledge Assistant leverages cutting-edge AI technologies for optimal performance:</p>
+            
+            <div class="tech-stack">
+                <span class="tech-tag">Vector Search</span>
+                <span class="tech-tag">RAG</span>
+                <span class="tech-tag">OpenAI GPT</span>
+                <span class="tech-tag">Embeddings</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">Citation System</span>
+            </div>
+
+            <h3>Architecture Highlights</h3>
+            <ul style="font-size: 1.1rem; line-height: 1.7; color: #4f5d75;">
+                <li><strong>Vector Database:</strong> High-performance vector storage for semantic search and similarity matching</li>
+                <li><strong>RAG Pipeline:</strong> Sophisticated retrieval and generation pipeline for accurate, contextual responses</li>
+                <li><strong>Real-time Processing:</strong> Sub-second response times for instant knowledge access</li>
+                <li><strong>Citation Management:</strong> Automated source attribution and reference tracking</li>
+                <li><strong>Scalable Architecture:</strong> Microservices design for handling high-volume queries</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>Business Impact</h2>
+            <p>Our RAG-Based Knowledge Assistant has delivered significant value to insurance companies:</p>
+            
+            <div class="project-features">
+                <div class="feature-card">
+                    <span class="feature-icon">⏰</span>
+                    <h3>Faster Resolution</h3>
+                    <p>Instant access to knowledge reduces response times by 90% and improves customer satisfaction.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Improved Accuracy</h3>
+                    <p>95% accuracy rate in providing correct, contextual answers with proper citations.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💰</span>
+                    <h3>Cost Efficiency</h3>
+                    <p>Reduced training time and improved agent productivity through instant knowledge access.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2>Future Roadmap</h2>
+            <p>We're continuously enhancing the RAG-Based Knowledge Assistant with advanced capabilities:</p>
+            <ul style="font-size: 1.1rem; line-height: 1.7; color: #4f5d75;">
+                <li><strong>Multi-modal RAG:</strong> Support for images, documents, and multimedia content in knowledge retrieval</li>
+                <li><strong>Conversational AI:</strong> Natural language conversation capabilities for complex queries</li>
+                <li><strong>Learning System:</strong> Continuous learning from user interactions to improve response quality</li>
+                <li><strong>Integration Hub:</strong> Enhanced connectivity with CRM, claims systems, and policy management tools</li>
+                <li><strong>Custom Training:</strong> Industry-specific model training for specialized insurance domains</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>Get Started</h2>
+            <p>Ready to transform your knowledge management with AI-powered RAG technology? Contact us to learn more about our RAG-Based Knowledge Assistant for Insurance.</p>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="contact.html" class="back-button" style="margin-right: 1rem;">
+                    <i class="fa fa-envelope"></i> Contact Us
+                </a>
+                <a href="about.html#our-work" class="back-button">
+                    <i class="fa fa-arrow-left"></i> View All Projects
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="site-footer" style="background:#fffbe6;color:#f9a825;padding:1.5rem 0;text-align:center;margin-top:2.5rem;">
+        <div class="footer-content">
+            <span>&copy; 2024 NovaMind AI. All rights reserved.</span>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+</body>
+</html> 
