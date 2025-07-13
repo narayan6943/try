@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI, LLMs & Generative Intelligence | NovaMind AI Blog</title>
+    <meta name="description" content="Discover how we harness state-of-the-art AI, LLMs & Generative Intelligence to build responsive, human-like systems. GPT-4o, Claude, Mistral, Gemini integration.">
+    <meta name="keywords" content="AI blog, LLMs, generative AI, GPT-4, Claude, Mistral, Gemini, RAG pipelines, vector databases, AI development">
+    <meta name="author" content="NovaMind AI">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Advanced AI, LLMs & Generative Intelligence | NovaMind AI">
+    <meta property="og:description" content="Discover how we harness state-of-the-art AI, LLMs & Generative Intelligence to build responsive, human-like systems.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://novamind.ai/ai-machine-learning.html">
+    <meta property="og:image" content="https://novamind.ai/images/ai-ml-blog-hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced AI, LLMs & Generative Intelligence">
+    <meta name="twitter:description" content="State-of-the-art AI, LLMs & Generative Intelligence for modern businesses">
+    
+    <link rel="canonical" href="https://novamind.ai/ai-machine-learning.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero_fix.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1a202c;
+            --secondary-color: #2d3748;
+            --accent-color: #3182ce;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-accent: #edf2f7;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --transition: all 0.2s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #232946;
+            background: #e9edfb;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Blog Header */
+        .blog-header {
+            margin-top: 0;
+            padding: 90px 0 60px;
+            background: #e9edfb;
+            color: #232946;
+            position: relative;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .blog-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+        .blog-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.13;
+            margin-bottom: 0;
+            color: #232946;
+            letter-spacing: -0.02em;
+            text-align: left;
+            margin-left: 2px;
+            text-shadow: 0 2px 8px rgba(35,41,70,0.04);
+        }
+
+        /* Main Content */
+        .blog-content {
+            padding: 80px 0;
+            background: transparent;
+            width: 100%;
+        }
+
+        .blog-article {
+            background: transparent;
+            border-radius: var(--border-radius-lg);
+            padding: 0 40px;
+            margin-bottom: 80px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-paragraph {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .blog-paragraph:first-of-type {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 24px;
+            margin-bottom: 40px;
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 8px;
+            margin-left: -24px;
+            margin-right: -24px;
+        }
+
+        .blog-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 80px 0 32px 0;
+            line-height: 1.3;
+        }
+
+        .blog-subheading {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin: 60px 0 24px 0;
+            line-height: 1.4;
+        }
+
+        .blog-list {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0;
+        }
+
+        .blog-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 18px;
+            color: var(--text-primary);
+            position: relative;
+            padding-left: 32px;
+            line-height: 1.6;
+        }
+
+        .blog-list li:last-child {
+            border-bottom: none;
+        }
+
+        .blog-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Image Sections */
+        .blog-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--border-radius-lg);
+            margin: 60px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .blog-image-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .blog-image-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 32px;
+            border-radius: var(--border-radius-lg);
+            margin: 60px 0;
+            box-shadow: var(--shadow-lg);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-box h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .highlight-box p {
+            font-size: 18px;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Tech Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-item {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .tech-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-color);
+        }
+
+        .tech-name {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .tech-description {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Sidebar */
+        .blog-sidebar {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius-lg);
+            padding: 32px;
+            margin-top: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sidebar-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 16px;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list li:hover {
+            color: var(--accent-color);
+            padding-left: 8px;
+        }
+
+        /* CTA Section */
+        .blog-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            margin: 80px 0;
+            box-shadow: var(--shadow-xl);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .cta-button:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .cta-button.primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .cta-button.primary:hover {
+            background: #f8fafc;
+        }
+
+        /* Footer */
+        .blog-footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+            
+            .blog-paragraph {
+                font-size: 16px;
+            }
+            
+            .blog-heading {
+                font-size: 28px;
+            }
+            
+            .blog-subheading {
+                font-size: 24px;
+            }
+            
+            .blog-header-content {
+                padding: 0 18px;
+            }
+            
+            .blog-article {
+                padding: 0 20px;
+            }
+            
+            .blog-header {
+                padding: 56px 0 32px;
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+            
+            .blog-image {
+                height: 300px;
+                margin: 40px 20px;
+            }
+            
+            .highlight-box {
+                margin: 40px 20px;
+            }
+            
+            .blog-sidebar {
+                margin: 40px 20px;
+            }
+            
+            .blog-cta {
+                margin: 80px 20px;
+                padding: 40px 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-article {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .tech-item {
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        .tech-item:nth-child(2) { animation-delay: 0.1s; }
+        .tech-item:nth-child(3) { animation-delay: 0.2s; }
+        .tech-item:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="clean-navbar">
+        <div class="navbar-inner">
+            <div class="navbar-brand">
+                <a href="index.html" class="company-name">NovaMind AI</a>
+            </div>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li class="has-dropdown">
+                        <a href="resources.html">Resources <span class="arrow">&#9662;</span></a>
+                        <div class="dropdown">
+                            <a href="#">Blog</a>
+                            <a href="#">Affiliate Programs</a>
+                            <a href="#">Community</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="container">
+            <div class="blog-header-content">
+                <h1 class="blog-title">Advanced AI, LLMs & Generative Intelligence</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <main class="blog-content">
+        <div class="container">
+            <article class="blog-article">
+                <p class="blog-paragraph">
+                    We harness the full power of state-of-the-art artificial intelligence by integrating the most advanced Large Language Models (LLMs) and Generative AI frameworks to build highly responsive, human-like systems. Whether you're launching a conversational AI assistant, real-time support bot, or decision-making AI co-pilot, we ensure your product is powered by intelligence that adapts, learns, and delivers value.
+                </p>
+
+                <!-- Image 1 -->
+                <div class="blog-image">
+                    <div class="blog-image-content">
+                        <i class="fas fa-robot blog-image-icon"></i>
+                        AI-Powered Intelligence Systems
+                    </div>
+                </div>
+
+                <h2 class="blog-heading">Industry-Leading AI Models</h2>
+                
+                <p class="blog-paragraph">
+                    At the heart of our stack are industry leaders like GPT-4 / GPT-4o, Claude, Mistral, and Gemini, offering unmatched performance in natural language understanding, code generation, reasoning, and summarization. These models are the cornerstone of our AI offerings — enabling deep contextual understanding and dynamic interaction across business domains like HR, FinTech, EdTech, logistics, and more.
+                </p>
+
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-name">GPT-4 / GPT-4o</div>
+                        <div class="tech-description">OpenAI's most advanced language model with multi-modal capabilities and enhanced reasoning abilities for complex problem-solving.</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Claude</div>
+                        <div class="tech-description">Anthropic's AI assistant with superior reasoning capabilities and safety-focused design for enterprise applications.</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Mistral</div>
+                        <div class="tech-description">High-performance open-source model with excellent multilingual capabilities and cost-effective deployment.</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-name">Gemini</div>
+                        <div class="tech-description">Google's multimodal AI model with advanced reasoning and creative capabilities for diverse applications.</div>
+                    </div>
+                </div>
+
+                <h2 class="blog-heading">Operationalizing Intelligence</h2>
+                
+                <p class="blog-paragraph">
+                    To operationalize intelligence, we integrate frameworks like LangChain, LlamaIndex, and Haystack, allowing us to build Retrieval-Augmented Generation (RAG) pipelines that can access enterprise knowledge bases, compliance documents, SOPs, and training manuals in milliseconds. This results in intelligent assistants that provide precise, verifiable, and context-rich responses to any query.
+                </p>
+
+                <!-- Image 2 -->
+                <div class="blog-image">
+                    <div class="blog-image-content">
+                        <i class="fas fa-network-wired blog-image-icon"></i>
+                        RAG Pipeline Architecture
+                    </div>
+                </div>
+
+                <h3 class="blog-subheading">Vector Databases for Semantic Search</h3>
+                
+                <p class="blog-paragraph">
+                    For storage and semantic search, we use powerful vector databases like Pinecone, Weaviate, and FAISS, giving your AI the ability to retrieve and reason over billions of records with near-instant latency.
+                </p>
+
+                <div class="highlight-box">
+                    <h3>🚀 Real-Time Performance</h3>
+                    <p>Our vector database implementations provide sub-100ms response times even when querying millions of documents, ensuring your AI applications remain lightning-fast regardless of scale.</p>
+                </div>
+
+                <h2 class="blog-heading">Beyond Text: Voice & Emotion AI</h2>
+                
+                <p class="blog-paragraph">
+                    We don't stop at text. With Whisper, Deepgram, and ElevenLabs, we enable real-time voice recognition, multilingual transcription, and lifelike AI speech. Combined with Hume.ai, we add emotion intelligence — allowing your systems to respond to user sentiment, tone, and facial expression in real time. This human-level understanding sets your product apart.
+                </p>
+
+                <!-- Image 3 -->
+                <div class="blog-image">
+                    <div class="blog-image-content">
+                        <i class="fas fa-microphone blog-image-icon"></i>
+                        Voice AI & Emotion Intelligence
+                    </div>
+                </div>
+
+                <h2 class="blog-heading">Business Impact & Applications</h2>
+                
+                <p class="blog-paragraph">
+                    Our advanced AI solutions deliver measurable business impact across multiple domains:
+                </p>
+
+                <ul class="blog-list">
+                    <li><strong>24/7 Smart Agents:</strong> Build intelligent agents that answer customer queries around the clock, reducing response times by up to 90% and improving customer satisfaction.</li>
+                    <li><strong>Intelligent Q&A Bots:</strong> Transform internal documentation into smart assistants that access compliance docs, SOPs, and training manuals instantly, improving employee productivity.</li>
+                    <li><strong>Personalization Engine:</strong> Drive targeted personalization in marketing, onboarding, and support with AI that understands individual preferences and behaviors.</li>
+                    <li><strong>Global AI Products:</strong> Launch multilingual AI solutions that serve customers worldwide in their native languages, expanding your global reach.</li>
+                </ul>
+
+                <!-- Image 4 -->
+                <div class="blog-image">
+                    <div class="blog-image-content">
+                        <i class="fas fa-chart-line blog-image-icon"></i>
+                        AI Business Impact Metrics
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>💡 Key Success Metrics</h3>
+                    <p>Our AI implementations typically achieve 95% query resolution accuracy, 90% reduction in response times, and 24/7 availability while supporting 50+ AI models across multiple business domains.</p>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+                <h3 class="sidebar-title">Related Technologies</h3>
+                <ul class="sidebar-list">
+                    <li><a href="frontend-development.html">Frontend Development</a></li>
+                    <li><a href="backend-apis.html">Backend & APIs</a></li>
+                    <li><a href="security-compliance.html">Security & Compliance</a></li>
+                    <li><a href="devops-cloud.html">DevOps & Cloud</a></li>
+                    <li><a href="data-analytics.html">Data & Analytics</a></li>
+                </ul>
+            </aside>
+
+            <!-- CTA Section -->
+            <section class="modern-cta">
+                <h2 class="modern-cta-title">Ready to Transform Your Business with AI?</h2>
+                <p class="modern-cta-desc">Let's discuss how our advanced AI, LLMs, and Generative Intelligence can revolutionize your operations and drive unprecedented growth.</p>
+                <div class="modern-cta-buttons">
+                    <a href="contact.html" class="modern-cta-btn primary">
+                        <span style="font-size:1.2em;margin-right:0.5em;">&#9993;</span> Start Your AI Journey
+                    </a>
+                    <a href="about.html#tech-stack" class="modern-cta-btn">
+                        <span style="font-size:1.2em;margin-right:0.5em;">&#8592;</span> View All Technologies
+                    </a>
+                </div>
+            </section>
+
+<style>
+.modern-cta {
+    background: linear-gradient(135deg, #ffb6ea 0%, #ff6fcb 100%);
+    border-radius: 2.5rem;
+    padding: 4.5rem 2rem 4rem 2rem;
+    margin: 80px auto 0 auto;
+    max-width: 92vw;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(255, 126, 179, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modern-cta-title {
+    font-family: 'Inter', 'Poppins', Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #232946;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+}
+.modern-cta-desc {
+    font-size: 1.45rem;
+    color: #232946;
+    margin-bottom: 3.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+.modern-cta-buttons {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.modern-cta-btn {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #232946;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 2.5rem;
+    padding: 1.2rem 2.5rem;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(35,41,70,0.06);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.modern-cta-btn.primary {
+    background: #fff;
+    color: #232946;
+}
+.modern-cta-btn:hover {
+    background: #f3eaff;
+    color: #a8327e;
+    box-shadow: 0 4px 24px rgba(255, 126, 179, 0.18);
+}
+@media (max-width: 700px) {
+    .modern-cta {
+        padding: 2.5rem 0.5rem 2rem 0.5rem;
+        border-radius: 1.2rem;
+    }
+    .modern-cta-title {
+        font-size: 2rem;
+    }
+    .modern-cta-desc {
+        font-size: 1.05rem;
+    }
+    .modern-cta-buttons {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .modern-cta-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 1.05rem;
+        padding: 1rem 1.2rem;
+    }
+}
+</style>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 NovaMind AI. All rights reserved. | Advanced AI & Machine Learning Solutions</p>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp" style="position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); z-index: 1000; transition: var(--transition);">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Advanced AI, LLMs & Generative Intelligence",
+        "description": "Discover how we harness state-of-the-art AI, LLMs & Generative Intelligence to build responsive, human-like systems.",
+        "author": {
+            "@type": "Organization",
+            "name": "NovaMind AI"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "NovaMind AI",
+            "url": "https://novamind.ai"
+        },
+        "datePublished": "2024-12-01",
+        "dateModified": "2024-12-01",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://novamind.ai/ai-machine-learning.html"
+        },
+        "image": "https://novamind.ai/images/ai-ml-blog-hero.jpg",
+        "keywords": "AI, LLMs, generative AI, GPT-4, Claude, Mistral, Gemini, RAG pipelines",
+        "articleSection": "AI & Machine Learning"
+    }
+    </script>
+</body>
+</html> 
