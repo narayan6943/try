@@ -3,728 +3,634 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAG-Based Knowledge Assistant for Insurance: AI-Powered Knowledge Management | NovaMind AI</title>
-    <meta name="description" content="Discover how RAG-based knowledge assistants revolutionize insurance operations. Learn about intelligent knowledge retrieval, automated responses, and enhanced customer service that improves efficiency by 70%.">
-    <meta name="keywords" content="RAG knowledge assistant, insurance AI, knowledge management, retrieval augmented generation, customer service automation, insurance technology, AI assistant">
-    <meta name="author" content="NovaMind AI">
-    <meta property="og:title" content="RAG-Based Knowledge Assistant for Insurance: AI-Powered Knowledge Management">
-    <meta property="og:description" content="RAG-based knowledge assistant that improves insurance efficiency by 70% with intelligent knowledge retrieval and automated responses.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://novamind.ai/rag-knowledge-assistant">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="RAG-Based Knowledge Assistant for Insurance">
-    <meta name="twitter:description" content="Revolutionize insurance with RAG-based knowledge management and AI assistance.">
-    
+    <title>RAG Knowledge Assistant - AI-Powered Information Retrieval & Knowledge Management</title>
+    <meta name="description" content="Advanced RAG (Retrieval-Augmented Generation) knowledge assistant with intelligent document processing, semantic search, and contextual responses. Transform your knowledge base into an intelligent AI assistant.">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="hero_fix.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            background: #e9edfb;
-            color: #2d3142;
-            font-family: 'Inter', 'Poppins', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-        }
-        
-        .blog-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('images/138 Millennium Pine.png') center/cover;
-            opacity: 0.1;
-            z-index: 1;
-        }
-        
-        .blog-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .blog-hero-icon {
-            background: rgba(255,255,255,0.2);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem auto;
-            font-size: 2rem;
-        }
-        
-        .blog-hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-            line-height: 1.2;
-        }
-        
-        .blog-hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 400;
-            max-width: 800px;
-            margin: 0 auto;
-            color: rgba(255,255,255,0.9);
-            line-height: 1.6;
-        }
-        
-        .blog-meta {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .blog-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            background: white;
-            color: #667eea;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 2rem 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .back-button i {
-            margin-right: 0.5rem;
-        }
-        
-        .blog-content {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            max-width: 100%;
-        }
-        
-        .blog-content h2 {
-            color: #2d3142;
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1rem 0;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        
-        .blog-content h3 {
-            color: #2d3142;
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem 0;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-        
-        .blog-content h4 {
-            color: #2d3142;
-            font-size: 1.2rem;
-            margin: 1.5rem 0 0.8rem 0;
-            font-weight: 600;
-        }
-        
-        .blog-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4f5d75;
-            margin-bottom: 1.5rem;
-        }
-        
-        .blog-content ul {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4f5d75;
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-        
-        .blog-content li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .blog-content strong {
-            color: #2d3142;
-            font-weight: 600;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .highlight-box h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 16px;
-            padding: 2.5rem;
-            text-align: center;
-            color: white;
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-weight: 500;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .feature-card {
-            background: linear-gradient(135deg, #f8f9ff 0%, #e3f7ff 100%);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid #e0e7ff;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
-        }
-        
-        .feature-icon {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0;
-            justify-content: center;
-        }
-        
-        .tech-tag {
-            background: linear-gradient(135deg, #e3f7ff 0%, #b2ebf2 100%);
-            color: #2d3142;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px solid #b3e5fc;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        
-        .comparison-table th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e0e7ff;
-            color: #4f5d75;
-        }
-        
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .quote-box {
-            background: linear-gradient(135deg, #e3f7ff 0%, #f0f8ff 100%);
-            border-left: 4px solid #667eea;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-        }
-        
-        .quote-box p {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: #2d3142;
-            margin: 0;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #fffde7 0%, #e3f7ff 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            margin: 3rem 0;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        .cta-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-        
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .cta-secondary {
-            background: white;
-            color: #667eea;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid #667eea;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-        
-        @media (max-width: 768px) {
-            .blog-hero-title {
-                font-size: 2rem;
-            }
-            
-            .blog-content {
-                padding: 2rem;
-            }
-            
-            .comparison-table {
-                font-size: 0.9rem;
-            }
-            
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .blog-meta {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar Start -->
-<header class="clean-navbar">
-    <div class="navbar-inner">
-        <div class="navbar-brand">
-            <a href="index.html" class="company-name">NovaMind AI</a>
-        </div>
-        <nav class="main-nav" aria-label="Main Navigation">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="demo.html">Demo</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="career.html">Career</a></li>
-                <li class="has-dropdown">
-                    <a href="resources.html">Resources <span class="arrow">&#9662;</span></a>
-                    <div class="dropdown">
-                        <a href="#">Blog</a>
-                        <a href="#">Affiliate Programs</a>
-                        <a href="#">Community</a>
-                    </div>
-                </li>
-                <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<!-- Navbar End -->
-    <div class="blog-hero">
-        <div class="blog-hero-content">
-            <div class="blog-hero-icon">
-                <i class="fa fa-lightbulb-o"></i>
+    <!-- Navigation -->
+    <nav class="clean-navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">AI Solutions</a>
             </div>
-            <h1 class="blog-hero-title">RAG-Based Knowledge Assistant for Insurance: AI-Powered Knowledge Management</h1>
-            <p class="blog-hero-subtitle">Discover how RAG-based knowledge assistants revolutionize insurance operations with intelligent knowledge retrieval, automated responses, and enhanced customer service that improves efficiency by 70%.</p>
-            <div class="blog-meta">
-                <span><i class="fa fa-calendar"></i> Published: January 2024</span>
-                <span><i class="fa fa-clock-o"></i> 12 min read</span>
-                <span><i class="fa fa-user"></i> NovaMind AI Team</span>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="career.html">Careers</a>
+                <a href="demo.html">Demo</a>
+                <a href="#contact" class="btn-primary">Get Started</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="container">
-        <a href="about.html#our-work" class="back-button">
-            <i class="fa fa-arrow-left"></i> Back to Our Work
-        </a>
-
-        <article class="blog-content">
-            <p>In the complex and highly regulated world of insurance, access to accurate, up-to-date knowledge is critical for both customer service and operational efficiency. Insurance professionals face the challenge of navigating vast amounts of policy documents, regulatory requirements, claims procedures, and product information—often leading to delays, errors, and inconsistent customer experiences.</p>
-
-            <p>Our RAG-Based Knowledge Assistant for Insurance transforms this challenging landscape by providing intelligent knowledge retrieval, automated responses, and enhanced decision support that improves efficiency by 70% while ensuring accuracy and compliance.</p>
-
-            <p>Let's explore how RAG (Retrieval Augmented Generation) technology is revolutionizing insurance knowledge management and why it's becoming essential for modern insurance operations.</p>
-
-            <div class="highlight-box">
-                <h3>Platform Impact</h3>
-                <p style="font-size: 1.1rem; margin: 0;">Achieving 70% efficiency improvement, 95% accuracy in knowledge retrieval, and 80% reduction in response time for insurance knowledge management.</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">70%</span>
-                    <div class="stat-label">Efficiency Improvement</div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-brain"></i>
+                    <span>Knowledge AI</span>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">95%</span>
-                    <div class="stat-label">Knowledge Accuracy</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">80%</span>
-                    <div class="stat-label">Response Time Reduction</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">24/7</span>
-                    <div class="stat-label">Knowledge Access</div>
-                </div>
-            </div>
-
-            <h2>What is RAG-Based Knowledge Management?</h2>
-            
-            <p>RAG (Retrieval Augmented Generation) combines the power of large language models with intelligent document retrieval to provide accurate, contextually relevant responses based on your organization's specific knowledge base. Unlike traditional chatbots that rely on pre-trained responses, RAG systems dynamically retrieve and synthesize information from your actual documents and databases.</p>
-
-            <p>For insurance companies, this means providing instant access to policy details, claims procedures, regulatory requirements, and product information with high accuracy and contextual understanding, while maintaining compliance and data security.</p>
-
-            <h2>Key Features That Transform Insurance Operations</h2>
-
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-search"></i>
+                <h1 class="hero-title">
+                    RAG Knowledge Assistant
+                    <span class="gradient-text">Intelligent Information</span>
+                </h1>
+                <p class="hero-description">
+                    Advanced RAG (Retrieval-Augmented Generation) knowledge assistant with intelligent document processing, semantic search, and contextual responses. 
+                    Transform your knowledge base into an intelligent AI assistant that understands and responds with accurate information.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Accuracy</div>
                     </div>
-                    <h4>Intelligent Knowledge Retrieval</h4>
-                    <p>Advanced semantic search that understands context and intent, retrieving the most relevant information from policy documents, regulations, and knowledge bases with 95% accuracy.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-comments"></i>
+                    <div class="stat">
+                        <div class="stat-number">Real-time</div>
+                        <div class="stat-label">Search</div>
                     </div>
-                    <h4>Automated Response Generation</h4>
-                    <p>Intelligent response generation that combines retrieved knowledge with natural language processing to provide accurate, helpful, and contextually appropriate answers.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-shield"></i>
+                    <div class="stat">
+                        <div class="stat-number">Multi-source</div>
+                        <div class="stat-label">Integration</div>
                     </div>
-                    <h4>Compliance & Security</h4>
-                    <p>Built-in compliance features that ensure all responses meet regulatory requirements, maintain data privacy, and provide audit trails for knowledge interactions.</p>
                 </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-users"></i>
-                    </div>
-                    <h4>Multi-Channel Support</h4>
-                    <p>Seamless integration across multiple channels including customer service portals, mobile apps, internal systems, and external platforms for consistent knowledge delivery.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-graduation-cap"></i>
-                    </div>
-                    <h4>Continuous Learning</h4>
-                    <p>Self-improving system that learns from interactions, feedback, and new information to continuously enhance knowledge accuracy and response quality.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-chart-line"></i>
-                    </div>
-                    <h4>Analytics & Insights</h4>
-                    <p>Comprehensive analytics providing insights into knowledge usage patterns, common queries, and optimization opportunities for continuous improvement.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Start Free Trial</a>
+                    <a href="#features" class="btn-secondary">Explore Features</a>
                 </div>
             </div>
-
-            <h2>How RAG Outperforms Traditional Knowledge Management</h2>
-            
-            <p>Traditional knowledge management systems have significant limitations in providing accurate, timely, and contextual information. Here's how RAG-powered solutions provide superior results:</p>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Traditional Systems</th>
-                        <th>RAG-Based Assistant</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Response Accuracy</strong></td>
-                        <td>60-70% accuracy</td>
-                        <td>95%+ accuracy</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Response Time</strong></td>
-                        <td>Minutes to hours</td>
-                        <td>Seconds to minutes</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Knowledge Currency</strong></td>
-                        <td>Manual updates required</td>
-                        <td>Real-time updates</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Context Understanding</strong></td>
-                        <td>Keyword matching</td>
-                        <td>Semantic understanding</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Scalability</strong></td>
-                        <td>Limited by human resources</td>
-                        <td>Unlimited concurrent users</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Technical Architecture: Built for Accuracy and Scale</h2>
-            
-            <p>Our RAG-based knowledge assistant is built with enterprise-grade technology that ensures high accuracy, scalability, and seamless integration with existing insurance systems.</p>
-            
-            <div class="tech-stack">
-                <span class="tech-tag">RAG Technology</span>
-                <span class="tech-tag">Large Language Models</span>
-                <span class="tech-tag">Vector Databases</span>
-                <span class="tech-tag">Semantic Search</span>
-                <span class="tech-tag">NLP Processing</span>
-                <span class="tech-tag">Cloud Computing</span>
-                <span class="tech-tag">API Integration</span>
-                <span class="tech-tag">Security Compliance</span>
-            </div>
-
-            <h3>Core Components</h3>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4><i class="fa fa-database" style="color: #667eea; margin-right: 0.5rem;"></i>Knowledge Base</h4>
-                    <p>Comprehensive knowledge repository that stores and indexes policy documents, regulations, procedures, and product information for efficient retrieval.</p>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <i class="fas fa-search"></i>
+                    <span>Semantic Search</span>
                 </div>
-                <div class="feature-card">
-                    <h4><i class="fa fa-search" style="color: #667eea; margin-right: 0.5rem;"></i>Retrieval Engine</h4>
-                    <p>Advanced semantic search and retrieval system that understands context and intent to find the most relevant information from the knowledge base.</p>
+                <div class="floating-card">
+                    <i class="fas fa-brain"></i>
+                    <span>RAG Technology</span>
                 </div>
-                <div class="feature-card">
-                    <h4><i class="fa fa-brain" style="color: #667eea; margin-right: 0.5rem;"></i>Generation Engine</h4>
-                    <p>Intelligent response generation that combines retrieved knowledge with natural language processing to create accurate, helpful responses.</p>
-                </div>
-                <div class="feature-card">
-                    <h4><i class="fa fa-shield" style="color: #667eea; margin-right: 0.5rem;"></i>Security Layer</h4>
-                    <p>Enterprise-grade security with encryption, access controls, and compliance features to protect sensitive insurance data and ensure regulatory adherence.</p>
+                <div class="floating-card">
+                    <i class="fas fa-comments"></i>
+                    <span>Contextual Responses</span>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h2>Real-World Applications: Transforming Insurance</h2>
-            
-            <p>RAG-based knowledge assistants are revolutionizing insurance operations across multiple areas, from customer service and claims processing to underwriting and compliance.</p>
-
-            <div class="quote-box">
-                <p>"The RAG knowledge assistant reduced our customer service response time by 80% while improving accuracy to 95%. Our agents can now focus on complex cases while the AI handles routine inquiries."</p>
+    <!-- Product Overview -->
+    <section id="overview" class="product-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Overview</span>
+                <h2>Revolutionary Knowledge Management Platform</h2>
+                <p>Our RAG knowledge assistant combines advanced retrieval technology with generative AI to provide intelligent, accurate responses from your knowledge base.</p>
             </div>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Semantic Search</h3>
+                    <p>Advanced semantic search with vector embeddings, similarity matching, and intelligent document retrieval across multiple sources.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>RAG Technology</h3>
+                    <p>Retrieval-Augmented Generation combines document retrieval with AI generation for accurate, contextual responses.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Contextual Responses</h3>
+                    <p>Intelligent responses with source citations, context awareness, and natural language understanding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="feature-grid">
+    <!-- Key Features -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2>Advanced RAG Capabilities</h2>
+                <p>Comprehensive suite of RAG features designed for intelligent knowledge management and information retrieval</p>
+            </div>
+            <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fa fa-headphones"></i>
+                        <i class="fas fa-search"></i>
                     </div>
-                    <h4>Customer Service</h4>
-                    <p>Instant access to policy information, claims status, and product details for customer service representatives and self-service portals.</p>
+                    <h3>Semantic Search</h3>
+                    <p>Advanced semantic search with vector embeddings and intelligent document retrieval</p>
+                    <ul class="feature-list">
+                        <li>Vector embeddings</li>
+                        <li>Similarity matching</li>
+                        <li>Intelligent retrieval</li>
+                        <li>Multi-source search</li>
+                        <li>Context awareness</li>
+                        <li>Real-time indexing</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fa fa-file-text"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h4>Claims Processing</h4>
-                    <p>Automated guidance on claims procedures, documentation requirements, and regulatory compliance for claims adjusters and processors.</p>
+                    <h3>RAG Technology</h3>
+                    <p>Retrieval-Augmented Generation with document processing and AI response generation</p>
+                    <ul class="feature-list">
+                        <li>Document retrieval</li>
+                        <li>AI generation</li>
+                        <li>Context integration</li>
+                        <li>Source citations</li>
+                        <li>Accuracy verification</li>
+                        <li>Response quality</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fa fa-balance-scale"></i>
+                        <i class="fas fa-file-alt"></i>
                     </div>
-                    <h4>Underwriting Support</h4>
-                    <p>Intelligent assistance with risk assessment, policy terms, and regulatory requirements for underwriters and risk managers.</p>
-                </div>
-            </div>
-
-            <h2>Implementation Strategy: Insurance Knowledge Transformation</h2>
-            
-            <p>Successfully implementing RAG-based knowledge management requires strategic planning and careful consideration of existing systems, compliance requirements, and user adoption.</p>
-
-            <h3>Phase 1: Knowledge Base Development</h3>
-            <p>Begin by identifying and organizing key knowledge sources including policy documents, procedures, regulations, and product information for ingestion into the RAG system.</p>
-
-            <h3>Phase 2: System Training & Validation</h3>
-            <p>Train the RAG system on your specific knowledge base, validate accuracy, and fine-tune responses to ensure compliance with insurance regulations and business requirements.</p>
-
-            <h3>Phase 3: Integration & Deployment</h3>
-            <p>Integrate with existing insurance systems, implement user training programs, and deploy with gradual rollout to ensure smooth adoption and optimal performance.</p>
-
-            <h2>Future of RAG in Insurance</h2>
-            
-            <p>The future of RAG-based knowledge management is heading toward even more sophisticated capabilities that will further enhance insurance operations.</p>
-
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4><i class="fa fa-eye" style="color: #667eea; margin-right: 0.5rem;"></i>Predictive Knowledge</h4>
-                    <p>AI systems that can predict knowledge needs and proactively provide relevant information based on user behavior and context.</p>
+                    <h3>Document Processing</h3>
+                    <p>Intelligent document processing with OCR, text extraction, and structured data handling</p>
+                    <ul class="feature-list">
+                        <li>OCR processing</li>
+                        <li>Text extraction</li>
+                        <li>Structured data</li>
+                        <li>Format support</li>
+                        <li>Content parsing</li>
+                        <li>Metadata extraction</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h4><i class="fa fa-mobile" style="color: #667eea; margin-right: 0.5rem;"></i>Mobile Knowledge Access</h4>
-                    <p>Mobile-optimized knowledge access that enables field agents and mobile users to access critical information on-the-go.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Natural Language</h3>
+                    <p>Natural language understanding with conversational AI and contextual responses</p>
+                    <ul class="feature-list">
+                        <li>Conversational AI</li>
+                        <li>Contextual responses</li>
+                        <li>Language understanding</li>
+                        <li>Query processing</li>
+                        <li>Response generation</li>
+                        <li>Dialogue management</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h4><i class="fa fa-globe" style="color: #667eea; margin-right: 0.5rem;"></i>Multi-language Support</h4>
-                    <p>Advanced multi-language knowledge management with cultural context understanding for global insurance operations.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics & Insights</h3>
+                    <p>Comprehensive analytics with usage patterns, knowledge gaps, and performance metrics</p>
+                    <ul class="feature-list">
+                        <li>Usage analytics</li>
+                        <li>Knowledge gaps</li>
+                        <li>Performance metrics</li>
+                        <li>Query analysis</li>
+                        <li>Response quality</li>
+                        <li>Trend insights</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h4><i class="fa fa-robot" style="color: #667eea; margin-right: 0.5rem;"></i>Autonomous Decision Support</h4>
-                    <p>Advanced AI systems that can provide autonomous decision support for complex insurance scenarios while maintaining human oversight.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Integration & APIs</h3>
+                    <p>Seamless integration with existing systems, knowledge bases, and enterprise platforms</p>
+                    <ul class="feature-list">
+                        <li>Knowledge base integration</li>
+                        <li>Enterprise platforms</li>
+                        <li>REST APIs</li>
+                        <li>Webhook support</li>
+                        <li>Custom connectors</li>
+                        <li>Multi-platform support</li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h2>Conclusion: The Competitive Advantage of RAG Knowledge Management</h2>
-            
-            <p>RAG-based knowledge management isn't just about providing information—it's about creating a more efficient, accurate, and responsive insurance operation that can adapt to changing market demands and customer expectations.</p>
-
-            <p>By implementing RAG-powered knowledge assistants, insurance companies can gain a significant competitive advantage through improved operational efficiency, enhanced customer service, and reduced compliance risks. The key to success lies in choosing the right implementation strategy and continuously optimizing based on performance data and business requirements.</p>
-
-            <div class="highlight-box">
-                <h3>Ready to Transform Your Knowledge Management?</h3>
-                <p style="font-size: 1.1rem; margin: 0;">Join forward-thinking insurance companies that are already achieving 70% efficiency improvements and 95% accuracy with RAG-based knowledge assistants.</p>
+    <!-- Use Cases -->
+    <section id="use-cases" class="use-cases-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Use Cases</span>
+                <h2>Industry Applications</h2>
+                <p>Discover how RAG knowledge assistants transform information management across industries</p>
             </div>
-        </article>
-
-        <section class="cta-section">
-            <h2>Ready to Revolutionize Your Knowledge Management?</h2>
-            <p style="font-size: 1.1rem; color: #4f5d75; max-width: 800px; margin: 0 auto 2rem auto;">
-                Experience the power of RAG-based knowledge management that provides instant access to accurate information and transforms your insurance operations.
-            </p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="cta-primary">
-                    <i class="fa fa-envelope" style="margin-right: 0.5rem;"></i>
-                    Get Started Today
-                </a>
-                <a href="about.html#our-work" class="cta-secondary">
-                    <i class="fa fa-arrow-left" style="margin-right: 0.5rem;"></i>
-                    View All Projects
-                </a>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Customer Support</h3>
+                    <p>Intelligent customer support with knowledge base integration, automated responses, and accurate information retrieval</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Knowledge base integration</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Automated responses</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Accurate information retrieval</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Educational content management, student assistance, and intelligent learning support with RAG technology</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Educational content management</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Student assistance</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Intelligent learning support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Medical knowledge management, clinical decision support, and patient information retrieval</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Medical knowledge management</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Clinical decision support</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Patient information retrieval</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Legal Services</h3>
+                    <p>Legal document management, case research assistance, and regulatory information retrieval</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Legal document management</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Case research assistance</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Regulatory information retrieval</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Financial Services</h3>
+                    <p>Financial knowledge management, compliance information, and investment research assistance</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Financial knowledge management</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Compliance information</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Investment research assistance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Manufacturing</h3>
+                    <p>Technical documentation management, maintenance procedures, and operational knowledge retrieval</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Technical documentation management</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Maintenance procedures</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Operational knowledge retrieval</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <footer class="site-footer" style="background:#fffbe6;color:#f9a825;padding:1.5rem 0;text-align:center;margin-top:2.5rem;">
-        <div class="footer-content">
-            <span>&copy; 2024 NovaMind AI. All rights reserved.</span>
+    <!-- Technical Specifications -->
+    <section id="specifications" class="specifications-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Technical Stack</span>
+                <h2>Advanced RAG Technologies</h2>
+                <p>Built with cutting-edge RAG and AI technologies for reliable, scalable knowledge management</p>
+            </div>
+            <div class="specs-grid">
+                <div class="spec-category">
+                    <h3><i class="fas fa-search"></i> Vector Search</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">Pinecone</span>
+                        <span class="spec-tag">Weaviate</span>
+                        <span class="spec-tag">Qdrant</span>
+                        <span class="spec-tag">Chroma</span>
+                        <span class="spec-tag">Elasticsearch</span>
+                        <span class="spec-tag">Vector Embeddings</span>
+                        <span class="spec-tag">Similarity Search</span>
+                        <span class="spec-tag">Semantic Indexing</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-brain"></i> Language Models</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">OpenAI GPT</span>
+                        <span class="spec-tag">Claude</span>
+                        <span class="spec-tag">Llama</span>
+                        <span class="spec-tag">BERT</span>
+                        <span class="spec-tag">Sentence Transformers</span>
+                        <span class="spec-tag">LangChain</span>
+                        <span class="spec-tag">LlamaIndex</span>
+                        <span class="spec-tag">Custom Models</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-file-alt"></i> Document Processing</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">OCR Processing</span>
+                        <span class="spec-tag">Text Extraction</span>
+                        <span class="spec-tag">PDF Processing</span>
+                        <span class="spec-tag">Document Parsing</span>
+                        <span class="spec-tag">Content Chunking</span>
+                        <span class="spec-tag">Metadata Extraction</span>
+                        <span class="spec-tag">Format Support</span>
+                        <span class="spec-tag">Structured Data</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud Infrastructure</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">AWS Lambda</span>
+                        <span class="spec-tag">Azure Functions</span>
+                        <span class="spec-tag">Google Cloud</span>
+                        <span class="spec-tag">Kubernetes</span>
+                        <span class="spec-tag">Docker</span>
+                        <span class="spec-tag">Redis</span>
+                        <span class="spec-tag">MongoDB</span>
+                        <span class="spec-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-chart-line"></i> Analytics & Monitoring</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">Query Analytics</span>
+                        <span class="spec-tag">Performance Metrics</span>
+                        <span class="spec-tag">Response Quality</span>
+                        <span class="spec-tag">Usage Patterns</span>
+                        <span class="spec-tag">Knowledge Gaps</span>
+                        <span class="spec-tag">Custom Dashboards</span>
+                        <span class="spec-tag">Real-time Monitoring</span>
+                        <span class="spec-tag">Insight Generation</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-shield-alt"></i> Security & Compliance</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">Data Encryption</span>
+                        <span class="spec-tag">Access Control</span>
+                        <span class="spec-tag">Audit Logging</span>
+                        <span class="spec-tag">Data Privacy</span>
+                        <span class="spec-tag">Secure APIs</span>
+                        <span class="spec-tag">Multi-factor Auth</span>
+                        <span class="spec-tag">Compliance Features</span>
+                        <span class="spec-tag">Data Governance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pricing</span>
+                <h2>Flexible RAG Knowledge Plans</h2>
+                <p>Choose the plan that best fits your knowledge management needs and scale as you grow</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-badge">Starter</div>
+                    <div class="pricing-header">
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="amount">199</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Perfect for small teams getting started with RAG knowledge management</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Up to 1,000 documents</li>
+                        <li><i class="fas fa-check"></i> Basic RAG capabilities</li>
+                        <li><i class="fas fa-check"></i> Standard search</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li><i class="fas fa-check"></i> Basic analytics</li>
+                        <li><i class="fas fa-check"></i> 30-day retention</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Start Free Trial</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Professional</div>
+                    <div class="pricing-header">
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="amount">599</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Advanced RAG knowledge management for growing organizations</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Up to 10,000 documents</li>
+                        <li><i class="fas fa-check"></i> Advanced RAG capabilities</li>
+                        <li><i class="fas fa-check"></i> Advanced search</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> 1-year retention</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                        <li><i class="fas fa-check"></i> Custom integrations</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Start Free Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-badge">Enterprise</div>
+                    <div class="pricing-header">
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="amount">1499</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Full-scale RAG knowledge management for large organizations</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited documents</li>
+                        <li><i class="fas fa-check"></i> Custom AI models</li>
+                        <li><i class="fas fa-check"></i> Advanced features</li>
+                        <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                        <li><i class="fas fa-check"></i> Unlimited retention</li>
+                        <li><i class="fas fa-check"></i> White-label options</li>
+                        <li><i class="fas fa-check"></i> On-premise deployment</li>
+                        <li><i class="fas fa-check"></i> Custom development</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Transform Your Knowledge Management?</h2>
+                    <p>Join thousands of organizations using RAG knowledge assistants to unlock intelligent information retrieval, improve customer support, and create smarter knowledge bases. Start your free trial today and discover the power of AI-powered knowledge management.</p>
+                    <div class="cta-features">
+                        <div class="feature">
+                            <i class="fas fa-rocket"></i>
+                            <span>Get started in minutes</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Enterprise-grade security</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 expert support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-actions">
+                    <a href="#" class="btn-primary">Start Free Trial</a>
+                    <a href="#" class="btn-secondary">Schedule Demo</a>
+                    <a href="#" class="btn-outline">View Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Solutions</h3>
+                    <p>Transforming businesses with cutting-edge AI technology and innovative solutions for the digital age.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="advanced-pdf-processing.html">PDF Processing</a></li>
+                        <li><a href="intelligent-invoice-processing.html">Invoice Processing</a></li>
+                        <li><a href="contract-intelligence-platform.html">Contract Intelligence</a></li>
+                        <li><a href="ai-powered-analytics-platform.html">AI Analytics</a></li>
+                        <li><a href="ai-security-compliance.html">Security & Compliance</a></li>
+                        <li><a href="intelligent-chatbot-platform.html">Chatbot Platform</a></li>
+                        <li><a href="predictive-maintenance-system.html">Predictive Maintenance</a></li>
+                        <li><a href="voice-feedback-analytics-engine.html">Voice Analytics</a></li>
+                        <li><a href="multilingual-ai-support-assistant.html">Multilingual Support</a></li>
+                        <li><a href="parental-control-ai-monitoring.html">Parental Control</a></li>
+                        <li><a href="white-labeled-ai-saas-platform.html">White-Label Platform</a></li>
+                        <li><a href="rag-knowledge-assistant.html">RAG Knowledge Assistant</a></li>
+                        <li><a href="products.html">View All Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="solutions.html">Industry Solutions</a></li>
+                        <li><a href="custom-ai-workflow-automation.html">Workflow Automation</a></li>
+                        <li><a href="document-intelligence-system.html">Document Intelligence</a></li>
+                        <li><a href="rag-knowledge-assistant.html">Knowledge Assistant</a></li>
+                        <li><a href="solutions.html">View All Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="security.html">Security</a>
+                    <a href="compliance.html">Compliance</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 AI Solutions. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
-    
-    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fa fa-whatsapp"></i>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script src="main.js"></script>
 </body>
 </html> 

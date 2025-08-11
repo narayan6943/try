@@ -3,726 +3,630 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice Feedback Analytics Engine: Transform Customer Insights with AI | NovaMind AI</title>
-    <meta name="description" content="Discover how AI-powered voice feedback analytics revolutionizes customer insights. Learn about real-time sentiment analysis, emotion detection, and actionable business intelligence from voice data.">
-    <meta name="keywords" content="voice feedback analytics, customer sentiment analysis, voice AI, emotion detection, customer insights, voice analytics, speech recognition, customer experience">
-    <meta name="author" content="NovaMind AI">
-    <meta property="og:title" content="Voice Feedback Analytics Engine: Transform Customer Insights with AI">
-    <meta property="og:description" content="AI-powered voice feedback analytics that provides real-time sentiment analysis and actionable customer insights.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://novamind.ai/voice-feedback-analytics-engine">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Voice Feedback Analytics Engine">
-    <meta name="twitter:description" content="Transform customer insights with AI-powered voice analytics.">
-    
+    <title>Voice Feedback Analytics Engine - AI-Powered Voice Analysis & Insights</title>
+    <meta name="description" content="Advanced AI-powered voice feedback analytics engine with speech recognition, sentiment analysis, and voice insights. Transform voice data into actionable business intelligence.">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="hero_fix.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            background: #e9edfb;
-            color: #2d3142;
-            font-family: 'Inter', 'Poppins', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-        }
-        
-        .blog-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('images/138 Millennium Pine.png') center/cover;
-            opacity: 0.1;
-            z-index: 1;
-        }
-        
-        .blog-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .blog-hero-icon {
-            background: rgba(255,255,255,0.2);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem auto;
-            font-size: 2rem;
-        }
-        
-        .blog-hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-            line-height: 1.2;
-        }
-        
-        .blog-hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 400;
-            max-width: 800px;
-            margin: 0 auto;
-            color: rgba(255,255,255,0.9);
-            line-height: 1.6;
-        }
-        
-        .blog-meta {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .blog-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            background: white;
-            color: #667eea;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 2rem 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .back-button i {
-            margin-right: 0.5rem;
-        }
-        
-        .blog-content {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            max-width: 100%;
-        }
-        
-        .blog-content h2 {
-            color: #2d3142;
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1rem 0;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        
-        .blog-content h3 {
-            color: #2d3142;
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem 0;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-        
-        .blog-content h4 {
-            color: #2d3142;
-            font-size: 1.2rem;
-            margin: 1.5rem 0 0.8rem 0;
-            font-weight: 600;
-        }
-        
-        .blog-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4f5d75;
-            margin-bottom: 1.5rem;
-        }
-        
-        .blog-content ul {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4f5d75;
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-        
-        .blog-content li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .blog-content strong {
-            color: #2d3142;
-            font-weight: 600;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .highlight-box h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 16px;
-            padding: 2.5rem;
-            text-align: center;
-            color: white;
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-weight: 500;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .feature-card {
-            background: linear-gradient(135deg, #f8f9ff 0%, #e3f7ff 100%);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid #e0e7ff;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
-        }
-        
-        .feature-icon {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0;
-            justify-content: center;
-        }
-        
-        .tech-tag {
-            background: linear-gradient(135deg, #e3f7ff 0%, #b2ebf2 100%);
-            color: #2d3142;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px solid #b3e5fc;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        
-        .comparison-table th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e0e7ff;
-            color: #4f5d75;
-        }
-        
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .quote-box {
-            background: linear-gradient(135deg, #e3f7ff 0%, #f0f8ff 100%);
-            border-left: 4px solid #667eea;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-        }
-        
-        .quote-box p {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: #2d3142;
-            margin: 0;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #fffde7 0%, #e3f7ff 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            margin: 3rem 0;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        .cta-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-        
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .cta-secondary {
-            background: white;
-            color: #667eea;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid #667eea;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-        
-        @media (max-width: 768px) {
-            .blog-hero-title {
-                font-size: 2rem;
-            }
-            
-            .blog-content {
-                padding: 2rem;
-            }
-            
-            .comparison-table {
-                font-size: 0.9rem;
-            }
-            
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .blog-meta {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="clean-navbar">
-    <div class="navbar-inner">
-        <div class="navbar-brand">
-            <a href="index.html" class="company-name">NovaMind AI</a>
-        </div>
-        <nav class="main-nav" aria-label="Main Navigation">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="demo.html">Demo</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="career.html">Career</a></li>
-                <li class="has-dropdown">
-                    <a href="resources.html">Resources <span class="arrow">&#9662;</span></a>
-                    <div class="dropdown">
-                        <a href="#">Blog</a>
-                        <a href="#">Affiliate Programs</a>
-                        <a href="#">Community</a>
-                    </div>
-                </li>
-                <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-    <div class="blog-hero">
-        <div class="blog-hero-content">
-            <div class="blog-hero-icon">
-                <i class="fa fa-microphone"></i>
+    <!-- Navigation -->
+    <nav class="clean-navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">AI Solutions</a>
             </div>
-            <h1 class="blog-hero-title">Voice Feedback Analytics Engine: Transform Customer Insights with AI</h1>
-            <p class="blog-hero-subtitle">Discover how AI-powered voice analytics revolutionizes customer feedback processing with real-time sentiment analysis, emotion detection, and actionable business intelligence.</p>
-            <div class="blog-meta">
-                <span><i class="fa fa-calendar"></i> Published: January 2024</span>
-                <span><i class="fa fa-clock-o"></i> 10 min read</span>
-                <span><i class="fa fa-user"></i> NovaMind AI Team</span>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="career.html">Careers</a>
+                <a href="demo.html">Demo</a>
+                <a href="#contact" class="btn-primary">Get Started</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="container">
-        <a href="about.html#our-work" class="back-button">
-            <i class="fa fa-arrow-left"></i> Back to Our Work
-        </a>
-
-        <article class="blog-content">
-            <p>In today's customer-centric business landscape, understanding customer feedback is more critical than ever. While traditional text-based feedback provides valuable insights, voice feedback contains a wealth of additional information—tone, emotion, urgency, and subtle nuances that text alone cannot convey. This is where AI-powered voice feedback analytics becomes a game-changer.</p>
-
-            <p>Our Voice Feedback Analytics Engine transforms raw voice data into actionable business intelligence, enabling companies to understand customer sentiment, emotions, and needs with unprecedented accuracy and speed.</p>
-
-            <p>Let's explore how voice analytics is revolutionizing customer feedback processing and why it's becoming essential for modern businesses.</p>
-
-            <div class="highlight-box">
-                <h3>Platform Impact</h3>
-                <p style="font-size: 1.1rem; margin: 0;">Achieving 90% accuracy in sentiment analysis, 85% emotion detection precision, and real-time processing capabilities for voice feedback.</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">90%</span>
-                    <div class="stat-label">Sentiment Accuracy</div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-microphone"></i>
+                    <span>Voice Analytics</span>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">85%</span>
-                    <div class="stat-label">Emotion Detection</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">Real-time</span>
-                    <div class="stat-label">Processing</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">50+</span>
-                    <div class="stat-label">Languages</div>
-                </div>
-            </div>
-
-            <h2>What is Voice Feedback Analytics?</h2>
-            
-            <p>Voice feedback analytics is the process of using artificial intelligence and machine learning to analyze spoken customer feedback, extracting meaningful insights about sentiment, emotions, topics, and actionable intelligence. Unlike traditional feedback methods, voice analytics captures the full spectrum of human communication—not just what customers say, but how they say it.</p>
-
-            <p>Our AI-powered engine processes voice data in real-time, converting speech to text while simultaneously analyzing tone, emotion, and context to provide comprehensive customer insights that drive better business decisions.</p>
-
-            <h2>Key Features That Transform Customer Insights</h2>
-
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-heart"></i>
+                <h1 class="hero-title">
+                    Voice Feedback Analytics Engine
+                    <span class="gradient-text">Voice Intelligence</span>
+                </h1>
+                <p class="hero-description">
+                    Advanced AI-powered voice feedback analytics engine with speech recognition, sentiment analysis, and voice insights. 
+                    Transform voice data into actionable business intelligence with cutting-edge voice processing technology.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Accuracy Rate</div>
                     </div>
-                    <h4>Real-time Sentiment Analysis</h4>
-                    <p>Advanced NLP models analyze voice feedback in real-time, detecting positive, negative, and neutral sentiments with 90% accuracy. Instant insights enable immediate response to customer concerns.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-smile-o"></i>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Languages</div>
                     </div>
-                    <h4>Emotion Detection</h4>
-                    <p>Sophisticated emotion recognition algorithms identify 8+ distinct emotions including joy, anger, frustration, satisfaction, and surprise with 85% precision across multiple languages.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-language"></i>
+                    <div class="stat">
+                        <div class="stat-number">Real-time</div>
+                        <div class="stat-label">Processing</div>
                     </div>
-                    <h4>Multi-language Support</h4>
-                    <p>Comprehensive language support for 50+ languages with automatic language detection and localized sentiment analysis for global customer bases.</p>
                 </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-tags"></i>
-                    </div>
-                    <h4>Topic Extraction</h4>
-                    <p>Intelligent topic modeling automatically identifies and categorizes key themes, issues, and topics mentioned in voice feedback for systematic analysis and response.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-chart-line"></i>
-                    </div>
-                    <h4>Trend Analysis</h4>
-                    <p>Longitudinal analysis of voice feedback patterns, identifying trends, seasonal variations, and emerging issues before they become widespread problems.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa fa-bell"></i>
-                    </div>
-                    <h4>Alert System</h4>
-                    <p>Intelligent alerting system that notifies relevant teams when critical issues, negative sentiment spikes, or urgent customer concerns are detected in voice feedback.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Start Free Trial</a>
+                    <a href="#features" class="btn-secondary">Explore Features</a>
                 </div>
             </div>
-
-            <h2>How Voice Analytics Outperforms Traditional Methods</h2>
-            
-            <p>Traditional feedback collection methods have significant limitations in capturing the full scope of customer experience. Here's how voice analytics provides superior insights:</p>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Traditional Methods</th>
-                        <th>Voice Analytics</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Emotion Detection</strong></td>
-                        <td>Limited to text sentiment</td>
-                        <td>Full emotional spectrum analysis</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Response Time</strong></td>
-                        <td>Days to weeks</td>
-                        <td>Real-time processing</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Data Richness</strong></td>
-                        <td>Text only</td>
-                        <td>Tone, pace, emphasis, context</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Accuracy</strong></td>
-                        <td>60-70% sentiment accuracy</td>
-                        <td>90%+ sentiment accuracy</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Scalability</strong></td>
-                        <td>Manual processing limits</td>
-                        <td>Unlimited automated processing</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Technical Architecture: Built for Accuracy and Scale</h2>
-            
-            <p>Our voice feedback analytics engine is built with cutting-edge AI technology that ensures high accuracy, real-time processing, and seamless integration with existing customer feedback systems.</p>
-            
-            <div class="tech-stack">
-                <span class="tech-tag">Speech Recognition</span>
-                <span class="tech-tag">NLP Models</span>
-                <span class="tech-tag">Emotion AI</span>
-                <span class="tech-tag">Machine Learning</span>
-                <span class="tech-tag">Real-time Processing</span>
-                <span class="tech-tag">Cloud Computing</span>
-                <span class="tech-tag">API Integration</span>
-                <span class="tech-tag">Data Analytics</span>
-            </div>
-
-            <h3>Core Components</h3>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4><i class="fa fa-microphone" style="color: #667eea; margin-right: 0.5rem;"></i>Speech Recognition Engine</h4>
-                    <p>Advanced speech-to-text conversion with noise reduction, speaker identification, and multi-language support for accurate transcription.</p>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <i class="fas fa-microphone"></i>
+                    <span>Speech Recognition</span>
                 </div>
-                <div class="feature-card">
-                    <h4><i class="fa fa-brain" style="color: #667eea; margin-right: 0.5rem;"></i>Sentiment Analysis</h4>
-                    <p>Deep learning models trained on millions of voice samples for precise sentiment classification and emotional state detection.</p>
+                <div class="floating-card">
+                    <i class="fas fa-brain"></i>
+                    <span>Sentiment Analysis</span>
                 </div>
-                <div class="feature-card">
-                    <h4><i class="fa fa-cogs" style="color: #667eea; margin-right: 0.5rem;"></i>Processing Pipeline</h4>
-                    <p>Real-time data processing pipeline that handles concurrent voice streams with minimal latency and maximum accuracy.</p>
-                </div>
-                <div class="feature-card">
-                    <h4><i class="fa fa-database" style="color: #667eea; margin-right: 0.5rem;"></i>Analytics Engine</h4>
-                    <p>Comprehensive analytics engine that generates insights, trends, and actionable recommendations from processed voice data.</p>
+                <div class="floating-card">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Voice Insights</span>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h2>Real-World Applications: Transforming Customer Experience</h2>
-            
-            <p>Voice feedback analytics is revolutionizing customer experience across multiple industries, from retail and hospitality to healthcare and financial services.</p>
-
-            <div class="quote-box">
-                <p>"The voice analytics system helped us identify customer pain points we never knew existed. We've seen a 40% improvement in customer satisfaction scores since implementing real-time voice feedback analysis."</p>
+    <!-- Product Overview -->
+    <section id="overview" class="product-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Overview</span>
+                <h2>Revolutionary Voice Analytics Platform</h2>
+                <p>Our voice feedback analytics engine combines advanced speech recognition with intelligent sentiment analysis to extract meaningful insights from voice data.</p>
             </div>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Advanced Speech Recognition</h3>
+                    <p>High-accuracy speech-to-text conversion with support for multiple languages, accents, and real-time processing capabilities.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Intelligent Sentiment Analysis</h3>
+                    <p>Deep learning algorithms analyze voice tone, emotion, and sentiment to understand customer feelings and satisfaction levels.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Voice Insights & Analytics</h3>
+                    <p>Comprehensive analytics dashboard with voice patterns, trend analysis, and actionable insights for business improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="feature-grid">
+    <!-- Key Features -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2>Advanced Voice Analytics Capabilities</h2>
+                <p>Comprehensive suite of AI-powered voice analytics features designed for modern voice data processing and insights</p>
+            </div>
+            <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fas fa-microphone"></i>
                     </div>
-                    <h4>Retail & E-commerce</h4>
-                    <p>Analyze customer service calls, product feedback, and shopping experiences to improve product offerings and service quality.</p>
+                    <h3>Speech Recognition</h3>
+                    <p>High-accuracy speech-to-text conversion with support for multiple languages, accents, and real-time processing</p>
+                    <ul class="feature-list">
+                        <li>Multi-language support</li>
+                        <li>Accent recognition</li>
+                        <li>Real-time processing</li>
+                        <li>Noise cancellation</li>
+                        <li>Speaker identification</li>
+                        <li>Custom vocabulary</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fa fa-hospital-o"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h4>Healthcare</h4>
-                    <p>Monitor patient feedback, satisfaction surveys, and care quality assessments to improve healthcare delivery and patient outcomes.</p>
+                    <h3>Sentiment Analysis</h3>
+                    <p>Advanced emotion detection and sentiment analysis using voice tone, pitch, and speech patterns</p>
+                    <ul class="feature-list">
+                        <li>Emotion detection</li>
+                        <li>Sentiment scoring</li>
+                        <li>Tone analysis</li>
+                        <li>Stress detection</li>
+                        <li>Confidence measurement</li>
+                        <li>Mood tracking</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fa fa-bank"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h4>Financial Services</h4>
-                    <p>Analyze customer service interactions, product feedback, and complaint patterns to enhance financial products and services.</p>
-                </div>
-            </div>
-
-            <h2>Implementation Strategy: Getting Started with Voice Analytics</h2>
-            
-            <p>Successfully implementing voice feedback analytics requires careful planning and strategic integration with existing customer feedback systems.</p>
-
-            <h3>Phase 1: Infrastructure Setup</h3>
-            <p>Begin by integrating voice recording capabilities into existing customer touchpoints—call centers, mobile apps, web platforms, and IoT devices. Ensure proper data collection and storage infrastructure.</p>
-
-            <h3>Phase 2: AI Model Training</h3>
-            <p>Train custom AI models on your specific industry data, customer demographics, and business context to achieve optimal accuracy for your use case.</p>
-
-            <h3>Phase 3: Integration & Optimization</h3>
-            <p>Integrate analytics results with existing CRM systems, customer service platforms, and business intelligence tools for seamless workflow integration.</p>
-
-            <h2>Future of Voice Analytics</h2>
-            
-            <p>The future of voice feedback analytics is heading toward even more sophisticated capabilities that will further enhance customer understanding and business intelligence.</p>
-
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4><i class="fa fa-eye" style="color: #667eea; margin-right: 0.5rem;"></i>Predictive Analytics</h4>
-                    <p>Advanced predictive models that can forecast customer behavior, churn risk, and satisfaction trends based on voice feedback patterns.</p>
+                    <h3>Voice Analytics</h3>
+                    <p>Comprehensive voice pattern analysis with trend identification, anomaly detection, and performance metrics</p>
+                    <ul class="feature-list">
+                        <li>Voice pattern analysis</li>
+                        <li>Trend identification</li>
+                        <li>Anomaly detection</li>
+                        <li>Performance metrics</li>
+                        <li>Quality assessment</li>
+                        <li>Comparative analysis</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h4><i class="fa fa-globe" style="color: #667eea; margin-right: 0.5rem;"></i>Global Language Support</h4>
-                    <p>Expanded language support with dialect recognition and cultural context understanding for truly global customer insights.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Content Analysis</h3>
+                    <p>Intelligent content extraction with keyword identification, topic modeling, and conversation summarization</p>
+                    <ul class="feature-list">
+                        <li>Keyword extraction</li>
+                        <li>Topic modeling</li>
+                        <li>Conversation summarization</li>
+                        <li>Intent recognition</li>
+                        <li>Entity extraction</li>
+                        <li>Context understanding</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h4><i class="fa fa-mobile" style="color: #667eea; margin-right: 0.5rem;"></i>Edge Computing</h4>
-                    <p>On-device processing capabilities that enable real-time voice analysis without requiring cloud connectivity for enhanced privacy and speed.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Integration & APIs</h3>
+                    <p>Seamless integration with existing systems, call centers, and voice platforms with comprehensive APIs</p>
+                    <ul class="feature-list">
+                        <li>Call center integration</li>
+                        <li>CRM systems</li>
+                        <li>Voice platforms</li>
+                        <li>REST APIs</li>
+                        <li>Webhook support</li>
+                        <li>Custom connectors</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h4><i class="fa fa-users" style="color: #667eea; margin-right: 0.5rem;"></i>Personalized Insights</h4>
-                    <p>Individual customer voice profiles that provide personalized insights and recommendations based on historical interaction patterns.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security & Privacy</h3>
+                    <p>Enterprise-grade security with data encryption, privacy protection, and compliance with regulatory requirements</p>
+                    <ul class="feature-list">
+                        <li>Data encryption</li>
+                        <li>Privacy protection</li>
+                        <li>GDPR compliance</li>
+                        <li>Access controls</li>
+                        <li>Audit logging</li>
+                        <li>Secure hosting</li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h2>Conclusion: The Competitive Advantage of Voice Analytics</h2>
-            
-            <p>Voice feedback analytics isn't just about understanding what customers say—it's about understanding how they feel, what they really mean, and what actions will drive the greatest impact on customer satisfaction and business success.</p>
-
-            <p>By implementing AI-powered voice analytics, businesses can gain a competitive advantage through deeper customer insights, faster response times, and more personalized customer experiences. The key to success lies in choosing the right implementation strategy and continuously optimizing based on real-world performance data.</p>
-
-            <div class="highlight-box">
-                <h3>Ready to Transform Your Customer Insights?</h3>
-                <p style="font-size: 1.1rem; margin: 0;">Join forward-thinking companies that are already achieving 90% sentiment accuracy and real-time customer insights with AI-powered voice analytics.</p>
+    <!-- Use Cases -->
+    <section id="use-cases" class="use-cases-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Use Cases</span>
+                <h2>Industry Applications</h2>
+                <p>Discover how voice feedback analytics transforms customer insights across industries</p>
             </div>
-        </article>
-
-        <section class="cta-section">
-            <h2>Ready to Unlock the Power of Voice Analytics?</h2>
-            <p style="font-size: 1.1rem; color: #4f5d75; max-width: 800px; margin: 0 auto 2rem auto;">
-                Experience the future of customer feedback analysis with AI-powered voice analytics that provides deeper insights and faster response times.
-            </p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="cta-primary">
-                    <i class="fa fa-envelope" style="margin-right: 0.5rem;"></i>
-                    Get Started Today
-                </a>
-                <a href="about.html#our-work" class="cta-secondary">
-                    <i class="fa fa-arrow-left" style="margin-right: 0.5rem;"></i>
-                    View All Projects
-                </a>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Call Centers</h3>
+                    <p>Customer service quality monitoring, agent performance analysis, and call center optimization with voice analytics</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Call quality monitoring</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Agent performance analysis</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Customer satisfaction tracking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Retail & E-commerce</h3>
+                    <p>Customer feedback analysis, product reviews, and voice-based customer experience optimization</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Voice feedback analysis</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Product review insights</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Customer experience optimization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Patient feedback analysis, medical consultations, and healthcare quality improvement with voice insights</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Patient feedback analysis</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Medical consultation insights</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Healthcare quality improvement</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Student feedback analysis, lecture quality assessment, and educational content optimization</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Student feedback analysis</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Lecture quality assessment</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Educational content optimization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Market Research</h3>
+                    <p>Voice-based surveys, focus group analysis, and market sentiment analysis for research insights</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Voice-based surveys</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Focus group analysis</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Market sentiment analysis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Media & Entertainment</h3>
+                    <p>Content analysis, audience feedback, and voice-based content optimization for media companies</p>
+                    <div class="use-case-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Content analysis</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Audience feedback</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Content optimization</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <footer class="site-footer" style="background:#fffbe6;color:#f9a825;padding:1.5rem 0;text-align:center;margin-top:2.5rem;">
-        <div class="footer-content">
-            <span>&copy; 2024 NovaMind AI. All rights reserved.</span>
+    <!-- Technical Specifications -->
+    <section id="specifications" class="specifications-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Technical Stack</span>
+                <h2>Advanced Voice Processing Technologies</h2>
+                <p>Built with cutting-edge voice recognition and AI technologies for reliable, scalable voice analytics</p>
+            </div>
+            <div class="specs-grid">
+                <div class="spec-category">
+                    <h3><i class="fas fa-microphone"></i> Speech Recognition</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">Google Speech-to-Text</span>
+                        <span class="spec-tag">Amazon Transcribe</span>
+                        <span class="spec-tag">Microsoft Azure Speech</span>
+                        <span class="spec-tag">OpenAI Whisper</span>
+                        <span class="spec-tag">DeepSpeech</span>
+                        <span class="spec-tag">Wav2Vec</span>
+                        <span class="spec-tag">Custom Models</span>
+                        <span class="spec-tag">Multi-language</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-brain"></i> Natural Language Processing</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">BERT</span>
+                        <span class="spec-tag">GPT Models</span>
+                        <span class="spec-tag">SpaCy</span>
+                        <span class="spec-tag">NLTK</span>
+                        <span class="spec-tag">Hugging Face</span>
+                        <span class="spec-tag">Sentiment Analysis</span>
+                        <span class="spec-tag">Entity Recognition</span>
+                        <span class="spec-tag">Topic Modeling</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-chart-line"></i> Voice Analytics</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">Tone Analysis</span>
+                        <span class="spec-tag">Emotion Detection</span>
+                        <span class="spec-tag">Stress Detection</span>
+                        <span class="spec-tag">Voice Patterns</span>
+                        <span class="spec-tag">Pitch Analysis</span>
+                        <span class="spec-tag">Speed Analysis</span>
+                        <span class="spec-tag">Volume Analysis</span>
+                        <span class="spec-tag">Quality Metrics</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud Infrastructure</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">AWS Lambda</span>
+                        <span class="spec-tag">Azure Functions</span>
+                        <span class="spec-tag">Google Cloud</span>
+                        <span class="spec-tag">Kubernetes</span>
+                        <span class="spec-tag">Docker</span>
+                        <span class="spec-tag">Redis</span>
+                        <span class="spec-tag">MongoDB</span>
+                        <span class="spec-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-chart-bar"></i> Analytics & Visualization</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">Real-time Analytics</span>
+                        <span class="spec-tag">Trend Analysis</span>
+                        <span class="spec-tag">Performance Dashboards</span>
+                        <span class="spec-tag">Custom Reports</span>
+                        <span class="spec-tag">Data Visualization</span>
+                        <span class="spec-tag">A/B Testing</span>
+                        <span class="spec-tag">Predictive Analytics</span>
+                        <span class="spec-tag">Insight Generation</span>
+                    </div>
+                </div>
+                <div class="spec-category">
+                    <h3><i class="fas fa-shield-alt"></i> Security & Compliance</h3>
+                    <div class="spec-tags">
+                        <span class="spec-tag">Data Encryption</span>
+                        <span class="spec-tag">GDPR Compliance</span>
+                        <span class="spec-tag">HIPAA Support</span>
+                        <span class="spec-tag">Access Control</span>
+                        <span class="spec-tag">Audit Logging</span>
+                        <span class="spec-tag">Data Privacy</span>
+                        <span class="spec-tag">Secure APIs</span>
+                        <span class="spec-tag">Multi-factor Auth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pricing</span>
+                <h2>Flexible Voice Analytics Plans</h2>
+                <p>Choose the plan that best fits your voice analytics needs and scale as you grow</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-badge">Starter</div>
+                    <div class="pricing-header">
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="amount">299</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Perfect for small teams getting started with voice analytics</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Up to 1,000 hours/month</li>
+                        <li><i class="fas fa-check"></i> Basic speech recognition</li>
+                        <li><i class="fas fa-check"></i> Standard sentiment analysis</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li><i class="fas fa-check"></i> Basic analytics</li>
+                        <li><i class="fas fa-check"></i> 30-day retention</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Start Free Trial</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Professional</div>
+                    <div class="pricing-header">
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="amount">799</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Advanced voice analytics for growing organizations</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Up to 10,000 hours/month</li>
+                        <li><i class="fas fa-check"></i> Advanced speech recognition</li>
+                        <li><i class="fas fa-check"></i> Advanced sentiment analysis</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> 1-year retention</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                        <li><i class="fas fa-check"></i> Custom integrations</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Start Free Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-badge">Enterprise</div>
+                    <div class="pricing-header">
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="amount">1999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Full-scale voice analytics for large organizations</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited hours</li>
+                        <li><i class="fas fa-check"></i> Custom AI models</li>
+                        <li><i class="fas fa-check"></i> Advanced features</li>
+                        <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                        <li><i class="fas fa-check"></i> Unlimited retention</li>
+                        <li><i class="fas fa-check"></i> White-label options</li>
+                        <li><i class="fas fa-check"></i> On-premise deployment</li>
+                        <li><i class="fas fa-check"></i> Custom development</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Unlock Voice Intelligence?</h2>
+                    <p>Join thousands of organizations using AI-powered voice analytics to understand customer sentiment, improve service quality, and make data-driven decisions. Start your free trial today and discover the power of voice intelligence.</p>
+                    <div class="cta-features">
+                        <div class="feature">
+                            <i class="fas fa-rocket"></i>
+                            <span>Get started in minutes</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Enterprise-grade security</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 expert support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-actions">
+                    <a href="#" class="btn-primary">Start Free Trial</a>
+                    <a href="#" class="btn-secondary">Schedule Demo</a>
+                    <a href="#" class="btn-outline">View Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Solutions</h3>
+                    <p>Transforming businesses with cutting-edge AI technology and innovative solutions for the digital age.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="advanced-pdf-processing.html">PDF Processing</a></li>
+                        <li><a href="intelligent-invoice-processing.html">Invoice Processing</a></li>
+                        <li><a href="contract-intelligence-platform.html">Contract Intelligence</a></li>
+                        <li><a href="ai-powered-analytics-platform.html">AI Analytics</a></li>
+                        <li><a href="ai-security-compliance.html">Security & Compliance</a></li>
+                        <li><a href="intelligent-chatbot-platform.html">Chatbot Platform</a></li>
+                        <li><a href="predictive-maintenance-system.html">Predictive Maintenance</a></li>
+                        <li><a href="voice-feedback-analytics-engine.html">Voice Analytics</a></li>
+                        <li><a href="products.html">View All Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="solutions.html">Industry Solutions</a></li>
+                        <li><a href="custom-ai-workflow-automation.html">Workflow Automation</a></li>
+                        <li><a href="document-intelligence-system.html">Document Intelligence</a></li>
+                        <li><a href="rag-knowledge-assistant.html">Knowledge Assistant</a></li>
+                        <li><a href="solutions.html">View All Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="security.html">Security</a>
+                    <a href="compliance.html">Compliance</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 AI Solutions. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
-    
-    <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fa fa-whatsapp"></i>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script src="main.js"></script>
 </body>
 </html> 

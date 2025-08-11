@@ -1,191 +1,350 @@
 // Solutions Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Tab functionality
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach((button, idx) => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
-            
-            // Remove active/focus/aria from all
-            tabButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-selected', 'false');
-                btn.setAttribute('tabindex', '-1');
-            });
-            tabContents.forEach(content => content.classList.remove('active'));
-            
-            // Add active/focus/aria to clicked
-            button.classList.add('active');
-            button.setAttribute('aria-selected', 'true');
-            button.setAttribute('tabindex', '0');
-            document.getElementById(targetTab).classList.add('active');
-            document.getElementById(targetTab).focus();
-        });
-        // Keyboard navigation for tabs
-        button.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-                e.preventDefault();
-                let newIdx = idx + (e.key === 'ArrowRight' ? 1 : -1);
-                if (newIdx < 0) newIdx = tabButtons.length - 1;
-                if (newIdx >= tabButtons.length) newIdx = 0;
-                tabButtons[newIdx].focus();
-            }
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                button.click();
-            }
-        });
-    });
-
-    // Smooth scrolling for anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Add animation on scroll for service cards
+    
+    // Initialize all components
+    initAnimations();
+    initScrollEffects();
+    initIndustryCards();
+    initSmoothScrolling();
+    initStatsCounter();
+    
+    // Animation initialization
+function initAnimations() {
+        // Animate elements on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('animate-in');
             }
         });
     }, observerOptions);
-
-    // Observe service and industry cards
-    const cards = document.querySelectorAll('.service-card, .industry-card');
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    
+    // Observe elements for animation
+        const animateElements = document.querySelectorAll('.solution-category, .industry-card, .section-header');
+    animateElements.forEach(el => {
+        observer.observe(el);
     });
-
-    // Add hover effects for better interactivity
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
+    }
+    
+    // Scroll effects
+    function initScrollEffects() {
+        let ticking = false;
+        
+        function updateScrollEffects() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero-particles');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+            
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffects);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+    }
+    
+    // Industry cards interaction
+    function initIndustryCards() {
+        const industryCards = document.querySelectorAll('.industry-card');
+        
+        industryCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.transform = 'translateY(-8px) scale(1.02)';
         });
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
         });
-    });
-
-    const industryCards = document.querySelectorAll('.industry-card');
-    industryCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.01)';
+            
+            // Add click functionality for future expansion
+            card.addEventListener('click', function() {
+                const industryName = this.querySelector('h3').textContent;
+                console.log(`Industry selected: ${industryName}`);
+                // Future: Add modal or navigation to detailed industry page
+            });
         });
+    }
+    
+    // Smooth scrolling for anchor links
+    function initSmoothScrolling() {
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+        anchorLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80; // Account for fixed header
+                    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    });
-
-    // Add loading animation
-    window.addEventListener('load', function() {
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-            heroContent.style.opacity = '0';
-            heroContent.style.transform = 'translateY(30px)';
+    }
+    
+    // Animated stats counter
+    function initStatsCounter() {
+        const statsElements = document.querySelectorAll('.stat-number');
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const finalValue = target.textContent;
+                    const isPercentage = finalValue.includes('%');
+                    const isTime = finalValue.includes('24/7');
+                    
+                    if (isTime) {
+                        // For time-based stats, just animate the appearance
+                        target.style.opacity = '0';
+                        target.style.transform = 'translateY(20px)';
             
             setTimeout(() => {
-                heroContent.style.transition = 'opacity 1s ease, transform 1s ease';
-                heroContent.style.opacity = '1';
-                heroContent.style.transform = 'translateY(0)';
-            }, 100);
+                            target.style.transition = 'all 0.6s ease-out';
+                            target.style.opacity = '1';
+                            target.style.transform = 'translateY(0)';
+                        }, 200);
+                    } else {
+                        // For numerical stats, animate the counting
+                        const numericValue = parseInt(finalValue.replace(/\D/g, ''));
+                        animateCounter(target, 0, numericValue, isPercentage ? '%' : '+');
+                    }
+                    
+                    statsObserver.unobserve(target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statsElements.forEach(el => statsObserver.observe(el));
+    }
+    
+    // Counter animation function
+    function animateCounter(element, start, end, suffix) {
+        const duration = 2000;
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function for smooth animation
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const currentValue = Math.floor(start + (end - start) * easeOutQuart);
+            
+            element.textContent = currentValue + suffix;
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        }
+        
+        requestAnimationFrame(updateCounter);
+    }
+    
+    // Add loading animation for page elements
+    function addLoadingAnimations() {
+        const elements = document.querySelectorAll('.solution-category, .industry-card');
+        
+        elements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                el.style.transition = 'all 0.6s ease-out';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    }
+    
+    // Initialize loading animations after a short delay
+    setTimeout(addLoadingAnimations, 500);
+    
+    // Add hover effects for buttons
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.02)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Add floating animation to hero visual cards
+    const floatingCards = document.querySelectorAll('.floating-card');
+    floatingCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 2}s`;
+    });
+    
+    // Add scroll-triggered animations for sections
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    const sections = document.querySelectorAll('.solutions-overview, .industries-section, .cta-section');
+    sections.forEach(section => sectionObserver.observe(section));
+    
+    // Add keyboard navigation support
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+            document.body.classList.add('keyboard-navigation');
         }
     });
+    
+    document.addEventListener('mousedown', function() {
+        document.body.classList.remove('keyboard-navigation');
+    });
+    
+    // Add performance optimization
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
-    // Add search functionality (optional enhancement)
-    const searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.placeholder = 'Search services...';
-    searchInput.className = 'search-input';
-    searchInput.style.cssText = `
-        width: 100%;
-        max-width: 400px;
-        padding: 12px 20px;
-        margin: 20px auto;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 25px;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        font-size: 1rem;
-        backdrop-filter: blur(10px);
-        display: block;
-    `;
-
-    // Insert search input after tab navigation
-    const tabNavigation = document.querySelector('.tab-navigation');
-    if (tabNavigation) {
-        tabNavigation.parentNode.insertBefore(searchInput, tabNavigation.nextSibling);
-    }
-
-    // Search functionality
-    searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        const serviceCards = document.querySelectorAll('.service-card');
+    // Optimize scroll events
+    const optimizedScrollHandler = debounce(() => {
+        // Handle scroll-based effects here
+    }, 16);
+    
+    window.addEventListener('scroll', optimizedScrollHandler);
+    
+    // Add accessibility improvements
+    function enhanceAccessibility() {
+        // Add ARIA labels to interactive elements
         const industryCards = document.querySelectorAll('.industry-card');
-
-        // Search in service cards
-        serviceCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const description = card.querySelector('p').textContent.toLowerCase();
-            const industries = card.querySelector('.service-details p:first-of-type').textContent.toLowerCase();
-            const useCases = card.querySelector('.service-details p:last-of-type').textContent.toLowerCase();
-
-            if (title.includes(searchTerm) || description.includes(searchTerm) || 
-                industries.includes(searchTerm) || useCases.includes(searchTerm)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+        industryCards.forEach((card, index) => {
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Learn more about ${card.querySelector('h3').textContent} AI solutions`);
+            
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
         });
-
-        // Search in industry cards
-        industryCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const solutions = Array.from(card.querySelectorAll('.solution-list li'))
-                .map(li => li.textContent.toLowerCase()).join(' ');
-
-            if (title.includes(searchTerm) || solutions.includes(searchTerm)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+        
+        // Add focus indicators
+        const focusableElements = document.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+        focusableElements.forEach(el => {
+            el.addEventListener('focus', function() {
+                this.style.outline = '3px solid #ffe082';
+                this.style.outlineOffset = '2px';
+            });
+            
+            el.addEventListener('blur', function() {
+                this.style.outline = '';
+                this.style.outlineOffset = '';
+            });
         });
+    }
+    
+    enhanceAccessibility();
+    
+    // Add error handling
+    window.addEventListener('error', function(e) {
+        console.error('JavaScript error:', e.error);
     });
+    
+    // Performance monitoring
+    if ('performance' in window) {
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+            }, 0);
+        });
+    }
+});
 
-    // Add placeholder styling
-    searchInput.addEventListener('focus', function() {
-        this.style.borderColor = 'rgba(255, 255, 255, 0.6)';
-        this.style.background = 'rgba(255, 255, 255, 0.15)';
-    });
+// Add CSS for animations
+const style = document.createElement('style');
+style.textContent = `
+    .animate-in {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .section-visible {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .keyboard-navigation *:focus {
+        outline: 3px solid #ffe082 !important;
+        outline-offset: 2px !important;
+    }
+    
+    .industry-card {
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .industry-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-primary, .btn-secondary {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .btn-primary:hover, .btn-secondary:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+`;
 
-    searchInput.addEventListener('blur', function() {
-        this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-        this.style.background = 'rgba(255, 255, 255, 0.1)';
-    });
-}); 
+document.head.appendChild(style); 

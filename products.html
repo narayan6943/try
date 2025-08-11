@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +21,12 @@
     <!-- Google Fonts: Poppins & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="hero_fix.css">
     <link rel="stylesheet" href="products.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Structured Data: Product -->
     <script type="application/ld+json">
     {
@@ -44,12 +45,12 @@
       }
     }
   </script>
-    <!-- Flickity CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#products" class="skip-link" tabindex="0">Skip to main content</a>
+
+    <!-- Navigation -->
     <header class="clean-navbar">
         <div class="navbar-inner">
             <div class="navbar-brand">
@@ -77,234 +78,1363 @@
         </div>
     </header>
 
-    <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-blobs">
-                <div class="blob blob-1"></div>
-                <div class="blob blob-2"></div>
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+            <div class="hero-gradient"></div>
             </div>
-            <div class="hero-container">
+        <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Our AI Products & Services</h1>
-                    <p class="hero-subtitle">Discover our comprehensive suite of intelligent AI solutions designed to transform your business operations, enhance efficiency, and drive innovation across every department.</p>
-                    <div class="hero-actions">
-                        <a href="#products-overview" class="button button-primary">Explore Our Products</a>
-                        <a href="#contact" class="button button-secondary">Request a Demo</a>
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>Enterprise AI Products</span>
+                </div>
+                <h1 class="hero-title">
+                    Transform Your Business with 
+                    <span class="gradient-text">AI-Powered Products</span>
+                </h1>
+                <p class="hero-description">
+                    Discover our comprehensive suite of intelligent AI products designed to automate processes, enhance decision-making, and drive innovation across your organization.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">99.5%</span>
+                        <span class="stat-label">Accuracy Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Availability</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Clients</span>
                     </div>
                 </div>
-                <div class="hero-image-placeholder">
-                    <i data-feather="image"></i>
-                    <p>AI Products Showcase</p>
+                    <div class="hero-actions">
+                    <a href="#products" class="btn-primary">
+                        <i class="fas fa-arrow-down"></i>
+                        Explore Products
+                    </a>
+                    <a href="#demo" class="btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </a>
+                    </div>
+                </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Document AI</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-comments"></i>
+                    <span>Chatbots</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </div>
                 </div>
             </div>
         </section>
 
         <!-- Products Overview -->
-        <section id="products-overview" class="page-section">
-            <h2 class="section-title">Comprehensive AI Solutions for Every Business Need</h2>
-            <p class="section-intro">From intelligent document processing to predictive analytics, our AI products are engineered to deliver measurable results and drive sustainable growth for organizations of all sizes.</p>
+    <section id="products" class="products-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our AI Services</span>
+                <h2>50+ Enterprise AI Services for Business Transformation</h2>
+                <p>Comprehensive AI solutions designed to automate, optimize, and revolutionize every aspect of your business operations.</p>
+            </div>
             
-            <div class="products-grid">
-                <!-- Intelligent Document Processing -->
-                <div class="product-card featured">
-                    <div class="product-badge">Most Popular</div>
-                    <div class="product-icon">
-                        <i class="fa fa-file-text-o"></i>
+            <!-- AI Services Categories -->
+            <div class="services-categories">
+                <!-- Document & Data Processing -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3 class="product-title">Intelligent Document Processing (IDP)</h3>
-                    <p class="product-description">Automate data extraction from invoices, contracts, forms, and documents with 99.5% accuracy using advanced OCR and AI.</p>
-                    <div class="product-features">
-                        <ul>
-                            <li>Multi-format document support</li>
-                            <li>Real-time data extraction</li>
-                            <li>Custom field mapping</li>
-                            <li>Integration with existing systems</li>
-                            <li>Compliance & audit trails</li>
-                        </ul>
+                        <h3>Document & Data Processing</h3>
+                        <p>Enterprise-grade intelligent document processing and data extraction solutions with 99.9% accuracy</p>
                     </div>
-                    <div class="product-pricing">
-                        <div class="price">Starting at $299/month</div>
-                        <div class="price-note">Per 1,000 documents processed</div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <h4>Advanced PDF Processing</h4>
+                            <p>Multi-page PDF analysis with OCR, table extraction, and intelligent data mapping with 99.9% accuracy</p>
                     </div>
-                    <div class="product-actions">
-                        <a href="#idp-details" class="button button-primary">Learn More</a>
-                        <a href="#contact" class="button button-secondary">Get Started</a>
+                        <div class="service-item">
+                            <i class="fas fa-receipt"></i>
+                            <h4>Intelligent Invoice Processing</h4>
+                            <p>End-to-end invoice automation with vendor matching, GL coding, and automated approval workflows</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-file-contract"></i>
+                            <h4>Contract Intelligence Platform</h4>
+                            <p>AI-powered contract analysis with risk scoring, clause extraction, and compliance monitoring</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-id-card"></i>
+                            <h4>Biometric ID Verification</h4>
+                            <p>Multi-factor identity verification with liveness detection and document authenticity validation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Smart Form Processing</h4>
+                            <p>Universal form recognition with dynamic field detection and real-time validation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Financial Document Analysis</h4>
+                            <p>Bank statements, tax documents, and financial reports processing with regulatory compliance</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-medical-kit"></i>
+                            <h4>Medical Record Processing</h4>
+                            <p>HIPAA-compliant medical document processing with patient data extraction and coding</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-gavel"></i>
+                            <h4>Legal Document Intelligence</h4>
+                            <p>Case law analysis, legal research automation, and precedent identification</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-building"></i>
+                            <h4>Real Estate Document Processing</h4>
+                            <p>Property documents, lease agreements, and title deed analysis with compliance checking</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Academic Document Processing</h4>
+                            <p>Transcript analysis, research paper processing, and academic credential verification</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h4>Logistics Document Processing</h4>
+                            <p>Shipping manifests, customs documents, and delivery confirmation processing</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Compliance Document Monitoring</h4>
+                            <p>Regulatory document tracking, audit trail generation, and compliance reporting automation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-language"></i>
+                            <h4>Multi-Language Document Processing</h4>
+                            <p>Support for 50+ languages with cultural context understanding and translation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Intelligent Data Extraction</h4>
+                            <p>Context-aware data extraction with entity recognition and relationship mapping</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Real-Time Document Processing</h4>
+                            <p>Streaming document processing with instant validation and immediate feedback</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-database"></i>
+                            <h4>Document Database Integration</h4>
+                            <p>Seamless integration with enterprise databases, CRMs, and ERP systems</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Document Analytics & Insights</h4>
+                            <p>Advanced analytics on document processing patterns, efficiency metrics, and optimization recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile Document Capture</h4>
+                            <p>Mobile app for document scanning with instant processing and cloud synchronization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud-Native Document Processing</h4>
+                            <p>Scalable cloud infrastructure with auto-scaling and global availability</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-lock"></i>
+                            <h4>Enterprise Security & Encryption</h4>
+                            <p>End-to-end encryption, secure data transmission, and SOC 2 Type II compliance</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Document Workflows</h4>
+                            <p>Tailored document processing workflows with custom validation rules and business logic</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- AI Chatbots & Virtual Agents -->
-                <div class="product-card">
-                    <div class="product-icon">
-                        <i class="fa fa-comments-o"></i>
+                <!-- Customer Experience & Support -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-headset"></i>
                     </div>
-                    <h3 class="product-title">AI Chatbots & Virtual Agents</h3>
-                    <p class="product-description">Enhance customer support with 24/7 intelligent conversational AI that understands context and provides instant assistance.</p>
-                    <div class="product-features">
-                        <ul>
-                            <li>Natural language processing</li>
-                            <li>Multi-language support</li>
-                            <li>Seamless human handoff</li>
-                            <li>Analytics & insights</li>
-                            <li>Custom training & branding</li>
-                        </ul>
+                        <h3>Customer Experience & Support</h3>
+                        <p>Next-generation AI-powered customer experience and omnichannel support solutions</p>
                     </div>
-                    <div class="product-pricing">
-                        <div class="price">Starting at $199/month</div>
-                        <div class="price-note">Per 1,000 conversations</div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-comments"></i>
+                            <h4>Conversational AI Platform</h4>
+                            <p>Advanced chatbots with context awareness, emotion detection, and seamless human handoff</p>
                     </div>
-                    <div class="product-actions">
-                        <a href="#chatbot-details" class="button button-primary">Learn More</a>
-                        <a href="#contact" class="button button-secondary">Get Started</a>
+                        <div class="service-item">
+                            <i class="fas fa-phone"></i>
+                            <h4>Intelligent Voice Assistants</h4>
+                            <p>Natural language voice processing with accent recognition and multi-language support</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Smart Email Management</h4>
+                            <p>AI-powered email triage, intelligent routing, and automated response generation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-smile"></i>
+                            <h4>Advanced Sentiment Analytics</h4>
+                            <p>Real-time emotion detection, intent analysis, and predictive customer behavior</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-user-tie"></i>
+                            <h4>Customer Journey Intelligence</h4>
+                            <p>End-to-end journey mapping with predictive analytics and personalization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Omnichannel Support Platform</h4>
+                            <p>Unified customer support across web, mobile, social media, and messaging platforms</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-video"></i>
+                            <h4>Video Customer Support</h4>
+                            <p>AI-powered video call analysis with real-time assistance and screen sharing</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Predictive Customer Service</h4>
+                            <p>Proactive issue detection and resolution before customers reach out</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Customer Experience Analytics</h4>
+                            <p>Comprehensive CX metrics, NPS tracking, and customer satisfaction insights</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Personalized Customer Engagement</h4>
+                            <p>AI-driven personalization with behavioral analysis and targeted recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Customer Data Protection</h4>
+                            <p>GDPR-compliant customer data handling with privacy-first AI processing</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>24/7 Intelligent Support</h4>
+                            <p>Round-the-clock automated support with human escalation capabilities</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-language"></i>
+                            <h4>Multilingual Customer Support</h4>
+                            <p>Support for 100+ languages with cultural context and local expertise</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-robot"></i>
+                            <h4>Self-Service AI Solutions</h4>
+                            <p>Intelligent knowledge bases, FAQ automation, and self-resolution tools</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-headset"></i>
+                            <h4>Agent Performance Optimization</h4>
+                            <p>AI-powered agent training, performance monitoring, and quality assurance</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Real-Time Customer Insights</h4>
+                            <p>Live customer behavior tracking, instant feedback analysis, and trend detection</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-gift"></i>
+                            <h4>Loyalty Program Intelligence</h4>
+                            <p>AI-driven loyalty program optimization with personalized rewards and retention strategies</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Crisis Management Support</h4>
+                            <p>Automated crisis response, escalation protocols, and reputation management</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Customer Segmentation & Targeting</h4>
+                            <p>Advanced customer segmentation with behavioral clustering and predictive targeting</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud-Native CX Platform</h4>
+                            <p>Scalable cloud infrastructure with global availability and auto-scaling capabilities</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom CX Workflows</h4>
+                            <p>Tailored customer experience workflows with industry-specific best practices</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Predictive Analytics -->
-                <div class="product-card">
-                    <div class="product-icon">
-                        <i class="fa fa-line-chart"></i>
+                <!-- Analytics & Business Intelligence -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="product-title">Predictive Analytics & Forecasting</h3>
-                    <p class="product-description">Leverage AI to predict future trends, optimize resource allocation, and make data-driven decisions with confidence.</p>
-                    <div class="product-features">
-                        <ul>
-                            <li>Advanced ML algorithms</li>
-                            <li>Real-time predictions</li>
-                            <li>Custom model training</li>
-                            <li>Interactive dashboards</li>
-                            <li>API integration</li>
-                        </ul>
+                        <h3>Analytics & Business Intelligence</h3>
+                        <p>Enterprise-grade AI analytics and business intelligence for strategic decision-making</p>
                     </div>
-                    <div class="product-pricing">
-                        <div class="price">Starting at $399/month</div>
-                        <div class="price-note">Per 10,000 predictions</div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-crystal-ball"></i>
+                            <h4>Advanced Predictive Analytics</h4>
+                            <p>ML-powered forecasting with 95% accuracy for trends, behavior, and outcomes</p>
                     </div>
-                    <div class="product-actions">
-                        <a href="#analytics-details" class="button button-primary">Learn More</a>
-                        <a href="#contact" class="button button-secondary">Get Started</a>
+                        <div class="service-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Real-Time BI Dashboards</h4>
+                            <p>Interactive dashboards with AI insights, automated alerts, and drill-down capabilities</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-search-dollar"></i>
+                            <h4>Market Intelligence Platform</h4>
+                            <p>Comprehensive market analysis with competitor tracking and trend prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Customer Intelligence Analytics</h4>
+                            <p>360-degree customer view with behavioral analysis and lifetime value prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Performance Optimization Analytics</h4>
+                            <p>Comprehensive KPI tracking with AI-driven optimization recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Prescriptive Analytics</h4>
+                            <p>AI-powered recommendations for optimal business decisions and actions</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-database"></i>
+                            <h4>Big Data Analytics</h4>
+                            <p>Petabyte-scale data processing with real-time streaming analytics</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Time Series Forecasting</h4>
+                            <p>Advanced forecasting models for sales, demand, and resource planning</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>Anomaly Detection</h4>
+                            <p>Real-time anomaly detection for fraud, system issues, and business irregularities</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Network Analytics</h4>
+                            <p>Social network analysis, influence mapping, and relationship intelligence</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-area"></i>
+                            <h4>Geospatial Analytics</h4>
+                            <p>Location-based analytics with mapping, clustering, and spatial intelligence</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-text-height"></i>
+                            <h4>Text Analytics & NLP</h4>
+                            <p>Sentiment analysis, topic modeling, and text mining for unstructured data</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-scatter"></i>
+                            <h4>Correlation Analysis</h4>
+                            <p>Advanced correlation and causation analysis for complex business relationships</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-robot"></i>
+                            <h4>Automated Machine Learning</h4>
+                            <p>AutoML platform for automated model selection, training, and deployment</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Data Governance & Quality</h4>
+                            <p>Data quality monitoring, governance frameworks, and compliance analytics</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Real-Time Streaming Analytics</h4>
+                            <p>Live data processing with instant insights and immediate action triggers</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-network"></i>
+                            <h4>Graph Analytics</h4>
+                            <p>Graph database analytics for complex relationship analysis and pattern recognition</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud-Native Analytics</h4>
+                            <p>Scalable cloud analytics with serverless processing and global availability</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Analytics Solutions</h4>
+                            <p>Tailored analytics solutions with industry-specific models and algorithms</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-gantt"></i>
+                            <h4>Business Process Analytics</h4>
+                            <p>Process mining, optimization, and performance analytics for operational excellence</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Custom AI Development -->
-                <div class="product-card">
-                    <div class="product-icon">
-                        <i class="fa fa-cogs"></i>
+                <!-- Marketing & Sales -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3 class="product-title">Custom AI Development</h3>
-                    <p class="product-description">Tailored AI solutions designed specifically for your unique business requirements and industry challenges.</p>
-                    <div class="product-features">
-                        <ul>
-                            <li>Custom model development</li>
-                            <li>Industry-specific solutions</li>
-                            <li>Full-stack integration</li>
-                            <li>Ongoing maintenance</li>
-                            <li>Dedicated support team</li>
-                        </ul>
+                        <h3>Marketing & Sales</h3>
+                        <p>Next-generation AI-powered marketing automation and intelligent sales optimization</p>
                     </div>
-                    <div class="product-pricing">
-                        <div class="price">Custom Pricing</div>
-                        <div class="price-note">Based on project scope</div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-bullseye"></i>
+                            <h4>Intelligent Lead Scoring</h4>
+                            <p>AI-powered lead qualification with behavioral analysis and conversion prediction</p>
                     </div>
-                    <div class="product-actions">
-                        <a href="#custom-details" class="button button-primary">Learn More</a>
-                        <a href="#contact" class="button button-secondary">Get Quote</a>
+                        <div class="service-item">
+                            <i class="fas fa-ad"></i>
+                            <h4>Predictive Ad Campaign Optimization</h4>
+                            <p>Real-time ad performance optimization with predictive budget allocation</p>
+                    </div>
+                        <div class="service-item">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <h4>Smart Email Marketing Automation</h4>
+                            <p>AI-driven email personalization with dynamic content and optimal send times</p>
+                </div>
+                        <div class="service-item">
+                            <i class="fas fa-search"></i>
+                            <h4>Advanced SEO & Content Intelligence</h4>
+                            <p>AI-powered SEO analysis with content optimization and keyword strategy</p>
+            </div>
+                        <div class="service-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h4>E-commerce AI Personalization</h4>
+                            <p>Real-time product recommendations with dynamic pricing and inventory optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Predictive Sales Analytics</h4>
+                            <p>Sales forecasting with pipeline analysis and revenue prediction models</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Customer Segmentation & Targeting</h4>
+                            <p>Advanced customer segmentation with behavioral clustering and predictive targeting</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-phone"></i>
+                            <h4>Intelligent Sales Automation</h4>
+                            <p>AI-powered sales process automation with lead nurturing and follow-up optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-bullhorn"></i>
+                            <h4>Multi-Channel Marketing Orchestration</h4>
+                            <p>Unified marketing campaigns across all channels with real-time optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Marketing Attribution & ROI Analytics</h4>
+                            <p>Advanced attribution modeling with cross-channel ROI analysis and optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Content Intelligence Platform</h4>
+                            <p>AI-powered content creation, optimization, and performance prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile Marketing Automation</h4>
+                            <p>Location-based mobile marketing with push notification optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-video"></i>
+                            <h4>Video Marketing Intelligence</h4>
+                            <p>Video content analysis, engagement tracking, and optimization recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-share-alt"></i>
+                            <h4>Social Media Marketing AI</h4>
+                            <p>Social media listening, sentiment analysis, and automated engagement optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-gift"></i>
+                            <h4>Loyalty Program Intelligence</h4>
+                            <p>AI-driven loyalty program optimization with personalized rewards and retention strategies</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Market Research & Competitive Intelligence</h4>
+                            <p>Automated market research with competitor analysis and trend prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-robot"></i>
+                            <h4>Conversational Marketing AI</h4>
+                            <p>Chatbot-driven lead generation with intelligent conversation flows and qualification</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>Customer Journey Analytics</h4>
+                            <p>End-to-end customer journey tracking with touchpoint optimization and conversion analysis</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Marketing Technology Stack Integration</h4>
+                            <p>Seamless integration with CRM, marketing automation, and analytics platforms</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Marketing AI Solutions</h4>
+                            <p>Tailored marketing AI solutions with industry-specific algorithms and workflows</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operations & Automation -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Operations & Automation</h3>
+                        <p>Enterprise-grade intelligent automation and operational excellence solutions</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-robot"></i>
+                            <h4>Intelligent Process Automation (IPA)</h4>
+                            <p>Advanced RPA with cognitive capabilities for complex business processes</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-truck"></i>
+                            <h4>AI-Powered Supply Chain Optimization</h4>
+                            <p>End-to-end supply chain management with predictive analytics and risk mitigation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-tools"></i>
+                            <h4>Predictive Maintenance Intelligence</h4>
+                            <p>IoT-based equipment monitoring with failure prediction and maintenance optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-warehouse"></i>
+                            <h4>Smart Inventory Management</h4>
+                            <p>Real-time inventory tracking with demand forecasting and automated reordering</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-route"></i>
+                            <h4>Intelligent Route Optimization</h4>
+                            <p>Dynamic route planning with traffic analysis and real-time optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Operational Analytics Platform</h4>
+                            <p>Comprehensive operational insights with KPI tracking and performance optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Workflow Automation Engine</h4>
+                            <p>Intelligent workflow orchestration with conditional logic and exception handling</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>Quality Control Automation</h4>
+                            <p>Computer vision-based quality inspection with defect detection and classification</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Resource Optimization AI</h4>
+                            <p>AI-driven resource allocation with capacity planning and utilization optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>Production Scheduling Intelligence</h4>
+                            <p>Dynamic production scheduling with constraint optimization and real-time adjustments</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Compliance Automation</h4>
+                            <p>Automated regulatory compliance monitoring with audit trail generation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>IoT Operations Management</h4>
+                            <p>Connected device management with sensor data analytics and remote monitoring</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Performance Analytics & Optimization</h4>
+                            <p>Real-time performance monitoring with predictive analytics and optimization recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Continuous Process Improvement</h4>
+                            <p>AI-driven process optimization with automated improvement recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Workforce Optimization</h4>
+                            <p>Employee productivity analysis with skill gap identification and training recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-network"></i>
+                            <h4>Process Mining & Discovery</h4>
+                            <p>Automated process discovery with bottleneck identification and optimization opportunities</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud Operations Automation</h4>
+                            <p>Cloud infrastructure automation with auto-scaling and resource optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Risk Management Automation</h4>
+                            <p>Automated risk assessment with early warning systems and mitigation strategies</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Automation Solutions</h4>
+                            <p>Tailored automation solutions with industry-specific workflows and integrations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HR & Recruitment -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-users-cog"></i>
+                            </div>
+                        <h3>HR & Recruitment</h3>
+                        <p>AI solutions for human resources and talent acquisition</p>
+                        </div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>Resume Screening</h4>
+                            <p>Automated resume parsing and candidate screening</p>
+                            </div>
+                        <div class="service-item">
+                            <i class="fas fa-video"></i>
+                            <h4>Video Interview Analysis</h4>
+                            <p>AI-powered video interview assessment and candidate evaluation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Employee Performance Analytics</h4>
+                            <p>Performance tracking and predictive analytics for workforce management</p>
+                            </div>
+                        <div class="service-item">
+                            <i class="fas fa-heart"></i>
+                            <h4>Employee Engagement</h4>
+                            <p>AI-driven employee satisfaction monitoring and engagement optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Learning & Development</h4>
+                            <p>Personalized training recommendations and skill gap analysis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Finance & Risk Management -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Finance & Risk Management</h3>
+                        <p>Enterprise-grade AI-powered financial intelligence and comprehensive risk management solutions</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Advanced Fraud Detection & Prevention</h4>
+                            <p>Real-time fraud detection with behavioral analysis and predictive threat modeling</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Intelligent Credit Risk Assessment</h4>
+                            <p>AI-powered credit scoring with alternative data analysis and dynamic risk modeling</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-calculator"></i>
+                            <h4>Predictive Financial Forecasting</h4>
+                            <p>Advanced financial modeling with scenario analysis and cash flow optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>Regulatory Compliance Automation</h4>
+                            <p>Automated compliance monitoring with real-time regulatory updates and audit reporting</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-coins"></i>
+                            <h4>AI-Powered Investment Intelligence</h4>
+                            <p>Portfolio optimization with market sentiment analysis and risk-adjusted returns</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Market Risk Analytics</h4>
+                            <p>Comprehensive market risk assessment with VaR modeling and stress testing</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Operational Risk Management</h4>
+                            <p>End-to-end operational risk monitoring with incident prediction and mitigation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Cybersecurity Risk Intelligence</h4>
+                            <p>AI-driven cybersecurity threat detection with vulnerability assessment and response automation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Liquidity Risk Analytics</h4>
+                            <p>Real-time liquidity monitoring with cash flow forecasting and funding optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>Transaction Monitoring & AML</h4>
+                            <p>Advanced transaction monitoring with anti-money laundering detection and suspicious activity reporting</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Credit Portfolio Management</h4>
+                            <p>Intelligent portfolio optimization with concentration risk analysis and diversification strategies</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Financial Process Automation</h4>
+                            <p>End-to-end financial process automation with intelligent document processing and reconciliation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-scatter"></i>
+                            <h4>Stress Testing & Scenario Analysis</h4>
+                            <p>Comprehensive stress testing with multiple scenario modeling and impact assessment</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Counterparty Risk Assessment</h4>
+                            <p>Advanced counterparty risk analysis with creditworthiness evaluation and exposure monitoring</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-area"></i>
+                            <h4>Real-Time Risk Dashboard</h4>
+                            <p>Live risk monitoring dashboard with alert systems and executive reporting</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>AI-Powered Financial Planning</h4>
+                            <p>Intelligent financial planning with personalized recommendations and goal optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Regulatory Reporting Automation</h4>
+                            <p>Automated regulatory reporting with data validation and compliance verification</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Financial Technology Integration</h4>
+                            <p>Seamless integration with core banking systems, trading platforms, and financial applications</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Financial AI Solutions</h4>
+                            <p>Tailored financial solutions with industry-specific risk models and compliance frameworks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare & Life Sciences -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Healthcare & Life Sciences</h3>
+                        <p>Next-generation AI-powered healthcare solutions and life sciences innovation</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-stethoscope"></i>
+                            <h4>Advanced Medical Image Analysis</h4>
+                            <p>AI-powered diagnostic imaging with 99.5% accuracy for radiology and pathology</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-pills"></i>
+                            <h4>Intelligent Drug Discovery Platform</h4>
+                            <p>AI-driven drug discovery with molecular modeling and clinical trial optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-user-md"></i>
+                            <h4>Clinical Decision Support Intelligence</h4>
+                            <p>Real-time clinical decision support with evidence-based treatment recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-notes-medical"></i>
+                            <h4>Medical Records Intelligence</h4>
+                            <p>HIPAA-compliant medical record processing with patient data analytics</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-dna"></i>
+                            <h4>Genomic Analysis & Precision Medicine</h4>
+                            <p>AI-powered genomic sequencing with personalized treatment recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Predictive Healthcare Analytics</h4>
+                            <p>Population health analytics with disease prediction and preventive care optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-heart"></i>
+                            <h4>Cardiovascular Health Monitoring</h4>
+                            <p>Real-time cardiac monitoring with arrhythmia detection and risk assessment</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>Ophthalmology AI Diagnostics</h4>
+                            <p>Retinal image analysis with diabetic retinopathy and glaucoma detection</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-lungs"></i>
+                            <h4>Respiratory Disease Analysis</h4>
+                            <p>Lung function analysis with COPD and asthma monitoring and prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Neurological Disorder Detection</h4>
+                            <p>Brain imaging analysis with Alzheimer's and Parkinson's disease prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-baby"></i>
+                            <h4>Maternal & Fetal Health Monitoring</h4>
+                            <p>Pregnancy monitoring with fetal development tracking and risk assessment</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <h4>Infectious Disease Prediction</h4>
+                            <p>Epidemiological modeling with outbreak prediction and containment strategies</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-pills"></i>
+                            <h4>Pharmaceutical Manufacturing AI</h4>
+                            <p>Drug manufacturing optimization with quality control and regulatory compliance</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-flask"></i>
+                            <h4>Laboratory Automation & Analysis</h4>
+                            <p>Automated lab testing with result interpretation and quality assurance</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Clinical Trial Optimization</h4>
+                            <p>Patient recruitment optimization with trial design and outcome prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Healthcare Cybersecurity</h4>
+                            <p>Medical device security with patient data protection and threat detection</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Telemedicine & Remote Monitoring</h4>
+                            <p>Remote patient monitoring with virtual consultations and health tracking</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Healthcare Analytics & Reporting</h4>
+                            <p>Comprehensive healthcare analytics with performance metrics and outcome analysis</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Healthcare AI Solutions</h4>
+                            <p>Tailored healthcare solutions with specialty-specific algorithms and compliance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal & Compliance -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>Legal & Compliance</h3>
+                        <p>Next-generation AI-powered legal intelligence and regulatory compliance solutions</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-search"></i>
+                            <h4>AI-Powered Legal Research</h4>
+                            <p>Automated case law research, statute analysis, and precedent identification with natural language understanding</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-file-contract"></i>
+                            <h4>Contract Review & Intelligence</h4>
+                            <p>AI-driven contract analysis, risk scoring, clause extraction, and compliance verification</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>Regulatory Compliance Automation</h4>
+                            <p>Automated monitoring of regulatory changes, compliance checks, and audit trail generation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-gavel"></i>
+                            <h4>Litigation Support AI</h4>
+                            <p>Evidence analysis, discovery automation, and litigation risk prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Data Privacy & Protection</h4>
+                            <p>GDPR, CCPA, and HIPAA compliance automation with real-time privacy risk monitoring</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-language"></i>
+                            <h4>Multi-Language Legal Processing</h4>
+                            <p>Legal document translation, cross-border compliance, and multilingual contract review</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-robot"></i>
+                            <h4>Legal Chatbots & Virtual Assistants</h4>
+                            <p>24/7 legal support, document drafting, and client intake automation</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Risk & Compliance Analytics</h4>
+                            <p>Real-time compliance dashboards, risk scoring, and regulatory reporting</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Whistleblower & Incident Management</h4>
+                            <p>Automated incident intake, investigation workflow, and regulatory reporting</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Legal AI Solutions</h4>
+                            <p>Tailored legal automation and compliance solutions for industry-specific needs</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Legal Technology Integration</h4>
+                            <p>Seamless integration with DMS, e-discovery, and compliance management platforms</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-file-alt"></i>
+                            <h4>Document Automation & E-signature</h4>
+                            <p>Automated legal document generation, workflow management, and secure e-signature</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>Regulatory Change Monitoring</h4>
+                            <p>Continuous tracking of global regulatory updates and impact analysis</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Compliance Training AI</h4>
+                            <p>Personalized compliance training modules with progress tracking and knowledge assessment</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Anti-Money Laundering (AML) AI</h4>
+                            <p>Automated AML checks, suspicious activity detection, and regulatory reporting</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Third-Party Risk Management</h4>
+                            <p>Vendor due diligence, risk scoring, and ongoing compliance monitoring</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Continuous Compliance Monitoring</h4>
+                            <p>Real-time compliance status tracking and automated remediation workflows</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Legal Analytics & Insights</h4>
+                            <p>Predictive analytics for litigation outcomes, contract risks, and compliance trends</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile Legal Solutions</h4>
+                            <p>Mobile access to legal documents, compliance dashboards, and e-signature workflows</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Regulatory AI Solutions</h4>
+                            <p>Industry-specific regulatory automation and compliance frameworks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manufacturing & IoT -->
+                <div class="service-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Manufacturing & IoT</h3>
+                        <p>Next-generation AI-powered manufacturing intelligence and industrial IoT solutions</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>AI-Driven Quality Control</h4>
+                            <p>Computer vision-based defect detection, real-time inspection, and predictive quality analytics</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Predictive Maintenance for IoT</h4>
+                            <p>IoT sensor data analysis for early failure detection, maintenance scheduling, and downtime reduction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Production Optimization AI</h4>
+                            <p>AI-powered production planning, process optimization, and yield improvement</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <h4>IoT Sensor Data Analytics</h4>
+                            <p>Real-time sensor data monitoring, anomaly detection, and predictive analytics for industrial assets</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-robot"></i>
+                            <h4>Industrial Automation & Robotics</h4>
+                            <p>AI-driven robotics control, process automation, and collaborative robot (cobot) optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Smart Factory & Digital Twin</h4>
+                            <p>Digital twin modeling, real-time factory simulation, and process optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-truck"></i>
+                            <h4>Supply Chain Visibility & Optimization</h4>
+                            <p>End-to-end supply chain monitoring, demand forecasting, and logistics optimization</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Industrial Cybersecurity AI</h4>
+                            <p>Threat detection, vulnerability assessment, and real-time security monitoring for OT/IoT networks</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Manufacturing Analytics & Reporting</h4>
+                            <p>Comprehensive analytics dashboards, KPI tracking, and operational insights</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Edge & Cloud IoT Integration</h4>
+                            <p>Seamless integration of edge devices, cloud platforms, and enterprise systems</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Continuous Process Improvement</h4>
+                            <p>AI-driven process mining, bottleneck identification, and automated improvement recommendations</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Workforce Safety & Monitoring</h4>
+                            <p>Real-time safety monitoring, incident detection, and compliance analytics for industrial environments</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-flask"></i>
+                            <h4>R&D and Innovation Analytics</h4>
+                            <p>AI-powered research analytics, patent analysis, and innovation trend prediction</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile & Remote Operations</h4>
+                            <p>Mobile access to factory data, remote monitoring, and control of industrial assets</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Custom Manufacturing AI Solutions</h4>
+                            <p>Tailored AI solutions for industry-specific manufacturing and IoT challenges</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Detailed Product Sections -->
-        <section id="idp-details" class="page-section bg-light">
-            <div class="product-detail-container">
-                <div class="product-detail-content">
-                    <h2 class="section-title">Intelligent Document Processing (IDP)</h2>
-                    <p class="section-intro">Transform your document workflows with AI-powered automation that extracts, processes, and validates data with unprecedented accuracy.</p>
-                    
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fa fa-check-circle"></i>
-                            </div>
-                            <h4>99.5% Accuracy Rate</h4>
-                            <p>Advanced OCR and AI validation ensure near-perfect data extraction from any document format.</p>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fa fa-clock-o"></i>
-                            </div>
-                            <h4>Real-time Processing</h4>
-                            <p>Process documents instantly with cloud-based AI that scales to handle your document volume.</p>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fa fa-shield"></i>
-                            </div>
+            <!-- Service Features Overview -->
+            <div class="service-features-overview">
+                <div class="section-header">
+                    <h3>Why Choose Our AI Services?</h3>
+                    <p>Enterprise-grade AI solutions with proven results, comprehensive support, and cutting-edge technology</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Rapid Implementation</h4>
+                        <p>Deploy AI solutions in weeks, not months with our pre-built models and enterprise-ready infrastructure</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
                             <h4>Enterprise Security</h4>
-                            <p>Bank-level encryption and compliance with GDPR, HIPAA, and SOC 2 Type II standards.</p>
+                        <p>Bank-level security with SOC 2 Type II compliance, end-to-end encryption, and comprehensive audit trails</p>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fa fa-plug"></i>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Proven ROI</h4>
+                        <p>Average 300% ROI within 6 months with measurable business outcomes and performance metrics</p>
                             </div>
-                            <h4>Easy Integration</h4>
-                            <p>RESTful APIs and pre-built connectors for popular business applications and databases.</p>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h4>24/7 Expert Support</h4>
+                        <p>Round-the-clock technical support with dedicated success managers and priority escalation</p>
                         </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Seamless Integration</h4>
+                        <p>Native integration with existing systems, APIs, and workflows with zero business disruption</p>
                     </div>
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Comprehensive Training</h4>
+                        <p>Expert-led training programs, change management support, and ongoing skill development</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Advanced AI Capabilities</h4>
+                        <p>State-of-the-art machine learning models with continuous learning and adaptive intelligence</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cloud"></i>
+                        <h4>Cloud-Native Architecture</h4>
+                        <p>Scalable cloud infrastructure with auto-scaling, global availability, and disaster recovery</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <h4>Real-Time Analytics</h4>
+                        <p>Live performance monitoring, predictive analytics, and actionable business insights</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Dedicated Success Team</h4>
+                        <p>Personalized account management with strategic guidance and quarterly business reviews</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-globe"></i>
+                        <h4>Global Compliance</h4>
+                        <p>Multi-region compliance with GDPR, HIPAA, SOC 2, and industry-specific regulations</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Continuous Innovation</h4>
+                        <p>Regular platform updates, new AI capabilities, and access to cutting-edge technology</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Mobile-First Design</h4>
+                        <p>Responsive mobile applications with offline capabilities and cross-platform compatibility</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h4>API-First Approach</h4>
+                        <p>Comprehensive REST APIs, webhooks, and SDKs for seamless third-party integrations</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Custom Solutions</h4>
+                        <p>Tailored AI solutions with industry-specific algorithms and bespoke development</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Data Privacy & Governance</h4>
+                        <p>Comprehensive data governance with privacy controls, retention policies, and audit capabilities</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>99.9% Uptime SLA</h4>
+                        <p>Enterprise-grade reliability with guaranteed uptime and performance SLAs</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>AI Training & Certification</h4>
+                        <p>Comprehensive AI training programs with certification and ongoing skill development</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Performance Optimization</h4>
+                        <p>Continuous performance monitoring and optimization for maximum efficiency and speed</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users-cog"></i>
+                        <h4>Change Management</h4>
+                        <p>Expert change management support with stakeholder alignment and adoption strategies</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Future-Ready Platform</h4>
+                        <p>Scalable architecture designed for emerging technologies and evolving business needs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="pricing-tiers">
-                        <h3>Choose Your Plan</h3>
-                        <div class="tier-grid">
-                            <div class="tier-card">
-                                <h4>Starter</h4>
-                                <div class="tier-price">$299<span>/month</span></div>
-                                <ul>
-                                    <li>1,000 documents/month</li>
-                                    <li>5 document types</li>
-                                    <li>Email support</li>
-                                    <li>Basic analytics</li>
-                                </ul>
-                                <a href="#contact" class="button button-primary">Get Started</a>
+    <!-- Product Details Section -->
+    <section id="idp-details" class="product-details-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Product Details</span>
+                <h2>Intelligent Document Processing (IDP)</h2>
+                <p>Transform your document workflows with next-generation AI-powered automation that extracts, processes, and validates data with unprecedented accuracy and intelligence.</p>
                             </div>
-                            <div class="tier-card featured">
-                                <div class="tier-badge">Most Popular</div>
-                                <h4>Professional</h4>
-                                <div class="tier-price">$799<span>/month</span></div>
-                                <ul>
-                                    <li>5,000 documents/month</li>
-                                    <li>Unlimited document types</li>
-                                    <li>Priority support</li>
-                                    <li>Advanced analytics</li>
-                                    <li>Custom field mapping</li>
-                                </ul>
-                                <a href="#contact" class="button button-primary">Get Started</a>
+            
+            <div class="product-details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-check-circle"></i>
                             </div>
-                            <div class="tier-card">
-                                <h4>Enterprise</h4>
-                                <div class="tier-price">Custom</div>
-                                <ul>
-                                    <li>Unlimited documents</li>
-                                    <li>Custom AI training</li>
-                                    <li>Dedicated support</li>
-                                    <li>On-premise deployment</li>
-                                    <li>SLA guarantees</li>
-                                </ul>
-                                <a href="#contact" class="button button-secondary">Contact Sales</a>
+                    <h3>99.9% Accuracy Rate</h3>
+                    <p>Advanced OCR, AI validation, and machine learning ensure near-perfect data extraction from any document format with continuous learning.</p>
                             </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-clock"></i>
                         </div>
+                    <h3>Real-time Processing</h3>
+                    <p>Process documents instantly with cloud-based AI that scales dynamically to handle enterprise document volumes with sub-second response times.</p>
                     </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-level encryption, SOC 2 Type II compliance, GDPR/HIPAA standards, and end-to-end data protection with audit trails.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Seamless Integration</h3>
+                    <p>RESTful APIs, pre-built connectors, and SDKs for popular business applications, ERPs, and cloud platforms.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Intelligence</h3>
+                    <p>Context-aware data extraction, intelligent form recognition, and adaptive learning for continuous improvement.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Multi-Language Support</h3>
+                    <p>Support for 50+ languages with cultural context understanding and automatic language detection.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Document Capture</h3>
+                    <p>Mobile app for document scanning with instant processing, cloud synchronization, and offline capabilities.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Document processing analytics, performance metrics, and insights for continuous optimization and process improvement.</p>
+                </div>
+            </div>
+
+            <!-- Advanced IDP Features -->
+            <div class="advanced-features-section" style="background: var(--bg-light); padding: 64px 0; border-radius: 24px; margin-top: 48px; box-shadow: 0 4px 24px rgba(102,126,234,0.07);">
+                <div class="section-header" style="text-align: center; margin-bottom: 48px;">
+                    <h3 style="font-size: 2.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">Advanced IDP Capabilities</h3>
+                    <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Enterprise-grade features for complex document processing requirements</p>
+                </div>
+                <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px;">
+                    <div class="feature-item" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(102,126,234,0.06); padding: 32px 24px; text-align: center; transition: box-shadow 0.2s, transform 0.2s;">
+                        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 18px;">
+                            <i class="fas fa-file-pdf" style="font-size: 2rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Multi-Format Document Support</h4>
+                        <p style="color: var(--text-secondary); font-size: 1rem;">PDF, images, scanned documents, handwritten text, and complex forms with intelligent layout recognition.</p>
+                    </div>
+                    <div class="feature-item" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(102,126,234,0.06); padding: 32px 24px; text-align: center; transition: box-shadow 0.2s, transform 0.2s;">
+                        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 18px;">
+                            <i class="fas fa-table" style="font-size: 2rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Table & Form Extraction</h4>
+                        <p style="color: var(--text-secondary); font-size: 1rem;">Intelligent table detection, cell extraction, and form field recognition with validation.</p>
+                    </div>
+                    <div class="feature-item" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(102,126,234,0.06); padding: 32px 24px; text-align: center; transition: box-shadow 0.2s, transform 0.2s;">
+                        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 18px;">
+                            <i class="fas fa-signature" style="font-size: 2rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Signature & Stamp Detection</h4>
+                        <p style="color: var(--text-secondary); font-size: 1rem;">Digital signature verification, stamp detection, and document authenticity validation.</p>
+                    </div>
+                    <div class="feature-item" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(102,126,234,0.06); padding: 32px 24px; text-align: center; transition: box-shadow 0.2s, transform 0.2s;">
+                        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 18px;">
+                            <i class="fas fa-chart-bar" style="font-size: 2rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Data Validation & Quality</h4>
+                        <p style="color: var(--text-secondary); font-size: 1rem;">Automated data validation, error detection, and quality assurance with confidence scoring.</p>
+                    </div>
+                    <div class="feature-item" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(102,126,234,0.06); padding: 32px 24px; text-align: center; transition: box-shadow 0.2s, transform 0.2s;">
+                        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 18px;">
+                            <i class="fas fa-cogs" style="font-size: 2rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Custom Workflow Automation</h4>
+                        <p style="color: var(--text-secondary); font-size: 1rem;">Tailored document processing workflows with business rules and approval processes.</p>
+                    </div>
+                    <div class="feature-item" style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(102,126,234,0.06); padding: 32px 24px; text-align: center; transition: box-shadow 0.2s, transform 0.2s;">
+                        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 18px;">
+                            <i class="fas fa-cloud" style="font-size: 2rem; color: var(--accent-color);"></i>
+                        </div>
+                        <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Cloud-Native Architecture</h4>
+                        <p style="color: var(--text-secondary); font-size: 1rem;">Scalable cloud infrastructure with auto-scaling, global availability, and disaster recovery.</p>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
 
         <!-- Use Cases Section -->
-        <section class="page-section">
-            <h2 class="section-title">Real-World Applications</h2>
-            <p class="section-intro">See how our AI products are transforming businesses across industries and delivering measurable results.</p>
+    <section class="use-cases-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Real-World Applications</span>
+                <h2>See How Our Products Transform Businesses</h2>
+                <p>Discover how organizations across industries are achieving remarkable results with our AI products.</p>
+            </div>
             
             <div class="use-cases-grid">
                 <div class="use-case-card">
                     <div class="use-case-icon">
-                        <i class="fa fa-hospital-o"></i>
+                        <i class="fas fa-hospital"></i>
                     </div>
                     <h3>Healthcare</h3>
                     <p>Automate medical record processing, insurance claims, and patient data extraction with HIPAA-compliant AI solutions.</p>
@@ -322,7 +1452,7 @@
 
                 <div class="use-case-card">
                     <div class="use-case-icon">
-                        <i class="fa fa-university"></i>
+                        <i class="fas fa-university"></i>
                     </div>
                     <h3>Finance & Banking</h3>
                     <p>Streamline loan applications, fraud detection, and compliance reporting with intelligent document processing.</p>
@@ -340,7 +1470,7 @@
 
                 <div class="use-case-card">
                     <div class="use-case-icon">
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                     </div>
                     <h3>E-commerce</h3>
                     <p>Enhance customer support with AI chatbots and optimize inventory with predictive analytics.</p>
@@ -353,67 +1483,115 @@
                             <span class="stat-number">40%</span>
                             <span class="stat-label">Sales Increase</span>
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Technology Stack -->
-        <section class="page-section bg-light">
-            <h2 class="section-title">Powered by Cutting-Edge Technology</h2>
-            <p class="section-intro">Our AI products are built on the latest advancements in machine learning, natural language processing, and cloud computing.</p>
+    <section class="tech-stack-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Technology Stack</span>
+                <h2>Powered by Cutting-Edge Technology</h2>
+                <p>Our AI products are built on the latest advancements in machine learning, natural language processing, and cloud computing.</p>
+            </div>
             
             <div class="tech-stack-grid">
                 <div class="tech-category">
-                    <h3>AI & Machine Learning</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">
-                            <img src="images/image copy 2.png" alt="TensorFlow">
-                            <span>TensorFlow</span>
+                    <h3><i class="fas fa-code"></i> AI & Machine Learning</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">OpenAI GPT</span>
+                        <span class="tech-tag">Hugging Face</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Keras</span>
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">LightGBM</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="images/image copy 3.png" alt="PyTorch">
-                            <span>PyTorch</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="images/image copy 4.png" alt="OpenAI">
-                            <span>OpenAI GPT</span>
-                        </div>
+
+                <div class="tech-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud Infrastructure</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Google Cloud</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">Helm</span>
+                        <span class="tech-tag">Istio</span>
+                        <span class="tech-tag">Prometheus</span>
+                        <span class="tech-tag">Grafana</span>
                     </div>
                 </div>
 
                 <div class="tech-category">
-                    <h3>Cloud Infrastructure</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">
-                            <img src="images/image copy 5.png" alt="AWS">
-                            <span>AWS</span>
+                    <h3><i class="fas fa-database"></i> Data Processing</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Apache Spark</span>
+                        <span class="tech-tag">Apache Kafka</span>
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">Databricks</span>
+                        <span class="tech-tag">Elasticsearch</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Apache Airflow</span>
+                        <span class="tech-tag">dbt</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="images/image copy 6.png" alt="Azure">
-                            <span>Azure</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="images/image copy 7.png" alt="Google Cloud">
-                            <span>Google Cloud</span>
-                        </div>
+
+                <div class="tech-category">
+                    <h3><i class="fas fa-brain"></i> Natural Language Processing</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SpaCy</span>
+                        <span class="tech-tag">NLTK</span>
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">GPT-4</span>
+                        <span class="tech-tag">Claude</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">LlamaIndex</span>
+                        <span class="tech-tag">Sentence Transformers</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Streamlit</span>
                     </div>
                 </div>
 
                 <div class="tech-category">
-                    <h3>Data Processing</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">
-                            <img src="images/image copy 8.png" alt="Apache Spark">
-                            <span>Apache Spark</span>
+                    <h3><i class="fas fa-eye"></i> Computer Vision & MLOps</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Pillow</span>
+                        <span class="tech-tag">YOLO</span>
+                        <span class="tech-tag">Detectron2</span>
+                        <span class="tech-tag">MLflow</span>
+                        <span class="tech-tag">Weights & Biases</span>
+                        <span class="tech-tag">Kubeflow</span>
+                        <span class="tech-tag">Seldon Core</span>
+                        <span class="tech-tag">TensorRT</span>
+                        <span class="tech-tag">ONNX</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="images/image copy 9.png" alt="Kafka">
-                            <span>Kafka</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="images/image copy 10.png" alt="Elasticsearch">
-                            <span>Elasticsearch</span>
+
+                <div class="tech-category">
+                    <h3><i class="fas fa-shield-alt"></i> Security & Monitoring</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">OAuth 2.0</span>
+                        <span class="tech-tag">Vault</span>
+                        <span class="tech-tag">Sentry</span>
+                        <span class="tech-tag">DataDog</span>
+                        <span class="tech-tag">New Relic</span>
+                        <span class="tech-tag">Jaeger</span>
+                        <span class="tech-tag">Zipkin</span>
+                        <span class="tech-tag">ELK Stack</span>
+                        <span class="tech-tag">Falco</span>
                         </div>
                     </div>
                 </div>
@@ -421,9 +1599,13 @@
         </section>
 
         <!-- Customer Success -->
-        <section class="page-section">
-            <h2 class="section-title">Trusted by Industry Leaders</h2>
-            <p class="section-intro">Join hundreds of companies that have transformed their operations with NovaMind AI solutions.</p>
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Customer Success</span>
+                <h2>Trusted by Industry Leaders</h2>
+                <p>Join hundreds of companies that have transformed their operations with NovaMind AI solutions.</p>
+            </div>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -459,79 +1641,102 @@
                             <h4>Emily Rodriguez</h4>
                             <span>Head of Analytics, RetailCorp</span>
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="page-section cta-banner">
-            <h2 class="section-title text-light">Ready to Transform Your Business with AI?</h2>
-            <p class="section-intro text-light-secondary">Join the AI revolution and discover how our intelligent solutions can drive growth, efficiency, and innovation for your organization.</p>
-            <div class="hero-ctas">
-                <a href="#contact" class="button button-primary">Start Your AI Journey</a>
-                <a href="#demo" class="button button-secondary-light">Schedule a Demo</a>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Transform Your Business with AI?</h2>
+                    <p>Join the AI revolution and discover how our intelligent products can drive growth, efficiency, and innovation for your organization.</p>
+                    <div class="cta-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>30-Day Free Trial</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert Implementation</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+            </div>
+                <div class="cta-actions">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Your AI Journey
+                    </a>
+                    <a href="#demo" class="btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Schedule a Demo
+                    </a>
+                </div>
+            </div>
             </div>
         </section>
-    </main>
 
-    <footer id="site-footer">
-        <div class="footer-inner page-section">
-            <div class="footer-grid">
-                <div class="footer-col about">
-                    <a href="/" class="logo" aria-label="NovaMind AI Homepage">
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="20" cy="20" r="18" stroke-width="3"></circle>
-                            <path d="M12 28C12 19 28 19 28 28" stroke-width="2.5" stroke-linecap="round"></path>
-                            <circle cx="20" cy="16" r="4"></circle>
-                        </svg>
-                        <span class="logo-text">NovaMind AI</span>
-                    </a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NovaMind AI</h3>
                     <p>Intelligent AI Solutions for Lasting Impact.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">Company</h4>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#idp">Document Processing</a></li>
+                        <li><a href="#chatbot">AI Chatbots</a></li>
+                        <li><a href="#analytics">Predictive Analytics</a></li>
+                        <li><a href="#custom">Custom Development</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">Products</h4>
+                <div class="footer-section">
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="#">Document Processing</a></li>
-                        <li><a href="#">AI Chatbots</a></li>
-                        <li><a href="#">Predictive Analytics</a></li>
-                        <li><a href="#">Custom Development</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">Connect</h4>
-                    <ul>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Twitter</a></li>
-                    </ul>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@novamindai.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 NovaMind AI. All Rights Reserved.</p>
-                <div>
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms of Service</a>
+                <p>&copy; 2024 NovaMind AI. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <a href="https://wa.me/919271112143" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-      <i class="fa fa-whatsapp"></i>
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="main.js" defer></script>
-    <script src="products.js" defer></script>
+    <script src="main.js"></script>
+    <script src="products.js"></script>
 </body>
-
 </html> 
